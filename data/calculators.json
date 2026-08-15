@@ -1,0 +1,46 @@
+[
+  {
+    "id": "grade-calculator",
+    "name": "Grade Calculator",
+    "slug": "grade-calculator",
+    "category": "math",
+    "categoryName": "Math",
+    "url": "/grade-calculator",
+    "description": "Calculate weighted average grades and figure out the exact score needed on your final exam.",
+    "featured": true,
+    "icon": "%"
+  },
+  {
+    "id": "percentage-calculator",
+    "name": "Percentage Calculator",
+    "slug": "percentage-calculator",
+    "category": "math",
+    "categoryName": "Math",
+    "url": "/math/percentage-calculator",
+    "description": "Calculate percentages, percentage increases, and differences.",
+    "featured": true,
+    "icon": "%"
+  },
+  {
+    "id": "gpa-calculator",
+    "name": "GPA Calculator",
+    "slug": "gpa-calculator",
+    "category": "math",
+    "categoryName": "Math",
+    "url": "/math/gpa-calculator",
+    "description": "Calculate high school and college GPA with weighted and unweighted credits.",
+    "featured": true,
+    "icon": "%"
+  },
+  {
+    "id": "fraction-calculator",
+    "name": "Fraction Calculator",
+    "slug": "fraction-calculator",
+    "category": "math",
+    "categoryName": "Math",
+    "url": "/math/fraction-calculator",
+    "description": "Add, subtract, multiply, and divide fractions easily.",
+    "featured": false,
+    "icon": "%"
+  }
+]

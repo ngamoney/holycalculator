@@ -1,6 +1,6 @@
 export default function CategoryGrid() {
   return (
-    <section className="cat-section">
+    <section className="cat-section" id="categories">
       <div className="section-head">
         <h2>All calculators, by category</h2>
         <p>30+ tools · new ones added monthly</p>
@@ -8,7 +8,7 @@ export default function CategoryGrid() {
 
       <div className="cat-layout">
         <div className="keypad">
-          <div className="key finance">
+          <div className="key finance" id="finance">
             <div className="key-top">
               <div className="key-head">
                 <div className="key-icon">₹</div>
@@ -28,7 +28,7 @@ export default function CategoryGrid() {
             </div>
           </div>
 
-          <div className="key health">
+          <div className="key health" id="health">
             <div className="key-top">
               <div className="key-head">
                 <div className="key-icon">+</div>
@@ -46,15 +46,16 @@ export default function CategoryGrid() {
             </div>
           </div>
 
-          <div className="key math">
+          <div className="key math" id="math">
             <div className="key-top">
               <div className="key-head">
                 <div className="key-icon">%</div>
                 <h3>Math</h3>
               </div>
-              <div className="key-see-all">See all 6 →</div>
+              <div className="key-see-all">See all 7 →</div>
             </div>
             <div className="key-links">
+              <a href="/grade-calculator">Grade calculator</a>
               <a href="#">Percentage calculator</a>
               <a href="#">Fraction calculator</a>
               <a href="#">Scientific calculator</a>
