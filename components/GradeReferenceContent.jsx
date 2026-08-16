@@ -5,6 +5,7 @@ import Link from "next/link";
 import { LETTER_GRADES } from "@/lib/calculations/grade";
 import { GRADE_FAQS } from "@/lib/data/gradeFaqs";
 import AdBanner from "@/components/AdBanner";
+import styles from "./GradeReferenceContent.module.css";
 
 export default function GradeReferenceContent() {
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
@@ -14,8 +15,8 @@ export default function GradeReferenceContent() {
   };
 
   return (
-    <section className="ref-content-section">
-      <div className="ref-prose">
+    <section className={styles.refContentSection}>
+      <div className={styles.refProse}>
         <h2>How Weighted Grades Are Calculated</h2>
         <p>
           In many high school, college, and university courses, assignments are not weighted equally.
@@ -25,12 +26,12 @@ export default function GradeReferenceContent() {
         </p>
 
         {/* Formula Display Box */}
-        <div className="formula-card">
-          <div className="formula-title">Mathematical Formula — Weighted Grade Average</div>
-          <div className="formula-math">
+        <div className={styles.formulaCard}>
+          <div className={styles.formulaTitle}>Mathematical Formula — Weighted Grade Average</div>
+          <div className={styles.formulaMath}>
             Weighted Average = ( ∑ (Grade<sub>i</sub> × Weight<sub>i</sub>) ) / ( ∑ Weight<sub>i</sub> )
           </div>
-          <div className="formula-desc">
+          <div className={styles.formulaDesc}>
             Where <em>Grade<sub>i</sub></em> is the percentage score earned on assignment <em>i</em>, and <em>Weight<sub>i</sub></em> is the percentage weight assigned to that category.
           </div>
         </div>
@@ -56,12 +57,12 @@ export default function GradeReferenceContent() {
           The formula to calculate the required final exam score is:
         </p>
 
-        <div className="formula-card">
-          <div className="formula-title">Mathematical Formula — Final Exam Target Planner</div>
-          <div className="formula-math">
+        <div className={styles.formulaCard}>
+          <div className={styles.formulaTitle}>Mathematical Formula — Final Exam Target Planner</div>
+          <div className={styles.formulaMath}>
             Final Exam Score = [ Desired Grade − ( Current Grade × (1 − Final Weight) ) ] / Final Weight
           </div>
-          <div className="formula-desc">
+          <div className={styles.formulaDesc}>
             Convert weights to decimals (e.g., 25% weight = 0.25, leaving 0.75 for completed coursework).
           </div>
         </div>
@@ -85,8 +86,8 @@ export default function GradeReferenceContent() {
         </p>
 
         {/* Semantic Grade Conversion Table */}
-        <div className="grade-scale-wrapper">
-          <table className="grade-scale-table">
+        <div className={styles.gradeScaleWrapper}>
+          <table className={styles.gradeScaleTable}>
             <thead>
               <tr>
                 <th>Letter Grade</th>
@@ -118,24 +119,24 @@ export default function GradeReferenceContent() {
         <AdBanner />
 
         {/* Frequently Asked Questions Section */}
-        <div className="faq-wrap" id="faqs">
+        <div className={styles.faqWrap} id="faqs">
           <h2>Frequently Asked Questions</h2>
-          <div className="faq-list">
+          <div className={styles.faqList}>
             {GRADE_FAQS.map((faq, index) => {
               const isOpen = openFaqIndex === index;
               return (
-                <div key={index} className="faq-item">
+                <div key={index} className={styles.faqItem}>
                   <button
                     type="button"
-                    className="faq-question"
+                    className={styles.faqQuestion}
                     onClick={() => toggleFaq(index)}
                     aria-expanded={isOpen}
                   >
                     <span>{faq.question}</span>
-                    <span className={`faq-icon ${isOpen ? "open" : ""}`}>+</span>
+                    <span className={`${styles.faqIcon} ${isOpen ? styles.open : ""}`}>+</span>
                   </button>
                   {isOpen && (
-                    <div className="faq-answer">
+                    <div className={styles.faqAnswer}>
                       <p>{faq.answer}</p>
                     </div>
                   )}
@@ -146,27 +147,27 @@ export default function GradeReferenceContent() {
         </div>
 
         {/* Related Calculators Links */}
-        <div style={{ marginTop: "50px", padding: "24px", background: "var(--paper-raised)", border: "1px solid var(--line)", borderRadius: "var(--radius)" }}>
-          <h3 style={{ marginTop: 0 }}>Explore Related Math &amp; Academic Calculators</h3>
-          <p style={{ marginBottom: "16px" }}>
+        <div className={styles.relatedCard}>
+          <h3>Explore Related Math &amp; Academic Calculators</h3>
+          <p>
             Check out our suite of free, instant calculation tools built for students and educators:
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "12px" }}>
-            <Link href="/#math" style={{ padding: "12px 14px", border: "1px solid var(--line)", borderRadius: "8px", background: "var(--paper)", display: "block" }}>
-              <strong style={{ display: "block", color: "var(--ink)" }}>GPA Calculator →</strong>
-              <span style={{ fontSize: "12px", color: "var(--ink-60)" }}>Calculate cumulative semester GPA</span>
+          <div className={styles.relatedGrid}>
+            <Link href="/gpa-calculator" className={styles.relatedLink}>
+              <strong>GPA Calculator →</strong>
+              <span>Calculate cumulative semester GPA</span>
             </Link>
-            <Link href="/#math" style={{ padding: "12px 14px", border: "1px solid var(--line)", borderRadius: "8px", background: "var(--paper)", display: "block" }}>
-              <strong style={{ display: "block", color: "var(--ink)" }}>Percentage Calculator →</strong>
-              <span style={{ fontSize: "12px", color: "var(--ink-60)" }}>Find percentages and percent changes</span>
+            <Link href="/#math" className={styles.relatedLink}>
+              <strong>Percentage Calculator →</strong>
+              <span>Find percentages and percent changes</span>
             </Link>
-            <Link href="/#math" style={{ padding: "12px 14px", border: "1px solid var(--line)", borderRadius: "8px", background: "var(--paper)", display: "block" }}>
-              <strong style={{ display: "block", color: "var(--ink)" }}>Fraction Calculator →</strong>
-              <span style={{ fontSize: "12px", color: "var(--ink-60)" }}>Simplify and operate on fractions</span>
+            <Link href="/#math" className={styles.relatedLink}>
+              <strong>Fraction Calculator →</strong>
+              <span>Simplify and operate on fractions</span>
             </Link>
-            <Link href="/" style={{ padding: "12px 14px", border: "1px solid var(--line)", borderRadius: "8px", background: "var(--paper)", display: "block" }}>
-              <strong style={{ display: "block", color: "var(--ink)" }}>Scientific Calculator →</strong>
-              <span style={{ fontSize: "12px", color: "var(--ink-60)" }}>Full-featured keyboard calculator</span>
+            <Link href="/" className={styles.relatedLink}>
+              <strong>Scientific Calculator →</strong>
+              <span>Full-featured keyboard calculator</span>
             </Link>
           </div>
         </div>

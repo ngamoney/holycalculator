@@ -59,7 +59,7 @@ export default function CategoryGrid() {
               <a href="#">Percentage calculator</a>
               <a href="#">Fraction calculator</a>
               <a href="#">Scientific calculator</a>
-              <a href="#">GPA calculator</a>
+              <a href="/gpa-calculator">GPA calculator</a>
               <a href="#">Average calculator</a>
               <a href="#">Standard deviation</a>
             </div>

@@ -27,7 +27,7 @@
     "slug": "gpa-calculator",
     "category": "math",
     "categoryName": "Math",
-    "url": "/math/gpa-calculator",
+    "url": "/gpa-calculator",
     "description": "Calculate high school and college GPA with weighted and unweighted credits.",
     "featured": true,
     "icon": "%"

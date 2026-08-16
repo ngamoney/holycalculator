@@ -1,0 +1,244 @@
+.refContentSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 28px 80px;
+}
+
+.refProse {
+  max-width: 860px;
+  margin-bottom: 48px;
+}
+
+.refProse h2 {
+  font-family: var(--head);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.015em;
+  margin-top: 36px;
+  margin-bottom: 14px;
+}
+
+.refProse h3 {
+  font-family: var(--head);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-top: 28px;
+  margin-bottom: 10px;
+}
+
+.refProse p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-60);
+  margin-bottom: 16px;
+}
+
+.refProse ul,
+.refProse ol {
+  margin-left: 20px;
+  margin-bottom: 18px;
+  color: var(--ink-60);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.refProse li {
+  margin-bottom: 6px;
+}
+
+/* Formula Callout Card */
+.formulaCard {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 20px 0 24px;
+  font-family: var(--mono);
+}
+
+.formulaTitle {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.formulaMath {
+  font-size: 16px;
+  color: #ffffff;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 8px;
+}
+
+.formulaDesc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+}
+
+/* Semantic Grade Scale & Example Tables */
+.tableCardWrapper {
+  margin: 20px 0 32px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper-raised);
+}
+
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13.5px;
+}
+
+.dataTable th {
+  background: rgba(20, 23, 31, 0.04);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.dataTable td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.dataTable tr:last-child td {
+  border-bottom: none;
+}
+
+.dataTable tr:hover td {
+  background: rgba(20, 23, 31, 0.02);
+}
+
+.tableTotalRow {
+  background: rgba(201, 153, 47, 0.08) !important;
+  font-weight: 700;
+}
+.tableTotalRow td {
+  color: var(--ink) !important;
+  font-family: var(--mono);
+}
+
+/* Cross-Sell Related Calculator Banner */
+.crossSellBanner {
+  margin: 40px 0;
+  padding: 24px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--gold-deep);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.crossSellText h4 {
+  font-family: var(--head);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.crossSellText p {
+  font-size: 13.5px;
+  color: var(--ink-60);
+  margin: 0;
+}
+.crossSellBtn {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+.crossSellBtn:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+/* FAQ Accordion */
+.faqWrap {
+  margin-top: 48px;
+  max-width: 860px;
+}
+
+.faqWrap h2 {
+  font-family: var(--head);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faqItem {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper-raised);
+  overflow: hidden;
+}
+
+.faqQuestion {
+  width: 100%;
+  text-align: left;
+  padding: 18px 20px;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  cursor: pointer;
+  font-family: var(--head);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.faqQuestion:hover {
+  color: var(--gold-deep);
+}
+
+.faqIcon {
+  font-family: var(--mono);
+  font-size: 16px;
+  color: var(--ink-60);
+  transition: transform 0.2s ease;
+}
+.faqIcon.open {
+  transform: rotate(45deg);
+}
+
+.faqAnswer {
+  padding: 0 20px 18px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink-60);
+}

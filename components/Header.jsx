@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <nav>
+    <header className="site-header">
       <div className="nav-inner">
         <Link href="/" className="logo">
           <span className="digit">holy</span>calculator
@@ -18,6 +18,6 @@ export default function Header() {
           </Link>
         </div>
       </div>
-    </nav>
+    </header>
   );
 }

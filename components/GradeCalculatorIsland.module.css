@@ -1,0 +1,820 @@
+.calcMain {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Recent Calculations Chips */
+.recentChipsBar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.recentChipsLabel {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-60);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-right: 4px;
+}
+.recentChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.recentChip:hover {
+  border-color: var(--gold-deep);
+  background: rgba(201, 153, 47, 0.08);
+  color: var(--gold-deep);
+}
+.recentChipScore {
+  font-weight: 700;
+  color: var(--gold-deep);
+}
+
+/* Card Container */
+.calcCard {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 2px rgba(20, 23, 31, 0.03), 0 10px 30px -15px rgba(20, 23, 31, 0.07);
+  overflow: hidden;
+}
+.calcCardHeader {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.calcCardTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.calcCardTitle h2 {
+  font-family: var(--head);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.calcBadgeIcon {
+  width: 28px;
+  height: 28px;
+  background: var(--gold-deep);
+  color: var(--paper);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+}
+.calcControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pillToggleGroup {
+  display: flex;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 3px;
+  gap: 2px;
+}
+.pillBtn {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: none;
+  background: transparent;
+  color: var(--ink-60);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.pillBtn.active {
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 600;
+}
+
+/* Grade Table */
+.calcTableContainer {
+  padding: 20px 24px;
+  overflow-x: auto;
+}
+.gradeTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.gradeTable th {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink-60);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 10px 10px;
+  border-bottom: 2px solid var(--line);
+}
+.gradeTable td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+}
+.gradeTable tr:hover td {
+  background: rgba(20, 23, 31, 0.015);
+}
+
+.colName {
+  width: 44%;
+}
+.colGrade {
+  width: 26%;
+}
+.colWeight {
+  width: 22%;
+}
+.colAction {
+  width: 8%;
+  text-align: center;
+}
+
+.headerLabelFull {
+  display: inline;
+}
+.headerLabelShort {
+  display: none;
+}
+
+.inputField {
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  font-family: var(--body);
+  font-size: 14px;
+  color: var(--ink);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  text-overflow: ellipsis;
+}
+.inputField:focus {
+  outline: none;
+  border-color: var(--gold-deep);
+  box-shadow: 0 0 0 3px rgba(201, 153, 47, 0.15);
+}
+.inputFieldMono {
+  font-family: var(--mono);
+  font-weight: 500;
+}
+.selectField {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%235C5F6B'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 14px;
+  padding-right: 32px;
+  cursor: pointer;
+}
+
+.pointsInputGroup {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.pointsSlash {
+  font-family: var(--mono);
+  color: var(--ink-60);
+  font-weight: 600;
+}
+
+.btnIconDel {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--ink-60);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.15s ease;
+}
+.btnIconDel:hover {
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+  border-color: rgba(220, 38, 38, 0.2);
+}
+
+/* Mobile Table & Card Optimizations - Full-bleed card & table */
+@media (max-width: 640px) {
+  .headerLabelFull {
+    display: none;
+  }
+  .headerLabelShort {
+    display: inline;
+  }
+  .calcCard {
+    margin-left: -16px;
+    margin-right: -16px;
+    width: calc(100% + 32px);
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    overflow: visible;
+  }
+  .calcCardHeader {
+    padding: 12px 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .calcControls {
+    width: 100%;
+  }
+  .pillToggleGroup {
+    width: 100%;
+    display: flex;
+    padding: 2px;
+  }
+  .pillBtn {
+    flex: 1;
+    text-align: center;
+    padding: 6px 4px;
+    font-size: 11px;
+  }
+  .calcTableContainer {
+    margin: 0;
+    width: 100%;
+    padding: 6px 8px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  .gradeTable {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+  }
+  .gradeTable th {
+    padding: 6px 2px;
+    font-size: 10px;
+    letter-spacing: 0.01em;
+  }
+  .gradeTable td {
+    padding: 4px 2px;
+  }
+  .colName {
+    width: 48%;
+  }
+  .colGrade {
+    width: 25%;
+  }
+  .colWeight {
+    width: 18%;
+  }
+  .colAction {
+    width: 9%;
+    text-align: center;
+  }
+  .inputField {
+    height: 36px;
+    padding: 0 6px;
+    font-size: 13px;
+    border-radius: 6px;
+  }
+  .selectField {
+    height: 36px;
+    padding: 0 16px 0 4px;
+    font-size: 12px;
+    border-radius: 6px;
+    background-size: 10px;
+    background-position: right 3px center;
+  }
+  .btnIconDel {
+    width: 26px;
+    height: 26px;
+    font-size: 12px;
+    padding: 0;
+    margin: 0 auto;
+  }
+  .pointsInputGroup {
+    gap: 2px;
+  }
+  .pointsSlash {
+    font-size: 11px;
+  }
+  .tableActions {
+    padding: 10px 14px;
+  }
+  .gradeOutputBox {
+    margin-left: -16px;
+    margin-right: -16px;
+    width: calc(100% + 32px);
+    border-radius: 0;
+    padding: 16px 14px;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .finalGradeCard {
+    margin-left: -16px;
+    margin-right: -16px;
+    width: calc(100% + 32px);
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
+}
+
+/* Table Footer Actions */
+.tableActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--line);
+  background: rgba(246, 243, 236, 0.5);
+  flex-wrap: wrap;
+}
+.btnAdd {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-family: var(--head);
+  font-weight: 600;
+  font-size: 13.5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.btnAdd:hover {
+  background: var(--gold-deep);
+  color: var(--ink);
+}
+.btnText {
+  font-family: var(--mono);
+  font-size: 12px;
+  background: transparent;
+  border: none;
+  color: var(--ink-60);
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: color 0.15s ease;
+}
+.btnText:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+/* Primary Output Banner */
+.gradeOutputBox {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 16px;
+  padding: 24px 28px;
+  box-shadow: 0 16px 36px -12px rgba(20, 23, 31, 0.35);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+@media (max-width: 680px) {
+  .gradeOutputBox {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+}
+
+.gradePrimaryVal {
+  display: flex;
+  flex-direction: column;
+}
+.gradeOutputLabel {
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 4px;
+}
+.gradeNumbersRow {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.gradePercentBig {
+  font-family: var(--mono);
+  font-size: clamp(38px, 5vw, 54px);
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+}
+.gradeLetterPill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--head);
+  font-weight: 800;
+  font-size: 20px;
+  padding: 6px 16px;
+  border-radius: 30px;
+  line-height: 1;
+  transition: all 0.25s ease;
+}
+.gradeLetterPill.green {
+  background: rgba(79, 122, 91, 0.25);
+  color: #72b984;
+  border: 1px solid rgba(114, 185, 132, 0.4);
+}
+.gradeLetterPill.greenLight {
+  background: rgba(79, 122, 91, 0.2);
+  color: #a8d5b3;
+  border: 1px solid rgba(168, 213, 179, 0.35);
+}
+.gradeLetterPill.amber {
+  background: rgba(201, 153, 47, 0.25);
+  color: var(--gold);
+  border: 1px solid rgba(201, 153, 47, 0.45);
+}
+.gradeLetterPill.red {
+  background: rgba(220, 38, 38, 0.25);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.4);
+}
+.gradeLetterPill.redDark {
+  background: rgba(185, 28, 28, 0.3);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.5);
+}
+.gradeLetterPill.default {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.gradeStatsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 14px;
+}
+.gradeStatCell span {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+}
+.gradeStatCell strong {
+  display: block;
+  font-family: var(--mono);
+  font-size: 17px;
+  color: var(--paper);
+  margin-top: 2px;
+}
+
+/* Weight Warning Pill */
+.weightAlert {
+  margin-top: 12px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.weightAlert.warning {
+  background: rgba(201, 153, 47, 0.12);
+  color: var(--gold-deep);
+  border: 1px solid rgba(201, 153, 47, 0.25);
+}
+.weightAlert.success {
+  background: rgba(79, 122, 91, 0.12);
+  color: var(--green);
+  border: 1px solid rgba(79, 122, 91, 0.25);
+}
+
+/* Secondary Actions Bar (Share / Save — Highlighted) */
+.actionButtonsRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 6px 0;
+}
+.btnActionHighlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-family: var(--head);
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(20, 23, 31, 0.08);
+}
+.btnActionHighlight.save {
+  background: var(--paper-raised);
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+}
+.btnActionHighlight.save:hover {
+  background: var(--ink);
+  color: var(--gold);
+  border-color: var(--ink);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(20, 23, 31, 0.18);
+}
+.btnActionHighlight.share {
+  background: var(--ink);
+  color: var(--paper);
+  border: 1.5px solid var(--ink);
+}
+.btnActionHighlight.share:hover {
+  background: var(--gold-deep);
+  color: var(--ink);
+  border-color: var(--gold-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(156, 116, 32, 0.25);
+}
+.btnActionIcon {
+  font-size: 15px;
+}
+
+/* Final Grade Planner — Compact */
+.plannerCard {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper-raised);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(20, 23, 31, 0.04);
+}
+.plannerHeaderBar {
+  background: #20507a;
+  background: linear-gradient(135deg, #1b456b 0%, #255b8c 100%);
+  color: #ffffff;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+.plannerHeaderBar h3 {
+  font-family: var(--head);
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.plannerChevron {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  transition: transform 0.2s ease;
+}
+.plannerChevron.open {
+  transform: rotate(180deg);
+}
+
+.plannerBody {
+  padding: 14px 18px 16px;
+  background: var(--paper-raised);
+}
+.plannerFormCompact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 520px;
+}
+.plannerRowItem {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  align-items: center;
+  gap: 12px;
+}
+@media (max-width: 540px) {
+  .plannerRowItem {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+.plannerLabel {
+  font-family: var(--head);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.plannerHelpBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: rgba(20, 23, 31, 0.1);
+  color: var(--ink-60);
+  font-size: 10px;
+  font-family: var(--mono);
+  font-weight: 700;
+  cursor: help;
+  border: none;
+}
+.plannerInputWrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.plannerInputField {
+  width: 110px;
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: 1.5px solid #255b8c;
+  background: #ffffff;
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.plannerInputField:focus {
+  outline: none;
+  border-color: #173d61;
+  box-shadow: 0 0 0 2px rgba(37, 91, 140, 0.2);
+}
+.plannerUnit {
+  font-family: var(--mono);
+  font-weight: 600;
+  color: var(--ink-60);
+  font-size: 13px;
+}
+.plannerActionsBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 2px;
+  padding-top: 4px;
+}
+.btnCalcGreen {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #447a28;
+  background: linear-gradient(180deg, #4d8630 0%, #3a6b22 100%);
+  color: #ffffff;
+  font-family: var(--head);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 5px;
+  border: 1px solid #33611d;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.btnCalcGreen:hover {
+  background: linear-gradient(180deg, #579737 0%, #427827 100%);
+}
+.btnCalcGreen:active {
+  transform: translateY(1px);
+}
+.btnCalcIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  font-size: 9px;
+}
+.btnLinkClear {
+  background: transparent;
+  border: none;
+  color: var(--ink-60);
+  font-family: var(--body);
+  font-size: 12.5px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.btnLinkClear:hover {
+  color: var(--ink);
+}
+
+.plannerResultBox {
+  margin-top: 14px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.plannerResultScore {
+  font-family: var(--mono);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--ink);
+}
+.plannerStatusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+}
+.plannerStatusBadge.green {
+  background: rgba(79, 122, 91, 0.15);
+  color: #3b6145;
+  border: 1px solid rgba(79, 122, 91, 0.3);
+}
+.plannerStatusBadge.amber {
+  background: rgba(201, 153, 47, 0.15);
+  color: #8c671b;
+  border: 1px solid rgba(201, 153, 47, 0.35);
+}
+.plannerStatusBadge.red {
+  background: rgba(220, 38, 38, 0.15);
+  color: #b91c1c;
+  border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+/* Share Toast */
+.shareToast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-family: var(--mono);
+  font-size: 13px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: slideUpToast 0.25s ease-out;
+}
+@keyframes slideUpToast {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

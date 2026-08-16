@@ -1,0 +1,209 @@
+.refContentSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 28px 80px;
+}
+.refProse {
+  max-width: 860px;
+  margin-bottom: 48px;
+}
+.refProse h2 {
+  font-family: var(--head);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.015em;
+  margin-top: 36px;
+  margin-bottom: 14px;
+}
+.refProse h3 {
+  font-family: var(--head);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+.refProse p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-60);
+  margin-bottom: 16px;
+}
+.refProse ul, .refProse ol {
+  margin-left: 20px;
+  margin-bottom: 18px;
+  color: var(--ink-60);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.refProse li {
+  margin-bottom: 6px;
+}
+
+/* Formula Callout Card */
+.formulaCard {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 20px 0 24px;
+  font-family: var(--mono);
+}
+.formulaTitle {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+.formulaMath {
+  font-size: 16px;
+  color: #ffffff;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 8px;
+}
+.formulaDesc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+}
+
+/* Semantic Grade Scale Table */
+.gradeScaleWrapper {
+  margin: 24px 0 40px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper-raised);
+}
+.gradeScaleTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13.5px;
+}
+.gradeScaleTable th {
+  background: rgba(20, 23, 31, 0.04);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.gradeScaleTable td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+}
+.gradeScaleTable tr:last-child td {
+  border-bottom: none;
+}
+.gradeScaleTable tr:hover td {
+  background: rgba(20, 23, 31, 0.02);
+}
+
+/* FAQ Accordion */
+.faqWrap {
+  margin-top: 48px;
+}
+.faqWrap h2 {
+  font-family: var(--head);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.faqItem {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper-raised);
+  overflow: hidden;
+}
+.faqQuestion {
+  width: 100%;
+  text-align: left;
+  padding: 18px 20px;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  cursor: pointer;
+  font-family: var(--head);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.faqQuestion:hover {
+  color: var(--gold-deep);
+}
+.faqIcon {
+  font-family: var(--mono);
+  font-size: 16px;
+  color: var(--ink-60);
+  transition: transform 0.2s ease;
+}
+.faqIcon.open {
+  transform: rotate(45deg);
+}
+.faqAnswer {
+  padding: 0 20px 18px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink-60);
+}
+
+/* Related Calculators Box */
+.relatedCard {
+  margin-top: 50px;
+  padding: 24px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.relatedCard h3 {
+  margin-top: 0;
+  font-family: var(--head);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.relatedCard p {
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: var(--ink-60);
+}
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+.relatedLink {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  display: block;
+  transition: border-color 0.15s ease;
+}
+.relatedLink:hover {
+  border-color: var(--gold-deep);
+}
+.relatedLink strong {
+  display: block;
+  color: var(--ink);
+  font-size: 14px;
+}
+.relatedLink span {
+  font-size: 12px;
+  color: var(--ink-60);
+}

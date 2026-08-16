@@ -1,46 +1,46 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import GradeCalculatorIsland from "@/components/GradeCalculatorIsland";
-import GradeReferenceContent from "@/components/GradeReferenceContent";
-import { GRADE_FAQS } from "@/lib/data/gradeFaqs";
+import GPACalculatorIsland from "@/components/GPACalculatorIsland";
+import GPAReferenceContent from "@/components/GPAReferenceContent";
+import { GPA_FAQS } from "@/lib/data/gpaFaqs";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Grade Calculator – Weighted Average & Final Grade Needed | Holy Calculator",
+  title: "GPA Calculator – Calculate Your Grade Point Average | Holy Calculator",
   description:
-    "Calculate your weighted grade average and find out exactly what score you need on your final exam. Free, instant, and works with percentages, points, or letter grades.",
+    "Calculate semester and cumulative Grade Point Average (GPA) instantly. Supports 4.0 scale, letter grades, percentages, prior GPA carryover, and target GPA planning.",
   alternates: {
-    canonical: "https://holycalculator.com/grade-calculator",
+    canonical: "https://holycalculator.com/gpa-calculator",
   },
   openGraph: {
-    title: "Grade Calculator – Weighted Average & Final Grade Needed",
+    title: "GPA Calculator – Calculate Your Grade Point Average",
     description:
-      "Calculate your weighted grade average and find out exactly what score you need on your final exam. Free, instant, and works with percentages, points, or letter grades.",
-    url: "https://holycalculator.com/grade-calculator",
+      "Calculate semester and cumulative Grade Point Average (GPA) instantly. Supports 4.0 scale, letter grades, percentages, prior GPA carryover, and target GPA planning.",
+    url: "https://holycalculator.com/gpa-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grade Calculator – Weighted Average & Final Grade Needed",
+    title: "GPA Calculator – Calculate Your Grade Point Average",
     description:
-      "Calculate your weighted grade average and find out what score you need on your final exam. Instant reactive calculator with shareable results.",
+      "Free instant GPA Calculator with semester grouping, letter/percentage grades, prior GPA carryover, and target planning.",
   },
 };
 
-export default function GradeCalculatorPage() {
+export default function GPACalculatorPage() {
   const breadcrumbItems = [
     { label: "Home", href: "/" },
     { label: "Math", href: "/#math" },
-    { label: "Grade Calculator", active: true },
+    { label: "GPA Calculator", active: true },
   ];
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": GRADE_FAQS.map((faq) => ({
+    "mainEntity": GPA_FAQS.map((faq) => ({
       "@type": "Question",
       "name": faq.question,
       "acceptedAnswer": {
@@ -53,25 +53,25 @@ export default function GradeCalculatorPage() {
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "How to Calculate a Weighted Grade Average",
-    "description": "Step-by-step calculation instructions to determine your overall weighted course grade.",
+    "name": "How to Calculate Grade Point Average (GPA)",
+    "description": "Step-by-step instructions to calculate semester and cumulative grade point average using quality points and credit weighting.",
     "step": [
       {
         "@type": "HowToStep",
-        "name": "Multiply each assignment grade by its weight",
-        "text": "For each graded component, multiply the percentage score by the decimal weight (e.g., 90% × 0.20 = 18 points).",
+        "name": "Convert each letter grade to numerical grade points",
+        "text": "Map each class grade to standard GPA points (e.g., A = 4.0, B = 3.0, C = 2.0).",
         "position": 1,
       },
       {
         "@type": "HowToStep",
-        "name": "Sum all weighted points",
-        "text": "Add together the weighted points calculated across all homework, quizzes, tests, and projects.",
+        "name": "Multiply grade points by course credit hours",
+        "text": "Multiply each class's grade point value by its number of credit hours to calculate Quality Points (e.g., 4 credits × 4.0 = 16 quality points).",
         "position": 2,
       },
       {
         "@type": "HowToStep",
-        "name": "Divide by total weight sum",
-        "text": "Divide the total weighted points by the sum of the assignment weights. If weights total 100%, the sum is your final percentage grade.",
+        "name": "Divide total quality points by total credit hours",
+        "text": "Sum all quality points earned and divide by the total number of graded credits attempted across the term.",
         "position": 3,
       },
     ],
@@ -80,8 +80,8 @@ export default function GradeCalculatorPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Holy Calculator - Grade Calculator",
-    "url": "https://holycalculator.com/grade-calculator",
+    "name": "Holy Calculator - GPA Calculator",
+    "url": "https://holycalculator.com/gpa-calculator",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "All",
     "offers": {
@@ -118,15 +118,15 @@ export default function GradeCalculatorPage() {
           <span className="dot" />
           Math &amp; Academic Calculators
         </div>
-        <h1>Grade Calculator</h1>
+        <h1>GPA Calculator</h1>
         <p className="lead">
-          Calculate your overall weighted class grade and determine the exact score you need on your final exam to reach your target GPA. Works with percentages, points, or letter grades with instant shareable links.
+          Calculate your semester and cumulative Grade Point Average (GPA) instantly. Group courses by term, carry forward prior college credits, and project the exact grades you need to achieve your graduation goal.
         </p>
       </header>
 
       {/* Main Two-Column Layout (Interactive Island + Sticky Ad Rail) */}
       <div className="calc-layout">
-        <GradeCalculatorIsland />
+        <GPACalculatorIsland />
 
         {/* Desktop Sticky Sidebar Rail */}
         <aside className="calc-sidebar">
@@ -139,17 +139,17 @@ export default function GradeCalculatorPage() {
 
           {/* Quick Navigation / Related Calculators */}
           <div className="sidebar-box">
-            <h4>Math Calculators</h4>
+            <h4>Academic &amp; Math Calculators</h4>
             <ul className="sidebar-links-list">
               <li>
-                <Link href="/#math">
-                  <span>Percentage Calculator</span>
+                <Link href="/grade-calculator">
+                  <span>Grade Calculator</span>
                   <span>→</span>
                 </Link>
               </li>
               <li>
-                <Link href="/gpa-calculator">
-                  <span>GPA Calculator</span>
+                <Link href="/#math">
+                  <span>Percentage Calculator</span>
                   <span>→</span>
                 </Link>
               </li>
@@ -171,7 +171,7 @@ export default function GradeCalculatorPage() {
       </div>
 
       {/* SEO Reference Content, Conversion Scale Table, Worked Examples, and FAQ */}
-      <GradeReferenceContent />
+      <GPAReferenceContent />
 
       <Footer />
     </main>

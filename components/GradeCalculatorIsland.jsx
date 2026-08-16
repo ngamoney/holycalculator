@@ -4,18 +4,20 @@ import { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import {
   LETTER_GRADES,
   calculateWeightedGrade,
-  calculateFinalGradeNeeded
+  calculateFinalGradeNeeded,
+  encodeCompactGradeState,
+  decodeCompactGradeState
 } from "@/lib/calculations/grade";
+import styles from "./GradeCalculatorIsland.module.css";
 
 const DEFAULT_ROWS = [
-  { id: "1", name: "Homework Assignments", type: "percentage", grade: "95", pointsEarned: "95", pointsTotal: "100", letter: "A", weight: "20" },
+  { id: "1", name: "Homework 1", type: "percentage", grade: "95", pointsEarned: "95", pointsTotal: "100", letter: "A", weight: "20" },
   { id: "2", name: "Quizzes", type: "percentage", grade: "88", pointsEarned: "44", pointsTotal: "50", letter: "B+", weight: "10" },
-  { id: "3", name: "Midterm Exam", type: "percentage", grade: "84", pointsEarned: "84", pointsTotal: "100", letter: "B", weight: "15" },
+  { id: "3", name: "Midterm exam", type: "percentage", grade: "84", pointsEarned: "84", pointsTotal: "100", letter: "B", weight: "15" },
   { id: "4", name: "", type: "percentage", grade: "", pointsEarned: "", pointsTotal: "", letter: "A", weight: "" },
   { id: "5", name: "", type: "percentage", grade: "", pointsEarned: "", pointsTotal: "", letter: "A", weight: "" },
   { id: "6", name: "", type: "percentage", grade: "", pointsEarned: "", pointsTotal: "", letter: "A", weight: "" },
-  { id: "7", name: "", type: "percentage", grade: "", pointsEarned: "", pointsTotal: "", letter: "A", weight: "" },
-  { id: "8", name: "", type: "percentage", grade: "", pointsEarned: "", pointsTotal: "", letter: "A", weight: "" }
+  { id: "7", name: "", type: "percentage", grade: "", pointsEarned: "", pointsTotal: "", letter: "A", weight: "" }
 ];
 
 const LOCAL_STORAGE_KEY = "holy_grade_calc_history_v1";
@@ -64,23 +66,34 @@ export default function GradeCalculatorIsland() {
     if (typeof window === "undefined") return;
 
     // 1. Try reading URL query params
-    const params = new URLSearchParams(window.location.search);
-    const dataParam = params.get("g");
-    if (dataParam) {
-      try {
-        const decoded = JSON.parse(decodeURIComponent(atob(dataParam)));
-        if (decoded.rows && Array.isArray(decoded.rows)) {
-          setRows(decoded.rows);
-        }
-        if (decoded.globalMode) setGlobalMode(decoded.globalMode);
-        if (decoded.weightMode) setWeightMode(decoded.weightMode);
-        if (decoded.finalGoal) setFinalGradeGoal(decoded.finalGoal);
-        if (decoded.remainingWeight) {
-          setRemainingWeight(decoded.remainingWeight);
-          setIsRemainingWeightCustom(true);
-        }
-      } catch (e) {
-        console.error("Failed to parse URL grade data", e);
+    const decoded = decodeCompactGradeState(window.location.search);
+    if (decoded && decoded.rows && decoded.rows.length > 0) {
+      const restored = [...decoded.rows];
+      // Always guarantee at least 4 empty rows ready for input
+      const emptyNeeded = Math.max(4, 7 - restored.length);
+      for (let i = 0; i < emptyNeeded; i++) {
+        restored.push({
+          id: (restored.length + 1).toString(),
+          name: "",
+          type: decoded.mode || "percentage",
+          grade: "",
+          pointsEarned: "",
+          pointsTotal: "",
+          letter: "A",
+          weight: ""
+        });
+      }
+      setRows(restored);
+      if (decoded.mode) setGlobalMode(decoded.mode);
+      if (decoded.goal) setFinalGradeGoal(decoded.goal);
+      if (decoded.remainingWeight) {
+        setRemainingWeight(decoded.remainingWeight);
+        setIsRemainingWeightCustom(true);
+      }
+    } else {
+      // Clean query string if no valid params
+      if (window.location.search) {
+        window.history.replaceState(null, "", window.location.pathname);
       }
     }
 
@@ -98,22 +111,15 @@ export default function GradeCalculatorIsland() {
     }
   }, []);
 
-  // Sync to URL query param via replaceState (debounced ~500ms)
-  const syncToUrl = useCallback((currentRows, mode, wMode, goal, rWeight) => {
+  // Sync to compact URL query param via replaceState (debounced ~500ms)
+  const syncToUrl = useCallback((currentRows, mode, goal, rWeight) => {
     if (typeof window === "undefined") return;
     if (urlSyncTimerRef.current) clearTimeout(urlSyncTimerRef.current);
 
     urlSyncTimerRef.current = setTimeout(() => {
       try {
-        const payload = {
-          rows: currentRows,
-          globalMode: mode,
-          weightMode: wMode,
-          finalGoal: goal,
-          remainingWeight: rWeight
-        };
-        const encoded = btoa(encodeURIComponent(JSON.stringify(payload)));
-        const newUrl = `${window.location.pathname}?g=${encoded}`;
+        const queryStr = encodeCompactGradeState(currentRows, goal, rWeight, mode);
+        const newUrl = queryStr ? `${window.location.pathname}?${queryStr}` : window.location.pathname;
         window.history.replaceState(null, "", newUrl);
       } catch (e) {
         // ignore serialization issues
@@ -123,8 +129,8 @@ export default function GradeCalculatorIsland() {
 
   // Update URL whenever inputs change
   useEffect(() => {
-    syncToUrl(rows, globalMode, weightMode, finalGradeGoal, remainingWeight);
-  }, [rows, globalMode, weightMode, finalGradeGoal, remainingWeight, syncToUrl]);
+    syncToUrl(rows, globalMode, finalGradeGoal, remainingWeight);
+  }, [rows, globalMode, finalGradeGoal, remainingWeight, syncToUrl]);
 
   // Show temporary toast helper
   const triggerToast = (msg) => {
@@ -158,7 +164,6 @@ export default function GradeCalculatorIsland() {
 
   const addRow = () => {
     const newId = (Date.now() + Math.floor(Math.random() * 1000)).toString();
-    const newIndex = rows.length + 1;
     setRows((prev) => [
       ...prev,
       {
@@ -189,7 +194,10 @@ export default function GradeCalculatorIsland() {
     setFinalGradeGoal("90");
     setRemainingWeight("55");
     setIsRemainingWeightCustom(false);
-    triggerToast("Reset to default (3 filled + 5 empty rows).");
+    if (typeof window !== "undefined") {
+      window.history.replaceState(null, "", window.location.pathname);
+    }
+    triggerToast("Reset to default (3 filled + 4 empty rows).");
   };
 
   const clearAllRows = () => {
@@ -198,9 +206,14 @@ export default function GradeCalculatorIsland() {
       { id: "2", name: "", type: globalMode, grade: "", pointsEarned: "", pointsTotal: "", letter: "A", weight: "" },
       { id: "3", name: "", type: globalMode, grade: "", pointsEarned: "", pointsTotal: "", letter: "A", weight: "" },
       { id: "4", name: "", type: globalMode, grade: "", pointsEarned: "", pointsTotal: "", letter: "A", weight: "" },
-      { id: "5", name: "", type: globalMode, grade: "", pointsEarned: "", pointsTotal: "", letter: "A", weight: "" }
+      { id: "5", name: "", type: globalMode, grade: "", pointsEarned: "", pointsTotal: "", letter: "A", weight: "" },
+      { id: "6", name: "", type: globalMode, grade: "", pointsEarned: "", pointsTotal: "", letter: "A", weight: "" },
+      { id: "7", name: "", type: globalMode, grade: "", pointsEarned: "", pointsTotal: "", letter: "A", weight: "" }
     ]);
-    triggerToast("Cleared all inputs.");
+    if (typeof window !== "undefined") {
+      window.history.replaceState(null, "", window.location.pathname);
+    }
+    triggerToast("Cleared all inputs (7 clean rows).");
   };
 
   const switchGlobalMode = (mode) => {
@@ -213,12 +226,14 @@ export default function GradeCalculatorIsland() {
     );
   };
 
-  // Copy shareable link
+  // Copy compact shareable link
   const handleCopyLink = () => {
     if (typeof window === "undefined") return;
-    navigator.clipboard.writeText(window.location.href).then(
+    const queryStr = encodeCompactGradeState(rows, finalGradeGoal, remainingWeight, globalMode);
+    const shareUrl = `${window.location.origin}${window.location.pathname}${queryStr ? `?${queryStr}` : ""}`;
+    navigator.clipboard.writeText(shareUrl).then(
       () => {
-        triggerToast("✓ Shareable link copied to clipboard!");
+        triggerToast("✓ Short shareable link copied to clipboard!");
       },
       () => {
         triggerToast("Failed to copy link.");
@@ -258,7 +273,23 @@ export default function GradeCalculatorIsland() {
 
   // Restore saved session from chip
   const restoreSession = (session) => {
-    if (session.rows) setRows(session.rows);
+    if (session.rows) {
+      const restored = [...session.rows];
+      const emptyNeeded = Math.max(4, 7 - restored.length);
+      for (let i = 0; i < emptyNeeded; i++) {
+        restored.push({
+          id: (restored.length + 1).toString(),
+          name: "",
+          type: session.globalMode || "percentage",
+          grade: "",
+          pointsEarned: "",
+          pointsTotal: "",
+          letter: "A",
+          weight: ""
+        });
+      }
+      setRows(restored);
+    }
     if (session.globalMode) setGlobalMode(session.globalMode);
     if (session.weightMode) setWeightMode(session.weightMode);
     if (session.finalGoal) setFinalGradeGoal(session.finalGoal);
@@ -283,103 +314,126 @@ export default function GradeCalculatorIsland() {
     triggerToast("Cleared final grade planner fields.");
   };
 
+  // Helper for letter badge color
+  const getBadgeColorClass = (color) => {
+    if (color === "green") return styles.green;
+    if (color === "green-light") return styles.greenLight;
+    if (color === "amber") return styles.amber;
+    if (color === "red") return styles.red;
+    if (color === "red-dark") return styles.redDark;
+    return styles.default;
+  };
+
+  const getPlannerBadgeColorClass = (color) => {
+    if (color === "green") return styles.green;
+    if (color === "amber") return styles.amber;
+    if (color === "red") return styles.red;
+    return "";
+  };
+
   return (
-    <div className="calc-main">
+    <div className={styles.calcMain}>
       {/* Toast Notification */}
-      {toastMessage && <div className="share-toast">{toastMessage}</div>}
+      {toastMessage && <div className={styles.shareToast}>{toastMessage}</div>}
 
       {/* Recent Calculations Chip Bar (Appears on repeat visits) */}
       {recentSessions.length > 0 && (
-        <div className="recent-chips-bar">
-          <span className="recent-chips-label">Recent Saved:</span>
+        <div className={styles.recentChipsBar}>
+          <span className={styles.recentChipsLabel}>Recent Saved:</span>
           {recentSessions.map((session) => (
             <button
               key={session.id}
               onClick={() => restoreSession(session)}
-              className="recent-chip"
+              className={styles.recentChip}
               title={`Saved on ${session.date}`}
             >
               <span>{session.label}</span>
-              <span className="recent-chip-score">{session.scoreText}</span>
+              <span className={styles.recentChipScore}>{session.scoreText}</span>
             </button>
           ))}
         </div>
       )}
 
       {/* 1. PRIMARY WEIGHTED GRADE CALCULATOR TABLE */}
-      <div className="calc-card" id="weighted-grade-calculator">
+      <div className={styles.calcCard} id="weighted-grade-calculator">
         {/* Card Header & Controls */}
-        <div className="calc-card-header">
-          <div className="calc-card-title">
-            <span className="calc-badge-icon">%</span>
+        <div className={styles.calcCardHeader}>
+          <div className={styles.calcCardTitle}>
+            <span className={styles.calcBadgeIcon}>%</span>
             <div>
               <h2>Weighted Grade Calculator</h2>
             </div>
           </div>
 
-          <div className="calc-controls">
+          <div className={styles.calcControls}>
             {/* Grade Input Format Toggle */}
-            <div className="pill-toggle-group" aria-label="Grade Format Toggle">
+            <div className={styles.pillToggleGroup} aria-label="Grade Format Toggle">
               <button
                 type="button"
-                className={`pill-btn ${globalMode === "percentage" ? "active" : ""}`}
+                className={`${styles.pillBtn} ${globalMode === "percentage" ? styles.active : ""}`}
                 onClick={() => switchGlobalMode("percentage")}
               >
-                Percentage (%)
+                <span className={styles.headerLabelFull}>Percentage (%)</span>
+                <span className={styles.headerLabelShort}>Percent (%)</span>
               </button>
               <button
                 type="button"
-                className={`pill-btn ${globalMode === "points" ? "active" : ""}`}
+                className={`${styles.pillBtn} ${globalMode === "points" ? styles.active : ""}`}
                 onClick={() => switchGlobalMode("points")}
               >
-                Points (X/Y)
+                <span className={styles.headerLabelFull}>Points (X/Y)</span>
+                <span className={styles.headerLabelShort}>Points</span>
               </button>
               <button
                 type="button"
-                className={`pill-btn ${globalMode === "letter" ? "active" : ""}`}
+                className={`${styles.pillBtn} ${globalMode === "letter" ? styles.active : ""}`}
                 onClick={() => switchGlobalMode("letter")}
               >
-                Letter Grade
+                <span className={styles.headerLabelFull}>Letter Grade</span>
+                <span className={styles.headerLabelShort}>Letter</span>
               </button>
             </div>
           </div>
         </div>
 
         {/* Dynamic Table of Rows */}
-        <div className="calc-table-container">
-          <table className="grade-table">
+        <div className={styles.calcTableContainer}>
+          <table className={styles.gradeTable}>
             <thead>
               <tr>
-                <th style={{ width: "38%" }}>Assignment / Category (Optional)</th>
-                <th style={{ width: "32%" }}>
+                <th className={styles.colName}>
+                  <span className={styles.headerLabelFull}>Assignment / Category (Optional)</span>
+                  <span className={styles.headerLabelShort}>Assignment (Optional)</span>
+                </th>
+                <th className={styles.colGrade}>
                   {globalMode === "percentage" && "Grade (%)"}
                   {globalMode === "points" && "Points (Earned / Total)"}
                   {globalMode === "letter" && "Letter Grade"}
                 </th>
-                <th style={{ width: "22%" }}>Weight ({weightMode === "percent" ? "%" : "pts"})</th>
-                <th style={{ width: "8%", textAlign: "center" }}>Action</th>
+                <th className={styles.colWeight}>Weight ({weightMode === "percent" ? "%" : "pts"})</th>
+                <th className={styles.colAction} aria-label="Actions"></th>
               </tr>
             </thead>
             <tbody>
               {rows.map((row, idx) => (
                 <tr key={row.id}>
-                  <td>
+                  <td className={styles.colName}>
                     <input
                       type="text"
-                      className="input-field"
+                      className={styles.inputField}
                       placeholder={`Assignment ${idx + 1}`}
                       value={row.name}
                       onChange={(e) => updateRow(row.id, "name", e.target.value)}
                     />
                   </td>
-                  <td>
+                  <td className={styles.colGrade}>
                     {row.type === "percentage" && (
                       <input
                         type="number"
                         step="any"
                         min="0"
                         max="200"
-                        className="input-field input-field-mono"
+                        className={styles.inputField}
                         placeholder="e.g. 92"
                         value={row.grade}
                         onChange={(e) => updateRow(row.id, "grade", e.target.value)}
@@ -387,22 +441,22 @@ export default function GradeCalculatorIsland() {
                     )}
 
                     {row.type === "points" && (
-                      <div className="points-input-group">
+                      <div className={styles.pointsInputGroup}>
                         <input
                           type="number"
                           step="any"
                           min="0"
-                          className="input-field input-field-mono"
+                          className={styles.inputField}
                           placeholder="Score"
                           value={row.pointsEarned}
                           onChange={(e) => updateRow(row.id, "pointsEarned", e.target.value)}
                         />
-                        <span className="points-slash">/</span>
+                        <span className={styles.pointsSlash}>/</span>
                         <input
                           type="number"
                           step="any"
                           min="1"
-                          className="input-field input-field-mono"
+                          className={styles.inputField}
                           placeholder="Max"
                           value={row.pointsTotal}
                           onChange={(e) => updateRow(row.id, "pointsTotal", e.target.value)}
@@ -412,7 +466,7 @@ export default function GradeCalculatorIsland() {
 
                     {row.type === "letter" && (
                       <select
-                        className="input-field select-field input-field-mono"
+                        className={`${styles.inputField} ${styles.selectField}`}
                         value={row.letter}
                         onChange={(e) => updateRow(row.id, "letter", e.target.value)}
                       >
@@ -424,22 +478,22 @@ export default function GradeCalculatorIsland() {
                       </select>
                     )}
                   </td>
-                  <td>
+                  <td className={styles.colWeight}>
                     <input
                       type="number"
                       step="any"
                       min="0"
-                      className="input-field input-field-mono"
+                      className={styles.inputField}
                       placeholder="e.g. 20"
                       value={row.weight}
                       onChange={(e) => updateRow(row.id, "weight", e.target.value)}
                     />
                   </td>
-                  <td style={{ textAlign: "center" }}>
+                  <td className={styles.colAction}>
                     <button
                       type="button"
                       onClick={() => removeRow(row.id)}
-                      className="btn-icon-del"
+                      className={styles.btnIconDel}
                       title="Delete this row"
                       aria-label={`Delete ${row.name || `Row ${idx + 1}`}`}
                     >
@@ -453,15 +507,15 @@ export default function GradeCalculatorIsland() {
         </div>
 
         {/* Table Footer Controls */}
-        <div className="table-actions">
+        <div className={styles.tableActions}>
           <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-            <button type="button" onClick={addRow} className="btn-add">
+            <button type="button" onClick={addRow} className={styles.btnAdd}>
               + Add Row
             </button>
-            <button type="button" onClick={resetRows} className="btn-text">
+            <button type="button" onClick={resetRows} className={styles.btnText}>
               Reset template
             </button>
-            <button type="button" onClick={clearAllRows} className="btn-text">
+            <button type="button" onClick={clearAllRows} className={styles.btnText}>
               Clear all
             </button>
           </div>
@@ -481,38 +535,38 @@ export default function GradeCalculatorIsland() {
         </div>
       </div>
 
-      {/* 2. LIVE PRIMARY OUTPUT CARD: CURRENT WEIGHTED GRADE (MOVED ABOVE OPTIONAL PLANNER) */}
-      <div className="grade-output-box">
-        <div className="grade-primary-val">
-          <span className="grade-output-label">CURRENT WEIGHTED GRADE</span>
-          <div className="grade-numbers-row">
-            <span className="grade-percent-big">
+      {/* 2. LIVE PRIMARY OUTPUT CARD: CURRENT WEIGHTED GRADE */}
+      <div className={styles.gradeOutputBox}>
+        <div className={styles.gradePrimaryVal}>
+          <span className={styles.gradeOutputLabel}>CURRENT WEIGHTED GRADE</span>
+          <div className={styles.gradeNumbersRow}>
+            <span className={styles.gradePercentBig}>
               {weightedResult.averagePercentage !== null ? `${weightedResult.averagePercentage}%` : "—"}
             </span>
-            <span className={`grade-letter-pill ${weightedResult.color}`}>
+            <span className={`${styles.gradeLetterPill} ${getBadgeColorClass(weightedResult.color)}`}>
               {weightedResult.letterGrade}
             </span>
           </div>
 
           {/* Weight breakdown alert */}
           {weightedResult.totalWeight > 0 && weightedResult.totalWeight !== 100 && (
-            <div className="weight-alert warning" style={{ marginTop: "10px" }}>
+            <div className={`${styles.weightAlert} ${styles.warning}`} style={{ marginTop: "10px" }}>
               <span>Completed weight is {weightedResult.totalWeight}%. Remaining weight is {Math.max(0, 100 - weightedResult.totalWeight)}%.</span>
             </div>
           )}
           {weightedResult.totalWeight === 100 && (
-            <div className="weight-alert success" style={{ marginTop: "10px" }}>
+            <div className={`${styles.weightAlert} ${styles.success}`} style={{ marginTop: "10px" }}>
               <span>✓ Total weight equals 100% (All course components completed).</span>
             </div>
           )}
         </div>
 
-        <div className="grade-stats-grid">
-          <div className="grade-stat-cell">
+        <div className={styles.gradeStatsGrid}>
+          <div className={styles.gradeStatCell}>
             <span>GPA EQUIVALENT</span>
             <strong>{weightedResult.gpa !== "—" ? `${weightedResult.gpa} / 4.0` : "—"}</strong>
           </div>
-          <div className="grade-stat-cell">
+          <div className={styles.gradeStatCell}>
             <span>GRADED ITEMS</span>
             <strong>{rows.filter((r) => r.grade !== "" || r.weight !== "").length} active</strong>
           </div>
@@ -520,7 +574,7 @@ export default function GradeCalculatorIsland() {
       </div>
 
       {/* 3. HIGHLIGHTED ACTION BUTTONS (SAVE & SHARE) */}
-      <div className="action-buttons-row">
+      <div className={styles.actionButtonsRow}>
         {isCustomSaveOpen ? (
           <div style={{ display: "flex", gap: "6px", alignItems: "center" }}>
             <input
@@ -528,13 +582,13 @@ export default function GradeCalculatorIsland() {
               placeholder="e.g. Physics 101 Midterm"
               value={customSaveLabel}
               onChange={(e) => setCustomSaveLabel(e.target.value)}
-              className="input-field"
+              className={styles.inputField}
               style={{ width: "220px", padding: "8px 12px", fontSize: "13px" }}
             />
             <button
               type="button"
               onClick={() => handleSaveSession(customSaveLabel)}
-              className="btn-action-highlight save"
+              className={`${styles.btnActionHighlight} ${styles.save}`}
               style={{ padding: "8px 16px" }}
             >
               Save
@@ -542,7 +596,7 @@ export default function GradeCalculatorIsland() {
             <button
               type="button"
               onClick={() => setIsCustomSaveOpen(false)}
-              className="btn-text"
+              className={styles.btnText}
             >
               Cancel
             </button>
@@ -551,10 +605,10 @@ export default function GradeCalculatorIsland() {
           <button
             type="button"
             onClick={() => setIsCustomSaveOpen(true)}
-            className="btn-action-highlight save"
+            className={`${styles.btnActionHighlight} ${styles.save}`}
             title="Save this calculation to browser memory"
           >
-            <span className="btn-action-icon">💾</span>
+            <span className={styles.btnActionIcon}>💾</span>
             <span>Save Calculation</span>
           </button>
         )}
@@ -562,18 +616,18 @@ export default function GradeCalculatorIsland() {
         <button
           type="button"
           onClick={handleCopyLink}
-          className="btn-action-highlight share"
+          className={`${styles.btnActionHighlight} ${styles.share}`}
           title="Copy bookmarkable share link to clipboard"
         >
-          <span className="btn-action-icon">🔗</span>
+          <span className={styles.btnActionIcon}>🔗</span>
           <span>Share / Copy Link</span>
         </button>
       </div>
 
-      {/* 4. FINAL GRADE PLANNING (OPTIONAL) — PLACED BELOW THE CURRENT OUTPUT & HIGHLIGHTED BUTTONS */}
-      <div className="planner-card" id="final-grade-planner">
+      {/* 4. FINAL GRADE PLANNING (OPTIONAL) */}
+      <div className={styles.plannerCard} id="final-grade-planner">
         <div
-          className="planner-header-bar"
+          className={styles.plannerHeaderBar}
           onClick={() => setIsPlannerOpen(!isPlannerOpen)}
           role="button"
           tabIndex={0}
@@ -582,21 +636,21 @@ export default function GradeCalculatorIsland() {
           <div>
             <h3>Final Grade Planning (Optional)</h3>
           </div>
-          <span className={`planner-chevron ${isPlannerOpen ? "open" : ""}`}>
+          <span className={`${styles.plannerChevron} ${isPlannerOpen ? styles.open : ""}`}>
             {isPlannerOpen ? "▲" : "▼"}
           </span>
         </div>
 
         {isPlannerOpen && (
-          <div className="planner-body">
-            <div className="planner-form-compact">
+          <div className={styles.plannerBody}>
+            <div className={styles.plannerFormCompact}>
               {/* Row 1: Final Grade Goal */}
-              <div className="planner-row-item">
-                <div className="planner-label">
+              <div className={styles.plannerRowItem}>
+                <div className={styles.plannerLabel}>
                   <span>Final Grade Goal</span>
                   <button
                     type="button"
-                    className="planner-help-btn"
+                    className={styles.plannerHelpBtn}
                     onClick={(e) => {
                       e.stopPropagation();
                       setShowGoalHelp(!showGoalHelp);
@@ -606,18 +660,18 @@ export default function GradeCalculatorIsland() {
                     ?
                   </button>
                 </div>
-                <div className="planner-input-wrap">
+                <div className={styles.plannerInputWrap}>
                   <input
                     type="number"
                     step="any"
                     min="0"
                     max="150"
-                    className="planner-input-field"
+                    className={styles.plannerInputField}
                     placeholder="90"
                     value={finalGradeGoal}
                     onChange={(e) => setFinalGradeGoal(e.target.value)}
                   />
-                  <span className="planner-unit">%</span>
+                  <span className={styles.plannerUnit}>%</span>
                 </div>
               </div>
 
@@ -628,17 +682,17 @@ export default function GradeCalculatorIsland() {
               )}
 
               {/* Row 2: Weight of Remaining Tasks */}
-              <div className="planner-row-item">
-                <div className="planner-label">
+              <div className={styles.plannerRowItem}>
+                <div className={styles.plannerLabel}>
                   <span>Weight of Remaining Tasks</span>
                 </div>
-                <div className="planner-input-wrap">
+                <div className={styles.plannerInputWrap}>
                   <input
                     type="number"
                     step="any"
                     min="1"
                     max="100"
-                    className="planner-input-field"
+                    className={styles.plannerInputField}
                     placeholder="55"
                     value={remainingWeight}
                     onChange={(e) => {
@@ -646,23 +700,23 @@ export default function GradeCalculatorIsland() {
                       setIsRemainingWeightCustom(true);
                     }}
                   />
-                  <span className="planner-unit">%</span>
+                  <span className={styles.plannerUnit}>%</span>
                 </div>
               </div>
 
               {/* Action Buttons (Calculate, Clear) */}
-              <div className="planner-actions-bar">
+              <div className={styles.plannerActionsBar}>
                 <button
                   type="button"
-                  className="btn-calc-green"
+                  className={styles.btnCalcGreen}
                   onClick={handleCalculatePlannerClick}
                 >
                   <span>Calculate</span>
-                  <span className="btn-calc-icon">▶</span>
+                  <span className={styles.btnCalcIcon}>▶</span>
                 </button>
                 <button
                   type="button"
-                  className="btn-link-clear"
+                  className={styles.btnLinkClear}
                   onClick={handleClearPlanner}
                 >
                   Clear
@@ -671,7 +725,7 @@ export default function GradeCalculatorIsland() {
             </div>
 
             {/* Final Exam Result Breakdown */}
-            <div className="planner-result-box" ref={plannerResultRef}>
+            <div className={styles.plannerResultBox} ref={plannerResultRef}>
               <div>
                 <span
                   style={{
@@ -687,7 +741,7 @@ export default function GradeCalculatorIsland() {
                   SCORE NEEDED ON REMAINING TASKS / FINAL EXAM
                 </span>
                 <div style={{ display: "flex", alignItems: "baseline", gap: "8px" }}>
-                  <span className="planner-result-score">
+                  <span className={styles.plannerResultScore}>
                     {finalResult.scoreNeeded !== null ? `${finalResult.scoreNeeded}%` : "—"}
                   </span>
                   {finalResult.scoreNeeded !== null && finalResult.letterGrade !== "—" && (
@@ -709,7 +763,7 @@ export default function GradeCalculatorIsland() {
               </div>
 
               <div>
-                <span className={`planner-status-badge ${finalResult.badgeColor}`}>
+                <span className={`${styles.plannerStatusBadge} ${getPlannerBadgeColorClass(finalResult.badgeColor)}`}>
                   {finalResult.status === "impossible" && "▲ Extra Credit Required"}
                   {finalResult.status === "secured" && "✓ Target Secured (0% Needed)"}
                   {finalResult.status === "comfortable" && "✓ Readily In Reach"}
