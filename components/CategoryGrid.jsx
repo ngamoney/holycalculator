@@ -38,7 +38,7 @@ export default function CategoryGrid() {
             </div>
             <div className="key-links">
               <a href="#">BMI calculator</a>
-              <a href="#">Calorie (TDEE) calculator</a>
+              <a href="/calorie-calculator">Calorie (TDEE) calculator</a>
               <a href="#">Body fat calculator</a>
               <a href="#">Ideal weight calculator</a>
               <a href="#">Pregnancy due date</a>
