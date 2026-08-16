@@ -42,5 +42,27 @@
     "description": "Add, subtract, multiply, and divide fractions easily.",
     "featured": false,
     "icon": "%"
+  },
+  {
+    "id": "age-calculator",
+    "name": "Age Calculator",
+    "slug": "age-calculator",
+    "category": "other",
+    "categoryName": "Other Calculators",
+    "url": "/age-calculator",
+    "description": "Calculate exact chronological age in years, months, days, hours, and seconds.",
+    "featured": true,
+    "icon": "◷"
+  },
+  {
+    "id": "dice-roller",
+    "name": "Dice Roller",
+    "slug": "dice-roller",
+    "category": "other",
+    "categoryName": "Other Calculators",
+    "url": "/dice-roller",
+    "description": "Roll virtual polyhedral dice (d4, d6, d8, d10, d12, d20) with cryptographically secure randomness.",
+    "featured": true,
+    "icon": "⚄"
   }
 ]

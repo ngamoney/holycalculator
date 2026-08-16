@@ -1,0 +1,316 @@
+/* ============================================================
+   DiceRollerIsland.module.css
+   Pure CSS — no animation libraries. Layout + keyframe roll anim.
+   ============================================================ */
+
+.calcMain {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ── Card shell ─────────────────────────────────────────────── */
+.calcCard {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 2px rgba(20, 23, 31, 0.03), 0 10px 30px -15px rgba(20, 23, 31, 0.07);
+  overflow: hidden;
+}
+
+.calcCardHeader {
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.calcBadgeIcon {
+  width: 32px;
+  height: 32px;
+  background: var(--indigo);
+  color: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.calcCardTitle {
+  font-family: var(--head);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* ── Form section ───────────────────────────────────────────── */
+.formSection {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1;
+}
+
+.inputLabel {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+}
+
+.numInput {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  font-family: var(--body);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.numInput:focus {
+  border-color: var(--indigo);
+  box-shadow: 0 0 0 3px rgba(59, 53, 100, 0.12);
+}
+
+/* ── Roll button ────────────────────────────────────────────── */
+.rollBtn {
+  height: 46px;
+  padding: 0 28px;
+  border-radius: 10px;
+  border: none;
+  background: var(--indigo);
+  color: #fff;
+  font-family: var(--head);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.15s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rollBtn:hover {
+  background: #2e2851;
+}
+
+.rollBtn:active {
+  transform: scale(0.97);
+}
+
+/* ── D6 Dice display ────────────────────────────────────────── */
+.diceResultSection {
+  padding: 20px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.diceRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.diceFace {
+  width: 64px;
+  height: 64px;
+  filter: drop-shadow(0 4px 10px rgba(20,23,31,0.18));
+  /* Rolling animation class added via JS */
+}
+
+.diceFace.rolling {
+  animation: diceRoll 350ms ease-out forwards;
+}
+
+@keyframes diceRoll {
+  0%   { opacity: 0.2; transform: rotate(-30deg) scale(0.7); }
+  40%  { opacity: 1;   transform: rotate(10deg) scale(1.12); }
+  70%  { transform: rotate(-5deg) scale(0.97); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+/* ── Total badge ─────────────────────────────────────────────── */
+.totalBadge {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 12px;
+  padding: 14px 32px;
+  text-align: center;
+}
+
+.totalLabel {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(246, 243, 236, 0.6);
+  margin-bottom: 4px;
+}
+
+.totalValue {
+  font-family: var(--head);
+  font-size: 38px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+
+.rollsBreakdown {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: rgba(246, 243, 236, 0.7);
+  margin-top: 6px;
+}
+
+/* ── Preset buttons (d4, d6, d8, d10, d12, d20) ─────────────── */
+.presetRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.presetBtn {
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  min-width: 44px;
+  min-height: 40px;
+  text-align: center;
+}
+
+.presetBtn:hover {
+  background: var(--indigo);
+  color: #fff;
+  border-color: var(--indigo);
+}
+
+.presetBtn.active {
+  background: var(--indigo);
+  color: #fff;
+  border-color: var(--indigo);
+}
+
+/* ── Numeric result display (non-d6 dice) ────────────────────── */
+.numericDiceRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.numericDie {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  background: var(--indigo);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(59, 53, 100, 0.35);
+}
+
+.numericDie.rolling {
+  animation: diceRoll 350ms ease-out forwards;
+}
+
+/* ── Separator ──────────────────────────────────────────────── */
+.sectionDivider {
+  height: 1px;
+  background: var(--line);
+  margin: 0 24px;
+}
+
+/* ── Toast ──────────────────────────────────────────────────── */
+.emptyState {
+  padding: 36px 24px;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink-60);
+}
+
+.emptyStateIcon {
+  font-size: 36px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* ── Mobile ─────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .formSection {
+    padding: 18px 16px;
+  }
+  .inputRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .rollBtn {
+    width: 100%;
+    justify-content: center;
+    height: 50px;
+    font-size: 16px;
+  }
+  .diceResultSection {
+    padding: 18px 16px 24px;
+  }
+  .diceFace {
+    width: 56px;
+    height: 56px;
+  }
+  .totalValue {
+    font-size: 32px;
+  }
+  .calcCardHeader {
+    padding: 14px 16px;
+  }
+  .presetRow {
+    gap: 6px;
+  }
+  .presetBtn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}

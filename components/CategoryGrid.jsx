@@ -74,7 +74,7 @@ export default function CategoryGrid() {
               <div className="key-see-all">See all 5 →</div>
             </div>
             <div className="key-links">
-              <a href="#">Age calculator</a>
+              <a href="/age-calculator">Age calculator</a>
               <a href="#">Date difference</a>
               <a href="#">Countdown calculator</a>
               <a href="#">Workdays calculator</a>
@@ -111,6 +111,20 @@ export default function CategoryGrid() {
               <a href="#">Zodiac compatibility</a>
               <a href="#">Angel number calculator</a>
               <a href="#">Lucky number generator</a>
+            </div>
+          </div>
+
+          <div className="key other" id="other">
+            <div className="key-top">
+              <div className="key-head">
+                <div className="key-icon">◎</div>
+                <h3>Other Calculators</h3>
+              </div>
+              <div className="key-see-all">See all 2 →</div>
+            </div>
+            <div className="key-links">
+              <a href="/age-calculator">Age calculator</a>
+              <a href="/dice-roller">Dice roller</a>
             </div>
           </div>
         </div>
