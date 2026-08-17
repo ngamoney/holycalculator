@@ -7,7 +7,7 @@ export default function Ticker() {
     "Percentage Calculator",
     "Zodiac Compatibility",
     "Currency Converter",
-    "EMI Calculator",
+    "Retirement Calculator",
     "Calorie Calculator",
     "Angel Number Calculator",
   ];

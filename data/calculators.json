@@ -64,5 +64,49 @@
     "description": "Roll virtual polyhedral dice (d4, d6, d8, d10, d12, d20) with cryptographically secure randomness.",
     "featured": true,
     "icon": "⚄"
+  },
+  {
+    "id": "pregnancy-calculator",
+    "name": "Pregnancy Due Date Calculator",
+    "slug": "pregnancy-calculator",
+    "category": "health",
+    "categoryName": "Health",
+    "url": "/pregnancy-calculator",
+    "description": "Estimate your due date, current gestational age, and trimester timeline using LMP, conception, IVF, or ultrasound methods.",
+    "featured": true,
+    "icon": "🗓️"
+  },
+  {
+    "id": "mortgage-calculator",
+    "name": "Mortgage Calculator",
+    "slug": "mortgage-calculator",
+    "category": "finance",
+    "categoryName": "Finance",
+    "url": "/mortgage-calculator",
+    "description": "Calculate monthly mortgage payments, property taxes, insurance, PMI, extra payments, and full amortization schedules.",
+    "featured": true,
+    "icon": "🏠"
+  },
+  {
+    "id": "retirement-calculator",
+    "name": "Retirement Calculator",
+    "slug": "retirement-calculator",
+    "category": "finance",
+    "categoryName": "Finance",
+    "url": "/retirement-calculator",
+    "description": "Estimate how much money you need to retire, required monthly savings, sustainable withdrawals, and drawdown timelines.",
+    "featured": true,
+    "icon": "🌴"
+  },
+  {
+    "id": "loan-calculator",
+    "name": "Loan Calculator",
+    "slug": "loan-calculator",
+    "category": "finance",
+    "categoryName": "Finance",
+    "url": "/loan-calculator",
+    "description": "Calculate monthly loan payments, total interest, deferred lump sums, and bond present values with custom compounding frequencies.",
+    "featured": true,
+    "icon": "💳"
   }
 ]

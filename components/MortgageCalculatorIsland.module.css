@@ -1,0 +1,763 @@
+.calcMain {
+  width: 100%;
+  position: relative;
+}
+
+.calcCard {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: 0 4px 20px rgba(20, 23, 31, 0.04);
+}
+
+.calcCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.calcCardTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.calcBadgeIcon {
+  width: 38px;
+  height: 38px;
+  background: rgba(20, 23, 31, 0.08);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.calcCardTitle h2 {
+  font-family: var(--head);
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.categoryBadge {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink);
+  background: rgba(20, 23, 31, 0.06);
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+}
+
+/* 2-Column Desktop Calculator Layout */
+.calculatorTwoColGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 24px;
+}
+
+.inputsColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.resultsColumn {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.stickyResultsCard {
+  position: sticky;
+  top: 90px;
+  align-self: flex-start;
+}
+
+@media (max-width: 960px) {
+  .calculatorTwoColGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .stickyResultsCard {
+    position: static;
+  }
+}
+
+/* Form Section */
+.formSection {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.inputsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputLabel {
+  font-family: var(--body);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.inputLabelGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.inputSubtext {
+  font-size: 12px;
+  color: var(--ink-60);
+  font-family: var(--mono);
+}
+
+.currencyInput,
+.numberInput,
+.dateInput,
+.selectInput {
+  width: 100%;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  min-height: 42px;
+}
+
+.currencyInput:focus,
+.numberInput:focus,
+.dateInput:focus,
+.selectInput:focus {
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px rgba(20, 23, 31, 0.1);
+}
+
+.rangeInput {
+  width: 100%;
+  accent-color: var(--ink);
+  cursor: pointer;
+}
+
+.togglePillGroup {
+  display: flex;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.togglePill {
+  background: transparent;
+  border: none;
+  padding: 3px 10px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink-60);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.activePill {
+  background: var(--ink) !important;
+  color: var(--paper-raised) !important;
+}
+
+.presetButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.presetBtn {
+  flex: 1;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.presetBtn:hover {
+  background: rgba(20, 23, 31, 0.05);
+}
+
+.activePreset {
+  background: var(--ink) !important;
+  color: var(--gold) !important;
+  border-color: var(--ink) !important;
+}
+
+.twoInputsRow {
+  display: flex;
+  gap: 10px;
+}
+
+/* Accordions */
+.accordionSection {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.accordionHeader {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--head);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+}
+
+.accordionBody {
+  padding: 0 20px 20px 20px;
+  border-top: 1px solid var(--line);
+}
+
+/* Toggle Checkbox Row */
+.toggleRow {
+  margin-bottom: 20px;
+}
+
+.toggleLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.checkboxInput {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--ink);
+  cursor: pointer;
+}
+
+/* Biweekly Savings Card */
+.biweeklyCard {
+  background: linear-gradient(135deg, rgba(201, 153, 47, 0.12) 0%, rgba(201, 153, 47, 0.04) 100%);
+  border: 1px solid rgba(201, 153, 47, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.biweeklyHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.biweeklyTitle {
+  font-family: var(--head);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.biweeklyBadge {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--gold-deep);
+  background: var(--paper-raised);
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(201, 153, 47, 0.3);
+}
+
+.biweeklyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+.biweeklyStat {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.statLabel {
+  font-size: 11.5px;
+  color: var(--ink-60);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.statValue {
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.statSub {
+  font-size: 11px;
+  color: var(--ink-60);
+}
+
+.statHighlight {
+  font-family: var(--mono);
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--gold-deep);
+}
+
+/* Primary Results Hero Display */
+.resultsHero {
+  background: linear-gradient(135deg, rgba(20, 23, 31, 0.05) 0%, rgba(20, 23, 31, 0.01) 100%);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.heroEyebrow {
+  display: block;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-60);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.monthlyDisplay {
+  font-family: var(--head);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  line-height: 1.15;
+}
+
+.perMonthText {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink-60);
+  margin-left: 6px;
+}
+
+/* Surfaced Top Amortization Chart Card */
+.topAmortizationChartCard {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.chartHeaderRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chartHeaderTitle {
+  font-family: var(--head);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.chartLegendRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--ink-60);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legendColorBox {
+  width: 12px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.svgContainer {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.amortizationSvg {
+  width: 100%;
+  height: auto;
+  max-height: 130px;
+  display: block;
+}
+
+.componentsPillsRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.pillCard {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 12.5px;
+}
+
+.pillDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.pillLabel {
+  color: var(--ink-60);
+  font-weight: 500;
+}
+
+.pillValue {
+  font-family: var(--mono);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  align-items: center;
+  text-align: left;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.chartWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chartCenterText {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 11px;
+  color: var(--ink-60);
+}
+
+.chartCenterText strong {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.metricsTable {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.metricRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.metricRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.metricRow span {
+  color: var(--ink-60);
+}
+
+.metricRow strong {
+  font-family: var(--mono);
+  color: var(--ink);
+  white-space: nowrap;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.pmiHighlight {
+  color: var(--gold-deep) !important;
+}
+
+/* Amortization Section */
+.amortizationSection {
+  margin-bottom: 24px;
+}
+
+.sectionHeadingRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sectionHeading h3 {
+  font-family: var(--head);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+}
+
+.expandScheduleBtn {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.expandScheduleBtn:hover {
+  background: var(--paper-raised);
+  border-color: var(--ink);
+}
+
+.scheduleContainer {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.scheduleTabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.scheduleTab {
+  background: transparent;
+  border: none;
+  padding: 8px 14px;
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-60);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.activeScheduleTab {
+  background: var(--paper-raised) !important;
+  color: var(--ink) !important;
+  box-shadow: 0 2px 6px rgba(20, 23, 31, 0.08);
+}
+
+.tableScrollWrapper {
+  max-height: 450px;
+  overflow-y: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.scheduleTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: 13px;
+  text-align: left;
+}
+
+.scheduleTable th {
+  position: sticky;
+  top: 0;
+  background: var(--paper-raised);
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--head);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  z-index: 10;
+}
+
+.scheduleTable td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.scheduleTable tr:nth-child(even) {
+  background: rgba(20, 23, 31, 0.02);
+}
+
+/* Disclaimer Box */
+.disclaimerBox {
+  background: rgba(20, 23, 31, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.disclaimerHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.disclaimerBox p {
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--ink-60);
+  margin: 0;
+}
+
+/* Card Footer Action Bar */
+.cardFooter {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.shareBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.shareBtn:hover {
+  background: var(--paper-raised);
+  border-color: var(--ink);
+  box-shadow: 0 2px 8px rgba(20, 23, 31, 0.1);
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--ink);
+  color: var(--paper-raised);
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  z-index: 1000;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  .calcCard {
+    padding: 18px 14px;
+  }
+
+  .monthlyDisplay {
+    font-size: 28px;
+  }
+}

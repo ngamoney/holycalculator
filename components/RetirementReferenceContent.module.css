@@ -1,0 +1,125 @@
+.referenceArticle {
+  font-family: var(--body);
+  color: var(--ink);
+  line-height: 1.65;
+  margin-top: 36px;
+}
+
+.section {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-bottom: 24px;
+}
+
+.section h2 {
+  font-family: var(--head);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.section p {
+  font-size: 14.5px;
+  color: var(--ink-60);
+  margin-bottom: 14px;
+}
+
+.section p:last-child {
+  margin-bottom: 0;
+}
+
+.ruleCard {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 18px;
+}
+
+.ruleCard:last-child {
+  margin-bottom: 0;
+}
+
+.ruleCard h3 {
+  font-family: var(--head);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.limitNote {
+  font-size: 13.5px !important;
+  color: #8a6416 !important;
+  background: rgba(201, 153, 47, 0.1);
+  border: 1px solid rgba(201, 153, 47, 0.25);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 10px;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.vehicleCard {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.vehicleCard h3 {
+  font-family: var(--head);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.vehicleCard p {
+  font-size: 13.5px;
+  color: var(--ink-60);
+  margin: 0;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.faqItem {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.faqItem h3 {
+  font-family: var(--head);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.faqItem p {
+  font-size: 14px;
+  color: var(--ink-60);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 20px 16px;
+  }
+}

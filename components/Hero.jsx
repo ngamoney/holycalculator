@@ -17,7 +17,7 @@ export default function Hero() {
           <form className="hero-search">
             <input
               type="text"
-              placeholder="Search calculators — “BMI”, “life path number”, “EMI”…"
+              placeholder="Search calculators — “BMI”, “life path number”, “Mortgage”…"
             />
             <button type="submit">Search</button>
           </form>

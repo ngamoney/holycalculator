@@ -15,13 +15,13 @@ export default function Footer() {
             <h5>Finance</h5>
             <ul>
               <li>
-                <a href="#">Mortgage</a>
+                <a href="/mortgage-calculator">Mortgage</a>
               </li>
               <li>
-                <a href="#">EMI</a>
+                <a href="/retirement-calculator">Retirement</a>
               </li>
               <li>
-                <a href="#">Retirement</a>
+                <a href="/loan-calculator">Loan Calculator</a>
               </li>
             </ul>
           </div>
@@ -29,13 +29,13 @@ export default function Footer() {
             <h5>Health</h5>
             <ul>
               <li>
-                <a href="#">BMI</a>
+                <a href="/calorie-calculator">Calorie</a>
               </li>
               <li>
-                <a href="#">Calorie</a>
+                <a href="/pregnancy-calculator">Pregnancy Due Date</a>
               </li>
               <li>
-                <a href="#">Body fat</a>
+                <a href="/#health">BMI</a>
               </li>
             </ul>
           </div>

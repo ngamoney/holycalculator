@@ -17,11 +17,10 @@ export default function CategoryGrid() {
               <div className="key-see-all">See all 8 →</div>
             </div>
             <div className="key-links">
-              <a href="#">Mortgage calculator</a>
-              <a href="#">Loan calculator</a>
-              <a href="#">EMI calculator</a>
+              <a href="/mortgage-calculator">Mortgage calculator</a>
+              <a href="/retirement-calculator">Retirement calculator</a>
+              <a href="/loan-calculator">Loan calculator</a>
               <a href="#">Compound interest</a>
-              <a href="#">Retirement calculator</a>
               <a href="#">Budget calculator</a>
               <a href="#">Income tax calculator</a>
               <a href="#">Sales tax calculator</a>
@@ -41,7 +40,7 @@ export default function CategoryGrid() {
               <a href="/calorie-calculator">Calorie (TDEE) calculator</a>
               <a href="#">Body fat calculator</a>
               <a href="#">Ideal weight calculator</a>
-              <a href="#">Pregnancy due date</a>
+              <a href="/pregnancy-calculator">Pregnancy due date calculator</a>
               <a href="#">BMR calculator</a>
             </div>
           </div>

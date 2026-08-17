@@ -1,0 +1,423 @@
+.calcMain {
+  width: 100%;
+  position: relative;
+}
+
+.calcCard {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: 0 4px 20px rgba(20, 23, 31, 0.04);
+}
+
+.calcCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.calcCardTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.calcBadgeIcon {
+  width: 38px;
+  height: 38px;
+  background: rgba(20, 23, 31, 0.08);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.calcCardTitle h2 {
+  font-family: var(--head);
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.categoryBadge {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink);
+  background: rgba(20, 23, 31, 0.06);
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+}
+
+/* 4 Mode Selector Tabs */
+.modeTabsWrapper {
+  margin-bottom: 24px;
+}
+
+.modeTabs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px;
+  background: var(--paper);
+  padding: 6px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+.modeTabBtn {
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-60);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  text-align: center;
+}
+
+.modeTabBtn:hover {
+  color: var(--ink);
+  background: rgba(20, 23, 31, 0.04);
+}
+
+.activeModeTab {
+  background: var(--paper-raised) !important;
+  color: var(--ink) !important;
+  box-shadow: 0 2px 8px rgba(20, 23, 31, 0.08);
+}
+
+/* 2-Column Desktop Calculator Layout */
+.calculatorTwoColGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 24px;
+}
+
+.inputsColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.resultsColumn {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.stickyResultsCard {
+  position: sticky;
+  top: 90px;
+  align-self: flex-start;
+}
+
+@media (max-width: 960px) {
+  .calculatorTwoColGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .stickyResultsCard {
+    position: static;
+  }
+}
+
+/* Form Section */
+.formSection {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.inputsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inputLabel {
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.inputLabelGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.togglePillGroup {
+  display: flex;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.togglePill {
+  border: none;
+  background: transparent;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-60);
+  padding: 3px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.activePill {
+  background: var(--ink) !important;
+  color: var(--paper-raised) !important;
+}
+
+.currencyInput,
+.numberInput {
+  width: 100%;
+  padding: 9px 12px;
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.currencyInput:focus,
+.numberInput:focus {
+  border-color: var(--ink);
+}
+
+/* Results Hero Card */
+.resultsHero {
+  background: linear-gradient(135deg, rgba(20, 23, 31, 0.05) 0%, rgba(20, 23, 31, 0.01) 100%);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+}
+
+.heroEyebrow {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink-60);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.primaryDisplay {
+  font-family: var(--head);
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  line-height: 1.15;
+}
+
+.subUnitText {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink-60);
+  margin-left: 6px;
+}
+
+.statusBadgeRow {
+  margin-bottom: 16px;
+}
+
+.statusBadge {
+  display: inline-block;
+  font-family: var(--body);
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.onTrackBadge {
+  background: rgba(79, 122, 91, 0.15);
+  color: #3b5c44;
+  border: 1px solid rgba(79, 122, 91, 0.3);
+}
+
+.shortfallBadge {
+  background: rgba(201, 153, 47, 0.15);
+  color: #8a6416;
+  border: 1px solid rgba(201, 153, 47, 0.3);
+}
+
+.chartCard {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.chartHeader {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-60);
+  margin-bottom: 8px;
+}
+
+.svgContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.chartSvg {
+  width: 100%;
+  height: auto;
+  max-height: 110px;
+  display: block;
+}
+
+.metricsTable {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.metricRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12.5px;
+  color: var(--ink-60);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+}
+
+.metricRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.metricRow strong {
+  font-family: var(--mono);
+  color: var(--ink);
+  white-space: nowrap;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.highlightText {
+  color: var(--gold-deep) !important;
+}
+
+/* Disclaimer Box */
+.disclaimerBox {
+  background: rgba(20, 23, 31, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 24px;
+}
+
+.disclaimerHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.disclaimerBox p {
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--ink-60);
+  margin: 0;
+}
+
+/* Card Footer Action Bar */
+.cardFooter {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  margin-top: 16px;
+}
+
+.shareBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 9px 15px;
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.shareBtn:hover {
+  background: var(--paper-raised);
+  border-color: var(--ink);
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--ink);
+  color: var(--paper-raised);
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  z-index: 1000;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 640px) {
+  .calcCard {
+    padding: 18px 14px;
+  }
+  .primaryDisplay {
+    font-size: 26px;
+  }
+}
