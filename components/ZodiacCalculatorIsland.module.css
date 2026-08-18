@@ -1,0 +1,182 @@
+/* ZodiacCalculatorIsland.module.css */
+.islandContainer {
+  background: var(--paper-raised, #FDFCF8);
+  border: 1px solid var(--line, #E5E0D8);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.selectorGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 640px) {
+  .selectorGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.personBox {
+  background: var(--paper, #F6F3EC);
+  border: 1px solid var(--line, #E5E0D8);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.boxLabel {
+  font-family: var(--font-sora, 'Sora', sans-serif);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #3B3564;
+  margin-bottom: 8px;
+}
+
+.selectInput {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 0.9375rem;
+  color: var(--ink, #14171F);
+  background: var(--paper-raised, #FDFCF8);
+  border: 1px solid var(--line, #E5E0D8);
+  border-radius: 8px;
+  padding: 10px 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.selectInput:focus {
+  outline: none;
+  border-color: #3B3564;
+  box-shadow: 0 0 0 3px rgba(59, 53, 100, 0.15);
+}
+
+/* Result Card */
+.resultCard {
+  background: var(--paper, #F6F3EC);
+  border: 1px solid var(--line, #E5E0D8);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.matchHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.signBadge {
+  font-family: var(--font-sora, 'Sora', sans-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #3B3564;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.heartDivider {
+  font-size: 1.75rem;
+  color: #C9992F;
+}
+
+/* Big Score Circle */
+.scoreCircle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3B3564 0%, #C9992F 100%);
+  color: #FFFFFF;
+  margin: 0 auto 16px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(59, 53, 100, 0.3);
+}
+
+.scoreVal {
+  font-family: var(--font-sora, 'Sora', sans-serif);
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.scoreLabel {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+}
+
+/* Score Breakdown Grid */
+.scoreGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 640px) {
+  .scoreGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.scoreItem {
+  background: var(--paper-raised, #FDFCF8);
+  border: 1px solid var(--line, #E5E0D8);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+
+.scoreItemTitle {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 0.75rem;
+  color: var(--ink-60, #63666E);
+  margin-bottom: 2px;
+}
+
+.scoreItemVal {
+  font-family: var(--font-jetbrains, 'JetBrains Mono', monospace);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #3B3564;
+}
+
+.synergyText {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 0.875rem;
+  color: var(--ink, #14171F);
+  line-height: 1.5;
+  background: var(--paper-raised, #FDFCF8);
+  border-left: 4px solid #3B3564;
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.actionRow {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.shareBtn {
+  background: #3B3564;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+}

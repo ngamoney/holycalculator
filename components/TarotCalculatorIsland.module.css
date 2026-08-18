@@ -1,0 +1,155 @@
+/* TarotCalculatorIsland.module.css */
+.islandContainer {
+  background: var(--paper-raised, #FDFCF8);
+  border: 1px solid var(--line, #E5E0D8);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.spreadTabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.spreadBtn {
+  flex: 1;
+  background: var(--paper, #F6F3EC);
+  border: 1px solid var(--line, #E5E0D8);
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-family: var(--font-sora, 'Sora', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #3B3564;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s ease;
+}
+
+.spreadBtnActive {
+  background: #3B3564;
+  color: #FFFFFF;
+  border-color: #3B3564;
+}
+
+.drawControls {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.drawBtn {
+  background: linear-gradient(135deg, #3B3564 0%, #C9992F 100%);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-family: var(--font-sora, 'Sora', sans-serif);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(59, 53, 100, 0.25);
+  transition: transform 0.15s ease;
+}
+
+.drawBtn:hover {
+  transform: translateY(-2px);
+}
+
+/* Cards Display Grid */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.tarotCard {
+  background: var(--paper, #F6F3EC);
+  border: 1px solid var(--line, #E5E0D8);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.cardPos {
+  font-family: var(--font-sora, 'Sora', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #C9992F;
+  margin-bottom: 6px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.cardIcon {
+  font-size: 1.5rem;
+}
+
+.cardName {
+  font-family: var(--font-sora, 'Sora', sans-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink, #14171F);
+  margin: 0;
+}
+
+.keywordsBar {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.keywordChip {
+  background: var(--paper-raised, #FDFCF8);
+  border: 1px solid var(--line, #E5E0D8);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.6875rem;
+  color: var(--ink-60, #63666E);
+}
+
+.cardMeaning {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 0.875rem;
+  color: var(--ink, #14171F);
+  line-height: 1.5;
+}
+
+.yesNoBanner {
+  background: #3B3564;
+  color: #FFFFFF;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  font-family: var(--font-sora, 'Sora', sans-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.actionRow {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.shareBtn {
+  background: var(--paper, #F6F3EC);
+  border: 1px solid var(--line, #E5E0D8);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #3B3564;
+  cursor: pointer;
+}

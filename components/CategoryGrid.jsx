@@ -57,7 +57,7 @@ export default function CategoryGrid() {
               <a href="/grade-calculator">Grade calculator</a>
               <a href="/math/percentage-calculator">Percentage calculator</a>
               <a href="/math/fraction-calculator">Fraction calculator</a>
-              <a href="#">Scientific calculator</a>
+              <a href="/math/scientific-calculator">Scientific calculator</a>
               <a href="/gpa-calculator">GPA calculator</a>
               <a href="/math/average-calculator">Average calculator</a>
               <a href="/math/standard-deviation-calculator">Standard deviation</a>
@@ -107,13 +107,14 @@ export default function CategoryGrid() {
                 <div className="key-icon">✦</div>
                 <h3>Spiritual &amp; Luck</h3>
               </div>
-              <div className="key-see-all">See all 4 →</div>
+              <div className="key-see-all">See all 5 →</div>
             </div>
             <div className="key-links">
               <a href="/spiritual/life-path-number-calculator">Life path number</a>
-              <a href="#">Zodiac compatibility</a>
-              <a href="#">Angel number calculator</a>
-              <a href="#">Lucky number generator</a>
+              <a href="/spiritual/zodiac-compatibility-calculator">Zodiac compatibility</a>
+              <a href="/spiritual/angel-number-calculator">Angel number calculator</a>
+              <a href="/spiritual/lucky-number-generator">Lucky number generator</a>
+              <a href="/spiritual/tarot-card-calculator">Daily tarot reading</a>
             </div>
           </div>
 

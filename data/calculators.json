@@ -339,5 +339,60 @@
     "description": "Calculate your Life Path Number and Master Numbers (11, 22, 33) using authentic Pythagorean numerology.",
     "featured": true,
     "icon": "🔮"
+  },
+  {
+    "id": "angel-number-calculator",
+    "name": "Angel Number Calculator",
+    "slug": "angel-number-calculator",
+    "category": "spiritual",
+    "categoryName": "Spiritual",
+    "url": "/spiritual/angel-number-calculator",
+    "description": "Calculate your personal Angel Number by birth date or name, and decode repeating number sequences (111, 222, 333, 444, 555, 777, 888, 1111).",
+    "featured": true,
+    "icon": "👼"
+  },
+  {
+    "id": "zodiac-compatibility-calculator",
+    "name": "Zodiac Compatibility Calculator",
+    "slug": "zodiac-compatibility-calculator",
+    "category": "spiritual",
+    "categoryName": "Spiritual",
+    "url": "/spiritual/zodiac-compatibility-calculator",
+    "description": "Calculate love compatibility percentage, element synergy, and relationship dynamics between any two zodiac signs.",
+    "featured": true,
+    "icon": "♈"
+  },
+  {
+    "id": "lucky-number-generator",
+    "name": "Lucky Number Generator",
+    "slug": "lucky-number-generator",
+    "category": "spiritual",
+    "categoryName": "Spiritual",
+    "url": "/spiritual/lucky-number-generator",
+    "description": "Generate lucky numbers for US lotteries (Powerball, Mega Millions, Cash4Life, Pick 3/4/5) and personal birthday numerology.",
+    "featured": true,
+    "icon": "🎰"
+  },
+  {
+    "id": "tarot-card-calculator",
+    "name": "Tarot Card Reader & Calculator",
+    "slug": "tarot-card-calculator",
+    "category": "spiritual",
+    "categoryName": "Spiritual",
+    "url": "/spiritual/tarot-card-calculator",
+    "description": "Draw 3-card past-present-future tarot spreads, single daily guidance cards, and Yes/No tarot readings.",
+    "featured": true,
+    "icon": "🃏"
+  },
+  {
+    "id": "scientific-calculator",
+    "name": "Scientific Calculator",
+    "slug": "scientific-calculator",
+    "category": "math",
+    "categoryName": "Math",
+    "url": "/math/scientific-calculator",
+    "description": "Perform high-precision scientific calculations, trigonometry, logarithms, exponents, factorials, and memory operations.",
+    "featured": true,
+    "icon": "🧪"
   }
 ]

@@ -1,0 +1,327 @@
+/* AngelNumberCalculatorIsland.module.css */
+.islandContainer {
+  background: var(--paper-raised, #FDFCF8);
+  border: 1px solid var(--line, #E5E0D8);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.modeTabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  background: var(--paper, #F6F3EC);
+  padding: 4px;
+  border-radius: 8px;
+  border: 1px solid var(--line, #E5E0D8);
+}
+
+.modeBtn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ink-60, #63666E);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: center;
+}
+
+.modeBtnActive {
+  background: var(--paper-raised, #FDFCF8);
+  color: #3B3564;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Quick Chips */
+.chipGrid {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.chipBtn {
+  background: var(--paper, #F6F3EC);
+  border: 1px solid var(--line, #E5E0D8);
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-family: var(--font-jetbrains, 'JetBrains Mono', monospace);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #3B3564;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.chipBtn:hover {
+  background: #EAE6FE;
+  border-color: #3B3564;
+}
+
+.chipBtnActive {
+  background: #3B3564;
+  color: #FFFFFF;
+  border-color: #3B3564;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 640px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.fieldLabel {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ink, #14171F);
+}
+
+.inputField {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 0.9375rem;
+  color: var(--ink, #14171F);
+  background: var(--paper, #F6F3EC);
+  border: 1px solid var(--line, #E5E0D8);
+  border-radius: 8px;
+  padding: 10px 12px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: #3B3564;
+  box-shadow: 0 0 0 3px rgba(59, 53, 100, 0.15);
+}
+
+.errorBanner {
+  background: #FDF2F2;
+  border: 1px solid #F8B4B4;
+  color: #9B1C1C;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 0.875rem;
+  margin-bottom: 20px;
+}
+
+/* Results Card with Lightweight CSS Halo */
+.resultCard {
+  background: var(--paper, #F6F3EC);
+  border: 1px solid var(--line, #E5E0D8);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 16px;
+  margin-bottom: var(--section-gap-sm, 24px);
+}
+
+.haloHeader {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.celestialBadge {
+  position: relative;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3B3564 0%, #5B4F9A 100%);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-jetbrains, 'JetBrains Mono', monospace);
+  font-size: 1.75rem;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(59, 53, 100, 0.3);
+  flex-shrink: 0;
+}
+
+/* Pure CSS Pulsing Halo Effect */
+.celestialBadge::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(201, 153, 47, 0.5);
+  animation: haloPulse 3s infinite ease-in-out;
+}
+
+@keyframes haloPulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.08); opacity: 0.3; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+.titleMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.angelTitle {
+  font-family: var(--font-sora, 'Sora', sans-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ink, #14171F);
+  margin: 0;
+}
+
+.tagline {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 0.875rem;
+  color: var(--ink-60, #63666E);
+  margin: 0;
+}
+
+/* Detail Navigation Sub-Tabs */
+.detailTabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--line, #E5E0D8);
+  padding-bottom: 8px;
+}
+
+.detailBtn {
+  background: transparent;
+  border: none;
+  font-family: var(--font-sora, 'Sora', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ink-60, #63666E);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.detailBtnActive {
+  color: #3B3564;
+  border-bottom-color: #3B3564;
+}
+
+.detailBody {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ink, #14171F);
+  margin-bottom: 20px;
+}
+
+.actionAdviceCallout {
+  background: var(--paper-raised, #FDFCF8);
+  border-left: 4px solid #3B3564;
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px;
+  font-size: 0.875rem;
+  color: var(--ink, #14171F);
+}
+
+.calcStepText {
+  font-family: var(--font-jetbrains, 'JetBrains Mono', monospace);
+  font-size: 0.75rem;
+  color: var(--ink-60, #63666E);
+  margin-bottom: 12px;
+}
+
+/* Action Bar */
+.actionRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.shareBtn {
+  background: #3B3564;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.shareBtn:hover {
+  background: #2A2548;
+}
+
+/* History Box */
+.historyContainer {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line, #E5E0D8);
+}
+
+.historyTitle {
+  font-family: var(--font-sora, 'Sora', sans-serif);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink, #14171F);
+  margin: 0 0 10px 0;
+}
+
+.historyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.historyItem {
+  background: var(--paper, #F6F3EC);
+  border: 1px solid var(--line, #E5E0D8);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 0.8125rem;
+  color: var(--ink, #14171F);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.historyItem:hover {
+  background: #EFEBE3;
+}
