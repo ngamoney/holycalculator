@@ -75,25 +75,29 @@ export default function CategoryGrid() {
             <div className="key-links">
               <a href="/age-calculator">Age calculator</a>
               <a href="/date-calculator">Date difference (calculator)</a>
+              <a href="/date-time/time-zone-calculator">Time zone calculator</a>
               <a href="#">Countdown calculator</a>
-              <a href="#">Workdays calculator</a>
-              <a href="#">Time zone converter</a>
+              <a href="/date-calculator">Workdays calculator</a>
             </div>
           </div>
 
-          <div className="key conv">
+          <div className="key conv" id="conversions">
             <div className="key-top">
               <div className="key-head">
                 <div className="key-icon">⇄</div>
                 <h3>Conversions</h3>
               </div>
-              <div className="key-see-all">See all 4 →</div>
+              <div className="key-see-all">See all 8 →</div>
             </div>
             <div className="key-links">
               <a href="/conversion-calculator">Unit converter</a>
               <a href="/currency-calculator">Currency converter</a>
-              <a href="/conversion-calculator">Length converter</a>
-              <a href="/conversion-calculator">Weight converter</a>
+              <a href="/conversion-calculator?cat=length">Length converter</a>
+              <a href="/conversion-calculator?cat=weight">Weight converter</a>
+              <a href="/conversion-calculator?cat=temperature">Temperature converter</a>
+              <a href="/conversion-calculator?cat=area">Area converter</a>
+              <a href="/conversion-calculator?cat=volume">Volume converter</a>
+              <a href="/conversion-calculator?cat=speed">Speed converter</a>
             </div>
           </div>
 

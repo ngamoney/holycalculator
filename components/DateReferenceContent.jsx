@@ -165,6 +165,14 @@ export default function DateReferenceContent() {
       <section className={styles.contentBlock}>
         <h2>Related Date &amp; Time Calculators</h2>
         <div className={styles.relatedGrid}>
+          <Link href="/date-time/time-zone-calculator" className={styles.relatedCard}>
+            <div>
+              <h4>Time Zone Calculator</h4>
+              <p>Convert time across world UTC offsets, compute time differences, and handle day rollovers.</p>
+            </div>
+            <span className={styles.arrowLink}>Open Time Zone Tool →</span>
+          </Link>
+
           <Link href="/age-calculator" className={styles.relatedCard}>
             <div>
               <h4>Age Calculator</h4>
@@ -179,14 +187,6 @@ export default function DateReferenceContent() {
               <p>Estimate due dates, gestational age in weeks and days, and trimester developmental milestones.</p>
             </div>
             <span className={styles.arrowLink}>Open Pregnancy Tool →</span>
-          </Link>
-
-          <Link href="/bmi-calculator" className={styles.relatedCard}>
-            <div>
-              <h4>BMI Calculator</h4>
-              <p>Calculate Body Mass Index, WHO categories, and CDC pediatric percentiles.</p>
-            </div>
-            <span className={styles.arrowLink}>Open BMI Tool →</span>
           </Link>
         </div>
       </section>

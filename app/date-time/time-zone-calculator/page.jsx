@@ -3,47 +3,47 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AdBanner from "@/components/AdBanner";
 import SidebarAd from "@/components/SidebarAd";
-import DateCalculatorIsland from "@/components/DateCalculatorIsland";
-import DateReferenceContent from "@/components/DateReferenceContent";
-import { DATE_FAQS } from "@/lib/data/dateFaqs";
+import TimeZoneCalculatorIsland from "@/components/TimeZoneCalculatorIsland";
+import TimeZoneReferenceContent from "@/components/TimeZoneReferenceContent";
+import { TIMEZONE_FAQS } from "@/lib/data/timezoneFaqs";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Date Calculator – Days Between Dates, Business Days & Workday Calculator | Holy Calculator",
+  title: "Time Zone Calculator – Convert Time Between Time Zones & Cities | Holy Calculator",
   description:
-    "Calculate exact duration between dates, count business days between two dates, or add/subtract working days with US federal holiday skipping. Free workday calculator.",
+    "Convert time across world UTC time zones and cities, compute time differences, and handle day rollover results instantly with standard offset arithmetic.",
   alternates: {
-    canonical: "https://holycalculator.com/date-calculator",
+    canonical: "https://holycalculator.com/date-time/time-zone-calculator",
   },
   openGraph: {
-    title: "Date Calculator – Days Between Dates, Business Days & Workday Calculator",
+    title: "Time Zone Calculator – Convert Time Between Time Zones & Cities",
     description:
-      "Free online Date & Workday Calculator. Compute exact days, business days, and working days between two dates, or add/subtract working days with holiday skipping.",
-    url: "https://holycalculator.com/date-calculator",
+      "Free online Time Zone Converter & World Clock Calculator. Convert time across world UTC offsets, compute time differences between cities, and handle day rollover instantly.",
+    url: "https://holycalculator.com/date-time/time-zone-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Date Calculator & Workday Calculator | Holy Calculator",
+    title: "Time Zone Calculator & World Time Converter | Holy Calculator",
     description:
-      "Calculate exact duration between dates, count business days, or add/subtract working days with holiday skipping.",
+      "Convert time across world UTC offsets, compute time differences between cities, and handle day rollover instantly.",
   },
 };
 
-export default function DateCalculatorPage() {
+export default function TimeZoneCalculatorPage() {
   const breadcrumbItems = [
     { label: "Home", href: "/" },
     { label: "Date & Time", href: "/#date" },
-    { label: "Date Calculator", active: true },
+    { label: "Time Zone Calculator", active: true },
   ];
 
   // FAQPage schema markup (JSON-LD)
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: DATE_FAQS.map((faq) => ({
+    mainEntity: TIMEZONE_FAQS.map((faq) => ({
       "@type": "Question",
       name: faq.question,
       acceptedAnswer: {
@@ -57,12 +57,12 @@ export default function DateCalculatorPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "Holy Calculator — Date Calculator",
-    url: "https://holycalculator.com/date-calculator",
-    applicationCategory: "UtilitiesApplication",
+    name: "Holy Calculator — Time Zone Calculator",
+    url: "https://holycalculator.com/date-time/time-zone-calculator",
+    applicationCategory: "EducationalApplication",
     operatingSystem: "All",
     description:
-      "Calculate duration between two dates or add/subtract days, weeks, months, and years with business day and US federal holiday skipping.",
+      "Convert time across global UTC offsets, compute time differences, and handle day rollover instantly.",
     offers: {
       "@type": "Offer",
       price: "0",
@@ -74,26 +74,26 @@ export default function DateCalculatorPage() {
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    name: "How to Calculate Days Between Dates or Add/Subtract Time",
+    name: "How to Convert Time Between Time Zones",
     description:
-      "Step-by-step instructions to calculate exact date differences or add/subtract working days with holiday skipping.",
+      "Step-by-step instructions to convert dates and times between global UTC time zone offsets.",
     step: [
       {
         "@type": "HowToStep",
-        name: "Select calculation mode",
-        text: "Choose between 'Days Between Dates' mode or 'Add or Subtract Time' mode.",
+        name: "Enter the source date and time",
+        text: "Input the date and 24-hour time (e.g. 15:00:00) into the input fields.",
         position: 1,
       },
       {
         "@type": "HowToStep",
-        name: "Enter start date and time parameters",
-        text: "Input the starting date and select the target date or enter the number of years, months, weeks, and days to add or subtract.",
+        name: "Select the source and target UTC offsets",
+        text: "Choose the 'From' time zone offset and 'To' time zone offset from the dropdown lists.",
         position: 2,
       },
       {
         "@type": "HowToStep",
-        name: "Configure business days and holiday settings",
-        text: "Expand the settings drawer to toggle business-day mode and select US federal or custom company holidays to exclude.",
+        name: "View instant calculated results",
+        text: "The result card displays the converted 12-hour and 24-hour time, the target calendar date, any day rollover (+1/-1 day), and the net offset difference.",
         position: 3,
       },
     ],
@@ -125,15 +125,15 @@ export default function DateCalculatorPage() {
           <span className="dot" style={{ background: "#7A6A55" }} />
           Date &amp; Time Calculators
         </div>
-        <h1>Date Calculator</h1>
+        <h1>Time Zone Calculator</h1>
         <p className="lead">
-          Calculate the exact duration between two dates in years, months, weeks, and days, or add and subtract time from any starting date. Includes full business-day counting with automatic US federal and custom holiday skipping.
+          Convert time across global UTC time zones, compute exact offset differences, and view calendar day rollovers instantly with static standard offset arithmetic.
         </p>
       </header>
 
       {/* Main Two-Column Layout */}
       <div className="calc-layout">
-        <DateCalculatorIsland />
+        <TimeZoneCalculatorIsland />
 
         {/* Desktop Sticky Sidebar Rail */}
         <aside className="calc-sidebar">
@@ -142,7 +142,7 @@ export default function DateCalculatorPage() {
             <SidebarAd />
           </div>
 
-          {/* Related Date Tools */}
+          {/* Related Date & Time Tools */}
           <div className="sidebar-box">
             <h4>Date &amp; Time Tools</h4>
             <ul className="sidebar-links-list">
@@ -153,37 +153,37 @@ export default function DateCalculatorPage() {
                 </Link>
               </li>
               <li>
-                <Link href="/pregnancy-calculator">
-                  <span>Pregnancy Due Date</span>
+                <Link href="/date-calculator">
+                  <span>Date Calculator</span>
                   <span>→</span>
                 </Link>
               </li>
               <li>
-                <Link href="/#date">
-                  <span>All Date Tools</span>
+                <Link href="/conversion-calculator">
+                  <span>Unit Converter</span>
                   <span>→</span>
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Quick Date Fast Facts */}
+          {/* Quick Time Zone Fast Facts */}
           <div className="sidebar-box">
-            <h4>Date Math Facts</h4>
+            <h4>Time Zone Fast Facts</h4>
             <ul className="sidebar-links-list" style={{ gap: "10px" }}>
               <li style={{ borderBottom: "1px solid var(--line)", paddingBottom: "8px" }}>
                 <span style={{ fontSize: "12.5px", color: "var(--ink-60)", display: "block" }}>
-                  <strong style={{ color: "var(--ink)" }}>365.2425 Days:</strong> Average Gregorian calendar year length
+                  <strong style={{ color: "var(--ink)" }}>38+ Offsets:</strong> World zones range from UTC-12:00 to UTC+14:00.
                 </span>
               </li>
               <li style={{ borderBottom: "1px solid var(--line)", paddingBottom: "8px" }}>
                 <span style={{ fontSize: "12.5px", color: "var(--ink-60)", display: "block" }}>
-                  <strong style={{ color: "var(--ink)" }}>11 US Holidays:</strong> Official federal business closures
+                  <strong style={{ color: "var(--ink)" }}>Half-Hour Zones:</strong> India (+5:30), Iran (+3:30), and Myanmar (+6:30).
                 </span>
               </li>
               <li>
                 <span style={{ fontSize: "12.5px", color: "var(--ink-60)", display: "block" }}>
-                  <strong style={{ color: "var(--ink)" }}>Leap Years:</strong> Rule 400/100/4 adds Feb 29th
+                  <strong style={{ color: "var(--ink)" }}>Quarter-Hour:</strong> Nepal (+5:45) and Chatham Islands (+12:45).
                 </span>
               </li>
             </ul>
@@ -195,7 +195,7 @@ export default function DateCalculatorPage() {
       <AdBanner />
 
       {/* Educational Reference Content & FAQs */}
-      <DateReferenceContent />
+      <TimeZoneReferenceContent />
 
       <Footer />
     </main>

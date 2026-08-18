@@ -28,6 +28,11 @@ export default function ConversionCalculatorIsland() {
       setFromUnit(units[0].id);
       setToUnit(units[1].id);
     }
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      params.set("cat", newCat);
+      window.history.replaceState(null, "", `${window.location.pathname}?${params.toString()}`);
+    }
   };
 
   // Swap units
@@ -77,8 +82,36 @@ export default function ConversionCalculatorIsland() {
     return () => clearTimeout(timerRef.current);
   }, [runConversion]);
 
-  // Load history on mount
+  // Load history & URL state on mount
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const params = new URLSearchParams(window.location.search);
+    const catParam = params.get("cat") || params.get("category");
+    const fromParam = params.get("from");
+    const toParam = params.get("to");
+    const vParam = params.get("v");
+
+    if (catParam && CONVERSION_CATEGORIES.some((c) => c.id === catParam)) {
+      setCategory(catParam);
+      const units = CONVERSION_UNITS[catParam] || [];
+      if (fromParam && units.some((u) => u.id === fromParam)) {
+        setFromUnit(fromParam);
+      } else if (units.length >= 1) {
+        setFromUnit(units[0].id);
+      }
+
+      if (toParam && units.some((u) => u.id === toParam)) {
+        setToUnit(toParam);
+      } else if (units.length >= 2) {
+        setToUnit(units[1].id);
+      }
+    }
+
+    if (vParam) {
+      setValueStr(vParam);
+    }
+
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) setHistory(JSON.parse(saved));

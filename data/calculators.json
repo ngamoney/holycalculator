@@ -176,6 +176,17 @@
     "icon": "📅"
   },
   {
+    "id": "time-zone-calculator",
+    "name": "Time Zone Calculator",
+    "slug": "time-zone-calculator",
+    "category": "date-time",
+    "categoryName": "Date & Time",
+    "url": "/date-time/time-zone-calculator",
+    "description": "Convert time across world UTC time zones, calculate time differences, and handle day rollover instantly without daylight saving shifts.",
+    "featured": true,
+    "icon": "🌐"
+  },
+  {
     "id": "standard-deviation-calculator",
     "name": "Standard Deviation Calculator",
     "slug": "standard-deviation-calculator",
@@ -196,6 +207,72 @@
     "description": "Convert units across Length, Weight, Temperature, Area, Volume, Time, and Speed instantly.",
     "featured": true,
     "icon": "⇄"
+  },
+  {
+    "id": "length-converter",
+    "name": "Length Converter",
+    "slug": "length-converter",
+    "category": "conversions",
+    "categoryName": "Conversions",
+    "url": "/conversion-calculator?cat=length",
+    "description": "Convert distance and length units instantly (inches, feet, meters, kilometers, miles).",
+    "featured": false,
+    "icon": "📏"
+  },
+  {
+    "id": "weight-converter",
+    "name": "Weight & Mass Converter",
+    "slug": "weight-converter",
+    "category": "conversions",
+    "categoryName": "Conversions",
+    "url": "/conversion-calculator?cat=weight",
+    "description": "Convert weight and mass units instantly (pounds, kilograms, grams, ounces, stones).",
+    "featured": false,
+    "icon": "⚖️"
+  },
+  {
+    "id": "temperature-converter",
+    "name": "Temperature Converter",
+    "slug": "temperature-converter",
+    "category": "conversions",
+    "categoryName": "Conversions",
+    "url": "/conversion-calculator?cat=temperature",
+    "description": "Convert temperature units instantly between Celsius (°C), Fahrenheit (°F), and Kelvin (K).",
+    "featured": false,
+    "icon": "🌡️"
+  },
+  {
+    "id": "area-converter",
+    "name": "Area Converter",
+    "slug": "area-converter",
+    "category": "conversions",
+    "categoryName": "Conversions",
+    "url": "/conversion-calculator?cat=area",
+    "description": "Convert area measurements instantly (square feet, meters, acres, hectares, square miles).",
+    "featured": false,
+    "icon": "🗺️"
+  },
+  {
+    "id": "volume-converter",
+    "name": "Volume Converter",
+    "slug": "volume-converter",
+    "category": "conversions",
+    "categoryName": "Conversions",
+    "url": "/conversion-calculator?cat=volume",
+    "description": "Convert fluid and 3D space volume units instantly (liters, gallons, cups, fluid ounces).",
+    "featured": false,
+    "icon": "🧪"
+  },
+  {
+    "id": "speed-converter",
+    "name": "Speed Converter",
+    "slug": "speed-converter",
+    "category": "conversions",
+    "categoryName": "Conversions",
+    "url": "/conversion-calculator?cat=speed",
+    "description": "Convert velocity and speed units instantly (mph, km/h, m/s, knots).",
+    "featured": false,
+    "icon": "🚀"
   },
   {
     "id": "currency-calculator",
