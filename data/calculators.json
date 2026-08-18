@@ -198,6 +198,17 @@
     "icon": "🌐"
   },
   {
+    "id": "countdown-calculator",
+    "name": "Countdown Calculator",
+    "slug": "countdown-calculator",
+    "category": "date-time",
+    "categoryName": "Date & Time",
+    "url": "/date-time/countdown-calculator",
+    "description": "Create live ticking countdown timers for events, holidays, weddings, and vacations with total hours, minutes, and seconds breakdowns.",
+    "featured": true,
+    "icon": "⏳"
+  },
+  {
     "id": "standard-deviation-calculator",
     "name": "Standard Deviation Calculator",
     "slug": "standard-deviation-calculator",

@@ -76,7 +76,7 @@ export default function CategoryGrid() {
               <a href="/age-calculator">Age calculator</a>
               <a href="/date-calculator">Date difference (calculator)</a>
               <a href="/date-time/time-zone-calculator">Time zone calculator</a>
-              <a href="#">Countdown calculator</a>
+              <a href="/date-time/countdown-calculator">Countdown calculator</a>
               <a href="/date-calculator">Workdays calculator</a>
             </div>
           </div>
