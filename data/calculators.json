@@ -39,9 +39,9 @@
     "category": "math",
     "categoryName": "Math",
     "url": "/math/fraction-calculator",
-    "description": "Add, subtract, multiply, and divide fractions easily.",
-    "featured": false,
-    "icon": "%"
+    "description": "Add, subtract, multiply, divide, simplify fractions, convert decimals to fractions, and solve mixed numbers.",
+    "featured": true,
+    "icon": "½"
   },
   {
     "id": "age-calculator",
@@ -174,5 +174,38 @@
     "description": "Calculate duration between dates or add/subtract time with US federal holiday and business-day support.",
     "featured": true,
     "icon": "📅"
+  },
+  {
+    "id": "standard-deviation-calculator",
+    "name": "Standard Deviation Calculator",
+    "slug": "standard-deviation-calculator",
+    "category": "math",
+    "categoryName": "Math",
+    "url": "/math/standard-deviation-calculator",
+    "description": "Calculate population and sample standard deviation, variance, mean, sum, count, and 95% confidence interval margin of error.",
+    "featured": true,
+    "icon": "σ"
+  },
+  {
+    "id": "conversion-calculator",
+    "name": "Unit Conversion Calculator",
+    "slug": "conversion-calculator",
+    "category": "conversions",
+    "categoryName": "Conversions",
+    "url": "/conversion-calculator",
+    "description": "Convert units across Length, Weight, Temperature, Area, Volume, Time, and Speed instantly.",
+    "featured": true,
+    "icon": "⇄"
+  },
+  {
+    "id": "currency-calculator",
+    "name": "Currency Calculator",
+    "slug": "currency-calculator",
+    "category": "finance",
+    "categoryName": "Finance",
+    "url": "/currency-calculator",
+    "description": "Convert currencies with live exchange rates, manual exchange rate overrides, and popular currency pair tables.",
+    "featured": true,
+    "icon": "💱"
   }
 ]

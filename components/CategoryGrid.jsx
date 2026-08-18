@@ -22,7 +22,7 @@ export default function CategoryGrid() {
               <a href="/loan-calculator">Loan calculator</a>
               <a href="/compound-interest-calculator">Compound interest</a>
               <a href="/budget-calculator">Budget calculator</a>
-              <a href="#">Income tax calculator</a>
+              <a href="/currency-calculator">Currency converter</a>
               <a href="#">Sales tax calculator</a>
             </div>
           </div>
@@ -56,11 +56,11 @@ export default function CategoryGrid() {
             <div className="key-links">
               <a href="/grade-calculator">Grade calculator</a>
               <a href="/math/percentage-calculator">Percentage calculator</a>
-              <a href="#">Fraction calculator</a>
+              <a href="/math/fraction-calculator">Fraction calculator</a>
               <a href="#">Scientific calculator</a>
               <a href="/gpa-calculator">GPA calculator</a>
               <a href="#">Average calculator</a>
-              <a href="#">Standard deviation</a>
+              <a href="/math/standard-deviation-calculator">Standard deviation</a>
             </div>
           </div>
 
@@ -90,10 +90,10 @@ export default function CategoryGrid() {
               <div className="key-see-all">See all 4 →</div>
             </div>
             <div className="key-links">
-              <a href="#">Unit converter</a>
-              <a href="#">Currency converter</a>
-              <a href="#">Length converter</a>
-              <a href="#">Weight converter</a>
+              <a href="/conversion-calculator">Unit converter</a>
+              <a href="/currency-calculator">Currency converter</a>
+              <a href="/conversion-calculator">Length converter</a>
+              <a href="/conversion-calculator">Weight converter</a>
             </div>
           </div>
 

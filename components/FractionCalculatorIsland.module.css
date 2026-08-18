@@ -1,0 +1,265 @@
+.islandWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap-sm, 24px);
+}
+
+.miniCard {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 1px 2px rgba(20, 23, 31, 0.04), 0 6px 20px -10px rgba(20, 23, 31, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color 0.15s ease;
+}
+
+.miniCard:hover {
+  border-color: var(--line-dark, rgba(20, 23, 31, 0.2));
+}
+
+@media (max-width: 640px) {
+  .miniCard {
+    padding: 16px 14px;
+    border-radius: 12px;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.cardTitle {
+  font-family: var(--head);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(156, 116, 32, 0.12);
+  color: #9C7420;
+}
+
+/* Fraction Stack UI */
+.fractionRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: var(--head);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.fractionStack {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 70px;
+}
+
+.fractionBar {
+  width: 100%;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 1px;
+}
+
+.inputNum {
+  width: 100%;
+  text-align: center;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  font-family: var(--body);
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.inputNum:focus {
+  outline: 2px solid #9C7420;
+  outline-offset: 1px;
+  border-color: transparent;
+}
+
+.inputWhole {
+  width: 55px;
+  text-align: center;
+  padding: 10px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  font-family: var(--body);
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.inputWhole:focus {
+  outline: 2px solid #9C7420;
+  outline-offset: 1px;
+  border-color: transparent;
+}
+
+.operatorSelect {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  font-family: var(--head);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  min-height: 40px;
+}
+
+.inputSingle {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  font-family: var(--body);
+  font-size: 15px;
+  color: var(--ink);
+  min-height: 44px;
+  width: 140px;
+}
+
+.inputSingle:focus {
+  outline: 2px solid #9C7420;
+  outline-offset: 1px;
+  border-color: transparent;
+}
+
+/* Result Box */
+.resultBadge {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-left: 4px solid #9C7420;
+  border-radius: 8px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.resultText {
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.formulaSub {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-60);
+}
+
+.errorBanner {
+  background: rgba(220, 53, 69, 0.08);
+  border: 1px solid rgba(220, 53, 69, 0.25);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 12.5px;
+  color: #c02b3a;
+}
+
+/* Action Bar */
+.actionsBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 12px;
+}
+
+.shareBtn {
+  background: var(--ink);
+  color: var(--paper-raised);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-family: var(--head);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.15s ease;
+  min-height: 38px;
+}
+
+.shareBtn:hover {
+  background: #9C7420;
+}
+
+.historyBox {
+  padding: 16px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.historyTitle {
+  font-family: var(--head);
+  font-size: 13.5px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clearBtn {
+  background: transparent;
+  border: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-60);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.historyList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.historyItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  background: var(--paper-raised);
+  color: var(--ink);
+}
