@@ -14,6 +14,12 @@
   --mono: var(--font-jetbrains-mono), 'JetBrains Mono', monospace;
   --head: var(--font-sora), 'Sora', sans-serif;
   --body: var(--font-inter), 'Inter', sans-serif;
+
+  /* Section Vertical Rhythm Standard */
+  --section-gap-sm: 24px;
+  --section-gap-md: 36px;
+  --section-gap-lg: 56px;
+  --section-gap-xl: 80px;
 }
 
 * {

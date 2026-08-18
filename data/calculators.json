@@ -17,7 +17,7 @@
     "category": "math",
     "categoryName": "Math",
     "url": "/math/percentage-calculator",
-    "description": "Calculate percentages, percentage increases, and differences.",
+    "description": "Calculate basic percentages (X% of Y, X is what % of Y, X is Y% of what), percentage difference, and percentage increase or decrease.",
     "featured": true,
     "icon": "%"
   },
@@ -130,5 +130,49 @@
     "description": "Calculate future investment value, total interest earned, Rule of 72 doubling time, and convert interest rates across compounding frequencies.",
     "featured": true,
     "icon": "📈"
+  },
+  {
+    "id": "bmi-calculator",
+    "name": "BMI Calculator",
+    "slug": "bmi-calculator",
+    "category": "health",
+    "categoryName": "Health",
+    "url": "/bmi-calculator",
+    "description": "Calculate your Body Mass Index (BMI), BMI Prime, Ponderal Index, and healthy weight range for adults, teens, and children.",
+    "featured": true,
+    "icon": "⚖️"
+  },
+  {
+    "id": "bmr-calculator",
+    "name": "BMR Calculator",
+    "slug": "bmr-calculator",
+    "category": "health",
+    "categoryName": "Health",
+    "url": "/bmr-calculator",
+    "description": "Calculate your Basal Metabolic Rate (BMR) using Mifflin-St Jeor, Harris-Benedict, and Katch-McArdle formulas, plus daily calorie needs by activity level.",
+    "featured": true,
+    "icon": "🔥"
+  },
+  {
+    "id": "ideal-weight-calculator",
+    "name": "Ideal Weight Calculator",
+    "slug": "ideal-weight-calculator",
+    "category": "health",
+    "categoryName": "Health",
+    "url": "/ideal-weight-calculator",
+    "description": "Compare ideal body weight across Devine, Robinson, Miller, and Hamwi formulas alongside WHO Healthy BMI weight ranges.",
+    "featured": true,
+    "icon": "🎯"
+  },
+  {
+    "id": "date-calculator",
+    "name": "Date Calculator",
+    "slug": "date-calculator",
+    "category": "date-time",
+    "categoryName": "Date & Time",
+    "url": "/date-calculator",
+    "description": "Calculate duration between dates or add/subtract time with US federal holiday and business-day support.",
+    "featured": true,
+    "icon": "📅"
   }
 ]

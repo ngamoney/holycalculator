@@ -22,9 +22,9 @@ export default function Hero() {
             <button type="submit">Search</button>
           </form>
           <div className="hero-chips">
-            <a href="#">Mortgage</a>
-            <a href="#">BMI</a>
-            <a href="#">Age</a>
+            <a href="/mortgage-calculator">Mortgage</a>
+            <a href="/bmi-calculator">BMI</a>
+            <a href="/age-calculator">Age</a>
             <a href="#">Life Path Number</a>
             <a href="#">Currency</a>
             <a href="#">Percentage</a>

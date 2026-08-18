@@ -32,3 +32,10 @@ multi-column input grid) must follow this on mobile:
 - Touch targets stay ≥40x40px even at narrow widths
 - Reference: /reference/grade-calculator-mobile-fix.png (calculator.net 
   layout = target clarity level)
+
+## Section Vertical Rhythm Standard
+All calculator pages must maintain consistent vertical spacing across section boundaries:
+- Result -> secondary actions / callouts: var(--section-gap-sm, 24px)
+- Main form / island bottom -> ad slot: var(--section-gap-md, 36px)
+- Ad slot -> reference content heading: var(--section-gap-lg, 56px)
+- Major content blocks (How it works -> FAQ -> Related): var(--section-gap-xl, 80px)

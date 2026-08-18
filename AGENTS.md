@@ -27,6 +27,7 @@
   gold #C9992F, gold-deep #9C7420, indigo #3B3564 (spiritual category only), green #4F7A5B
 - Fonts: Sora (headings), Inter (body), JetBrains Mono (numbers/labels/code)
 - Category icon colors: finance=ink, health=green, math=gold-deep, date=#7A6A55, conversions=#4A5A6B, spiritual=indigo
+- Section Vertical Rhythm tokens: --section-gap-sm (24px), --section-gap-md (36px), --section-gap-lg (56px), --section-gap-xl (80px)
 
 ## Performance rules (non-negotiable)
 - No client-side data fetching for calculation logic — pure JS functions in lib/calculations/

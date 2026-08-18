@@ -36,12 +36,12 @@ export default function CategoryGrid() {
               <div className="key-see-all">See all 6 →</div>
             </div>
             <div className="key-links">
-              <a href="#">BMI calculator</a>
+              <a href="/bmi-calculator">BMI calculator</a>
               <a href="/calorie-calculator">Calorie (TDEE) calculator</a>
               <a href="#">Body fat calculator</a>
-              <a href="#">Ideal weight calculator</a>
+              <a href="/ideal-weight-calculator">Ideal weight calculator</a>
               <a href="/pregnancy-calculator">Pregnancy due date calculator</a>
-              <a href="#">BMR calculator</a>
+              <a href="/bmr-calculator">BMR calculator</a>
             </div>
           </div>
 
@@ -55,7 +55,7 @@ export default function CategoryGrid() {
             </div>
             <div className="key-links">
               <a href="/grade-calculator">Grade calculator</a>
-              <a href="#">Percentage calculator</a>
+              <a href="/math/percentage-calculator">Percentage calculator</a>
               <a href="#">Fraction calculator</a>
               <a href="#">Scientific calculator</a>
               <a href="/gpa-calculator">GPA calculator</a>
@@ -74,7 +74,7 @@ export default function CategoryGrid() {
             </div>
             <div className="key-links">
               <a href="/age-calculator">Age calculator</a>
-              <a href="#">Date difference</a>
+              <a href="/date-calculator">Date difference (calculator)</a>
               <a href="#">Countdown calculator</a>
               <a href="#">Workdays calculator</a>
               <a href="#">Time zone converter</a>
