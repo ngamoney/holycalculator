@@ -328,5 +328,16 @@
     "description": "Calculate sales tax amounts, before-tax prices, and final prices with 50-state tax rate lookups.",
     "featured": true,
     "icon": "🏷️"
+  },
+  {
+    "id": "life-path-number-calculator",
+    "name": "Life Path Number Calculator",
+    "slug": "life-path-number-calculator",
+    "category": "spiritual",
+    "categoryName": "Spiritual",
+    "url": "/spiritual/life-path-number-calculator",
+    "description": "Calculate your Life Path Number and Master Numbers (11, 22, 33) using authentic Pythagorean numerology.",
+    "featured": true,
+    "icon": "🔮"
   }
 ]

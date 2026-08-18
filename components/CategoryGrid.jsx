@@ -110,7 +110,7 @@ export default function CategoryGrid() {
               <div className="key-see-all">See all 4 →</div>
             </div>
             <div className="key-links">
-              <a href="#">Life path number</a>
+              <a href="/spiritual/life-path-number-calculator">Life path number</a>
               <a href="#">Zodiac compatibility</a>
               <a href="#">Angel number calculator</a>
               <a href="#">Lucky number generator</a>
