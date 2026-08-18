@@ -23,6 +23,12 @@ export default function Footer() {
               <li>
                 <a href="/loan-calculator">Loan Calculator</a>
               </li>
+              <li>
+                <a href="/budget-calculator">Budget Calculator</a>
+              </li>
+              <li>
+                <a href="/compound-interest-calculator">Compound Interest</a>
+              </li>
             </ul>
           </div>
           <div>

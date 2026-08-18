@@ -108,5 +108,27 @@
     "description": "Calculate monthly loan payments, total interest, deferred lump sums, and bond present values with custom compounding frequencies.",
     "featured": true,
     "icon": "💳"
+  },
+  {
+    "id": "budget-calculator",
+    "name": "Budget Calculator",
+    "slug": "budget-calculator",
+    "category": "finance",
+    "categoryName": "Finance",
+    "url": "/budget-calculator",
+    "description": "Plan your personal budget, track 9 expense categories across 30+ line items, calculate your DTI ratio, and compare spending against benchmarks.",
+    "featured": true,
+    "icon": "📊"
+  },
+  {
+    "id": "compound-interest-calculator",
+    "name": "Compound Interest Calculator",
+    "slug": "compound-interest-calculator",
+    "category": "finance",
+    "categoryName": "Finance",
+    "url": "/compound-interest-calculator",
+    "description": "Calculate future investment value, total interest earned, Rule of 72 doubling time, and convert interest rates across compounding frequencies.",
+    "featured": true,
+    "icon": "📈"
   }
 ]

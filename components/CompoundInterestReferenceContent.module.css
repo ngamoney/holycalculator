@@ -1,0 +1,236 @@
+.referenceArticle {
+  font-family: var(--body);
+  color: var(--ink);
+  line-height: 1.65;
+  margin-top: 36px;
+}
+
+.section {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-bottom: 24px;
+}
+
+.section h2 {
+  font-family: var(--head);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.section p {
+  font-size: 14.5px;
+  color: var(--ink-60);
+  margin-bottom: 14px;
+}
+
+.section p:last-child {
+  margin-bottom: 0;
+}
+
+.comparisonGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.compCard {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.highlightCompCard {
+  background: linear-gradient(135deg, rgba(201, 153, 47, 0.12) 0%, rgba(201, 153, 47, 0.03) 100%);
+  border-color: rgba(201, 153, 47, 0.3);
+}
+
+.compCard h3 {
+  font-family: var(--head);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.compVal {
+  font-family: var(--head);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 10px !important;
+}
+
+.formulaBox {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 16px;
+}
+
+.formulaBox h3 {
+  font-family: var(--head);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.formulaText {
+  font-family: var(--mono);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.formulaLegend {
+  padding-left: 20px;
+  font-size: 13.5px;
+  color: var(--ink-60);
+}
+
+.formulaLegend li {
+  margin-bottom: 6px;
+}
+
+.ruleTableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 16px;
+}
+
+.ruleTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  text-align: left;
+}
+
+.ruleTable th,
+.ruleTable td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.ruleTable th {
+  font-family: var(--head);
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.ruleTable td {
+  font-family: var(--mono);
+  color: var(--ink-60);
+}
+
+.caveatNote {
+  font-size: 12.5px;
+  color: var(--ink-60);
+  margin-top: 10px;
+}
+
+.hubGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.hubCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.18s ease;
+}
+
+.hubCard:hover {
+  border-color: var(--ink);
+}
+
+.hubIcon {
+  font-size: 24px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hubContent h3 {
+  font-family: var(--head);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.hubContent p {
+  font-size: 12.5px;
+  color: var(--ink-60);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.hubLinkText {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gold-deep);
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.faqItem {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.faqItem h3 {
+  font-family: var(--head);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.faqItem p {
+  font-size: 14px;
+  color: var(--ink-60);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 20px 16px;
+  }
+}

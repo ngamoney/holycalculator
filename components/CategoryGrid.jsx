@@ -20,8 +20,8 @@ export default function CategoryGrid() {
               <a href="/mortgage-calculator">Mortgage calculator</a>
               <a href="/retirement-calculator">Retirement calculator</a>
               <a href="/loan-calculator">Loan calculator</a>
-              <a href="#">Compound interest</a>
-              <a href="#">Budget calculator</a>
+              <a href="/compound-interest-calculator">Compound interest</a>
+              <a href="/budget-calculator">Budget calculator</a>
               <a href="#">Income tax calculator</a>
               <a href="#">Sales tax calculator</a>
             </div>
