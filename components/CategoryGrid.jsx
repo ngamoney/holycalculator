@@ -23,7 +23,7 @@ export default function CategoryGrid() {
               <a href="/compound-interest-calculator">Compound interest</a>
               <a href="/budget-calculator">Budget calculator</a>
               <a href="/currency-calculator">Currency converter</a>
-              <a href="#">Sales tax calculator</a>
+              <a href="/sales-tax-calculator">Sales tax calculator</a>
             </div>
           </div>
 
@@ -38,7 +38,7 @@ export default function CategoryGrid() {
             <div className="key-links">
               <a href="/bmi-calculator">BMI calculator</a>
               <a href="/calorie-calculator">Calorie (TDEE) calculator</a>
-              <a href="#">Body fat calculator</a>
+              <a href="/body-fat-calculator">Body fat calculator</a>
               <a href="/ideal-weight-calculator">Ideal weight calculator</a>
               <a href="/pregnancy-calculator">Pregnancy due date calculator</a>
               <a href="/bmr-calculator">BMR calculator</a>
@@ -59,7 +59,7 @@ export default function CategoryGrid() {
               <a href="/math/fraction-calculator">Fraction calculator</a>
               <a href="#">Scientific calculator</a>
               <a href="/gpa-calculator">GPA calculator</a>
-              <a href="#">Average calculator</a>
+              <a href="/math/average-calculator">Average calculator</a>
               <a href="/math/standard-deviation-calculator">Standard deviation</a>
             </div>
           </div>

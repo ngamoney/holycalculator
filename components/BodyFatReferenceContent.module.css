@@ -1,0 +1,203 @@
+/* BodyFatReferenceContent.module.css */
+.refSection {
+  margin-top: var(--section-gap-lg, 56px);
+  margin-bottom: var(--section-gap-xl, 80px);
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  color: var(--ink, #14171F);
+  line-height: 1.6;
+}
+
+.refContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.blockHeading {
+  font-family: var(--font-sora, 'Sora', sans-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ink, #14171F);
+  margin-top: var(--section-gap-lg, 56px);
+  margin-bottom: 16px;
+  border-bottom: 2px solid var(--line, #E5E0D8);
+  padding-bottom: 8px;
+}
+
+.blockHeading:first-of-type {
+  margin-top: 0;
+}
+
+.subHeading {
+  font-family: var(--font-sora, 'Sora', sans-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink, #14171F);
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+
+.paragraph {
+  font-size: 0.95rem;
+  color: var(--ink, #14171F);
+  margin-bottom: 16px;
+}
+
+.tableCardWrapper {
+  background: var(--paper-raised, #FDFCF8);
+  border: 1px solid var(--line, #E5E0D8);
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  text-align: left;
+}
+
+.dataTable th {
+  background: var(--paper, #F6F3EC);
+  color: var(--ink, #14171F);
+  font-family: var(--font-sora, 'Sora', sans-serif);
+  font-weight: 600;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line, #E5E0D8);
+  white-space: nowrap;
+}
+
+.dataTable td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line, #E5E0D8);
+  color: var(--ink, #14171F);
+}
+
+.dataTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.monoCell {
+  font-family: var(--font-jetbrains, 'JetBrains Mono', monospace);
+}
+
+.disclaimerCallout {
+  background: var(--paper, #F6F3EC);
+  border-left: 4px solid #4F7A5B;
+  border-radius: 0 8px 8px 0;
+  padding: 16px 20px;
+  margin: 24px 0;
+}
+
+.disclaimerTitle {
+  font-family: var(--font-sora, 'Sora', sans-serif);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #4F7A5B;
+  margin: 0 0 6px 0;
+}
+
+.disclaimerBody {
+  font-size: 0.875rem;
+  color: var(--ink-60, #63666E);
+  margin: 0;
+}
+
+/* FAQ Accordion List */
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.faqItem {
+  background: var(--paper-raised, #FDFCF8);
+  border: 1px solid var(--line, #E5E0D8);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.faqQuestion {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 16px 20px;
+  font-family: var(--font-sora, 'Sora', sans-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink, #14171F);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  gap: 12px;
+  transition: background 0.15s ease;
+}
+
+.faqQuestion:hover {
+  background: var(--paper, #F6F3EC);
+}
+
+.faqIcon {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #4F7A5B;
+  transition: transform 0.2s ease;
+  line-height: 1;
+}
+
+.faqIcon.open {
+  transform: rotate(45deg);
+}
+
+.faqAnswer {
+  padding: 0 20px 16px 20px;
+  font-size: 0.90rem;
+  color: var(--ink-60, #63666E);
+  line-height: 1.55;
+  border-top: 1px solid var(--line, #E5E0D8);
+  padding-top: 14px;
+}
+
+/* Related Calculators Grid */
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.relatedCard {
+  background: var(--paper, #F6F3EC);
+  border: 1px solid var(--line, #E5E0D8);
+  border-radius: 8px;
+  padding: 16px;
+  text-decoration: none;
+  color: var(--ink, #14171F);
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.relatedCard:hover {
+  transform: translateY(-2px);
+  border-color: #4F7A5B;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.relatedCardTitle {
+  font-family: var(--font-sora, 'Sora', sans-serif);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  color: var(--ink, #14171F);
+}
+
+.relatedCardDesc {
+  font-size: 0.8125rem;
+  color: var(--ink-60, #63666E);
+  margin: 0;
+}

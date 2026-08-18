@@ -165,6 +165,17 @@
     "icon": "🎯"
   },
   {
+    "id": "body-fat-calculator",
+    "name": "Body Fat Calculator",
+    "slug": "body-fat-calculator",
+    "category": "health",
+    "categoryName": "Health",
+    "url": "/body-fat-calculator",
+    "description": "Calculate body fat percentage, fat mass, and lean mass using the U.S. Navy Method and BMI Method.",
+    "featured": true,
+    "icon": "💪"
+  },
+  {
     "id": "date-calculator",
     "name": "Date Calculator",
     "slug": "date-calculator",
@@ -196,6 +207,17 @@
     "description": "Calculate population and sample standard deviation, variance, mean, sum, count, and 95% confidence interval margin of error.",
     "featured": true,
     "icon": "σ"
+  },
+  {
+    "id": "average-calculator",
+    "name": "Average Calculator",
+    "slug": "average-calculator",
+    "category": "math",
+    "categoryName": "Math",
+    "url": "/math/average-calculator",
+    "description": "Calculate Mean, Median, Mode, Range, Geometric Mean, Harmonic Mean, and Weighted Average.",
+    "featured": true,
+    "icon": "x̄"
   },
   {
     "id": "conversion-calculator",
@@ -284,5 +306,16 @@
     "description": "Convert currencies with live exchange rates, manual exchange rate overrides, and popular currency pair tables.",
     "featured": true,
     "icon": "💱"
+  },
+  {
+    "id": "sales-tax-calculator",
+    "name": "Sales Tax Calculator",
+    "slug": "sales-tax-calculator",
+    "category": "finance",
+    "categoryName": "Finance",
+    "url": "/sales-tax-calculator",
+    "description": "Calculate sales tax amounts, before-tax prices, and final prices with 50-state tax rate lookups.",
+    "featured": true,
+    "icon": "🏷️"
   }
 ]
