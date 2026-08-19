@@ -63,6 +63,13 @@ export default function RootLayout({ children }) {
       className={`${sora.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <head>
+        {/* Google AdSense */}
+        <Script
+          async
+          strategy="afterInteractive"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8328664420871406"
+          crossOrigin="anonymous"
+        />
         {/* Google tag (gtag.js) */}
         <Script
           strategy="afterInteractive"
