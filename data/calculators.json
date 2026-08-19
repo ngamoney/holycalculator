@@ -77,6 +77,17 @@
     "icon": "🗓️"
   },
   {
+    "id": "calorie-calculator",
+    "name": "Calorie Calculator",
+    "slug": "calorie-calculator",
+    "category": "health",
+    "categoryName": "Health",
+    "url": "/calorie-calculator",
+    "description": "Calculate daily calorie needs, BMR, and weight loss or gain targets using Mifflin-St Jeor, Harris-Benedict, or Katch-McArdle formulas.",
+    "featured": true,
+    "icon": "🔥"
+  },
+  {
     "id": "mortgage-calculator",
     "name": "Mortgage Calculator",
     "slug": "mortgage-calculator",

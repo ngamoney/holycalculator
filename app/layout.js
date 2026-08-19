@@ -20,8 +20,42 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Holy Calculator — Every number, one place",
-  description: "30+ free calculators — mortgage to BMI to life path number. No sign-in, no downloads, no cost. Every result shows the formula behind it.",
+  metadataBase: new URL("https://holycalculator.com"),
+  title: {
+    default: "Holy Calculator — Every number, one place",
+    template: "%s | Holy Calculator",
+  },
+  description:
+    "30+ free calculators — mortgage to BMI to life path number. No sign-in, no downloads, no cost. Every result shows the formula behind it.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Holy Calculator — Every number, one place",
+    description:
+      "30+ free calculators — mortgage to BMI to life path number. No sign-in, no downloads, no cost. Every result shows the formula behind it.",
+    url: "https://holycalculator.com",
+    siteName: "Holy Calculator",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Holy Calculator — Every number, one place",
+    description:
+      "30+ free calculators — mortgage to BMI to life path number. No sign-in, no downloads, no cost.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({ children }) {
