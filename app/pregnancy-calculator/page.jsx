@@ -140,11 +140,7 @@ export default function PregnancyCalculatorPage() {
         {/* Desktop Sidebar */}
         <aside className="calc-sidebar">
           {/* Vertical Ad Space */}
-          <div className="sidebar-box" style={{ padding: "10px", textAlign: "center" }}>
-            <div className="ad-vertical" aria-label="Advertisement">
-              <span>ADVERTISEMENT</span>
-            </div>
-          </div>
+          <SidebarAd />
 
           {/* Related Health Calculators */}
           <div className="sidebar-box">

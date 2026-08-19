@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import SidebarAd from "@/components/SidebarAd";
 import GradeCalculatorIsland from "@/components/GradeCalculatorIsland";
 import GradeReferenceContent from "@/components/GradeReferenceContent";
 import { GRADE_FAQS } from "@/lib/data/gradeFaqs";
@@ -131,11 +132,7 @@ export default function GradeCalculatorPage() {
         {/* Desktop Sticky Sidebar Rail */}
         <aside className="calc-sidebar">
           {/* 300x600 Sticky Ad Container */}
-          <div className="sidebar-box" style={{ padding: "10px", textAlign: "center" }}>
-            <div className="ad-vertical" style={{ height: "450px" }}>
-              ADVERTISEMENT — 300×600
-            </div>
-          </div>
+          <SidebarAd />
 
           {/* Quick Navigation / Related Calculators */}
           <div className="sidebar-box">

@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import SidebarAd from "@/components/SidebarAd";
 import DiceRollerIsland from "@/components/DiceRollerIsland";
 import DiceReferenceContent from "@/components/DiceReferenceContent";
 import { DICE_FAQS } from "@/lib/data/diceFaqs";
@@ -96,11 +97,7 @@ export default function DiceRollerPage() {
 
         {/* Desktop sticky sidebar — no ads near the Roll button */}
         <aside className="calc-sidebar">
-          <div className="sidebar-box" style={{ padding: "10px", textAlign: "center" }}>
-            <div className="ad-vertical" style={{ height: "450px" }}>
-              ADVERTISEMENT — 300×600
-            </div>
-          </div>
+          <SidebarAd />
 
           <div className="sidebar-box">
             <h4>Related Tools</h4>

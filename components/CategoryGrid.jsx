@@ -1,3 +1,6 @@
+import Link from "next/link";
+import SidebarAd from "@/components/SidebarAd";
+
 export default function CategoryGrid() {
   return (
     <section className="cat-section" id="categories">
@@ -8,25 +11,27 @@ export default function CategoryGrid() {
 
       <div className="cat-layout">
         <div className="keypad">
+          {/* Finance */}
           <div className="key finance" id="finance">
             <div className="key-top">
               <div className="key-head">
-                <div className="key-icon">₹</div>
+                <div className="key-icon">$</div>
                 <h3>Finance</h3>
               </div>
-              <div className="key-see-all">See all 8 →</div>
+              <div className="key-see-all">See all 7 →</div>
             </div>
             <div className="key-links">
-              <a href="/mortgage-calculator">Mortgage calculator</a>
-              <a href="/retirement-calculator">Retirement calculator</a>
-              <a href="/loan-calculator">Loan calculator</a>
-              <a href="/compound-interest-calculator">Compound interest</a>
-              <a href="/budget-calculator">Budget calculator</a>
-              <a href="/currency-calculator">Currency converter</a>
-              <a href="/sales-tax-calculator">Sales tax calculator</a>
+              <Link href="/mortgage-calculator">Mortgage calculator</Link>
+              <Link href="/retirement-calculator">Retirement calculator</Link>
+              <Link href="/loan-calculator">Loan calculator</Link>
+              <Link href="/compound-interest-calculator">Compound interest</Link>
+              <Link href="/budget-calculator">Budget calculator</Link>
+              <Link href="/currency-calculator">Currency converter</Link>
+              <Link href="/sales-tax-calculator">Sales tax calculator</Link>
             </div>
           </div>
 
+          {/* Health & Fitness */}
           <div className="key health" id="health">
             <div className="key-top">
               <div className="key-head">
@@ -36,15 +41,16 @@ export default function CategoryGrid() {
               <div className="key-see-all">See all 6 →</div>
             </div>
             <div className="key-links">
-              <a href="/bmi-calculator">BMI calculator</a>
-              <a href="/calorie-calculator">Calorie (TDEE) calculator</a>
-              <a href="/body-fat-calculator">Body fat calculator</a>
-              <a href="/ideal-weight-calculator">Ideal weight calculator</a>
-              <a href="/pregnancy-calculator">Pregnancy due date calculator</a>
-              <a href="/bmr-calculator">BMR calculator</a>
+              <Link href="/bmi-calculator">BMI calculator</Link>
+              <Link href="/calorie-calculator">Calorie (TDEE) calculator</Link>
+              <Link href="/body-fat-calculator">Body fat calculator</Link>
+              <Link href="/ideal-weight-calculator">Ideal weight calculator</Link>
+              <Link href="/pregnancy-calculator">Pregnancy due date calculator</Link>
+              <Link href="/bmr-calculator">BMR calculator</Link>
             </div>
           </div>
 
+          {/* Math */}
           <div className="key math" id="math">
             <div className="key-top">
               <div className="key-head">
@@ -54,33 +60,34 @@ export default function CategoryGrid() {
               <div className="key-see-all">See all 7 →</div>
             </div>
             <div className="key-links">
-              <a href="/grade-calculator">Grade calculator</a>
-              <a href="/math/percentage-calculator">Percentage calculator</a>
-              <a href="/math/fraction-calculator">Fraction calculator</a>
-              <a href="/math/scientific-calculator">Scientific calculator</a>
-              <a href="/gpa-calculator">GPA calculator</a>
-              <a href="/math/average-calculator">Average calculator</a>
-              <a href="/math/standard-deviation-calculator">Standard deviation</a>
+              <Link href="/grade-calculator">Grade calculator</Link>
+              <Link href="/math/percentage-calculator">Percentage calculator</Link>
+              <Link href="/math/fraction-calculator">Fraction calculator</Link>
+              <Link href="/math/scientific-calculator">Scientific calculator</Link>
+              <Link href="/gpa-calculator">GPA calculator</Link>
+              <Link href="/math/average-calculator">Average calculator</Link>
+              <Link href="/math/standard-deviation-calculator">Standard deviation</Link>
             </div>
           </div>
 
-          <div className="key date">
+          {/* Date & Time */}
+          <div className="key date" id="date-time">
             <div className="key-top">
               <div className="key-head">
                 <div className="key-icon">◷</div>
                 <h3>Date &amp; Time</h3>
               </div>
-              <div className="key-see-all">See all 5 →</div>
+              <div className="key-see-all">See all 4 →</div>
             </div>
             <div className="key-links">
-              <a href="/age-calculator">Age calculator</a>
-              <a href="/date-calculator">Date difference (calculator)</a>
-              <a href="/date-time/time-zone-calculator">Time zone calculator</a>
-              <a href="/date-time/countdown-calculator">Countdown calculator</a>
-              <a href="/date-calculator">Workdays calculator</a>
+              <Link href="/age-calculator">Age calculator</Link>
+              <Link href="/date-calculator">Date calculator</Link>
+              <Link href="/date-time/time-zone-calculator">Time zone calculator</Link>
+              <Link href="/date-time/countdown-calculator">Countdown calculator</Link>
             </div>
           </div>
 
+          {/* Conversions */}
           <div className="key conv" id="conversions">
             <div className="key-top">
               <div className="key-head">
@@ -90,18 +97,19 @@ export default function CategoryGrid() {
               <div className="key-see-all">See all 8 →</div>
             </div>
             <div className="key-links">
-              <a href="/conversion-calculator">Unit converter</a>
-              <a href="/currency-calculator">Currency converter</a>
-              <a href="/conversion-calculator?cat=length">Length converter</a>
-              <a href="/conversion-calculator?cat=weight">Weight converter</a>
-              <a href="/conversion-calculator?cat=temperature">Temperature converter</a>
-              <a href="/conversion-calculator?cat=area">Area converter</a>
-              <a href="/conversion-calculator?cat=volume">Volume converter</a>
-              <a href="/conversion-calculator?cat=speed">Speed converter</a>
+              <Link href="/conversion-calculator">Unit converter</Link>
+              <Link href="/currency-calculator">Currency converter</Link>
+              <Link href="/conversion-calculator?cat=length">Length converter</Link>
+              <Link href="/conversion-calculator?cat=weight">Weight converter</Link>
+              <Link href="/conversion-calculator?cat=temperature">Temperature converter</Link>
+              <Link href="/conversion-calculator?cat=area">Area converter</Link>
+              <Link href="/conversion-calculator?cat=volume">Volume converter</Link>
+              <Link href="/conversion-calculator?cat=speed">Speed converter</Link>
             </div>
           </div>
 
-          <div className="key spiritual">
+          {/* Spiritual & Luck */}
+          <div className="key spiritual" id="spiritual">
             <div className="key-top">
               <div className="key-head">
                 <div className="key-icon">✦</div>
@@ -110,32 +118,31 @@ export default function CategoryGrid() {
               <div className="key-see-all">See all 5 →</div>
             </div>
             <div className="key-links">
-              <a href="/spiritual/life-path-number-calculator">Life path number</a>
-              <a href="/spiritual/zodiac-compatibility-calculator">Zodiac compatibility</a>
-              <a href="/spiritual/angel-number-calculator">Angel number calculator</a>
-              <a href="/spiritual/lucky-number-generator">Lucky number generator</a>
-              <a href="/spiritual/tarot-card-calculator">Daily tarot reading</a>
+              <Link href="/spiritual/life-path-number-calculator">Life path number</Link>
+              <Link href="/spiritual/zodiac-compatibility-calculator">Zodiac compatibility</Link>
+              <Link href="/spiritual/angel-number-calculator">Angel number calculator</Link>
+              <Link href="/spiritual/lucky-number-generator">Lucky number generator</Link>
+              <Link href="/spiritual/tarot-card-calculator">Daily tarot reading</Link>
             </div>
           </div>
 
+          {/* Tools & Games */}
           <div className="key other" id="other">
             <div className="key-top">
               <div className="key-head">
                 <div className="key-icon">◎</div>
-                <h3>Other Calculators</h3>
+                <h3>Tools &amp; Games</h3>
               </div>
-              <div className="key-see-all">See all 2 →</div>
+              <div className="key-see-all">See tool →</div>
             </div>
             <div className="key-links">
-              <a href="/age-calculator">Age calculator</a>
-              <a href="/dice-roller">Dice roller</a>
+              <Link href="/dice-roller">Virtual dice roller</Link>
             </div>
           </div>
         </div>
 
-        <div className="sidebar-ad">
-          <div className="ad-vertical">ADVERTISEMENT — 300×600</div>
-        </div>
+        {/* Unified Sidebar Ad */}
+        <SidebarAd />
       </div>
     </section>
   );

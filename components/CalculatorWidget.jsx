@@ -120,7 +120,7 @@ export default function CalculatorWidget() {
       setDisplay((prev) => prev + lastAnswer);
       setParts((prev) => [...prev, String(lastAnswer)]);
     } else if (c === "rnd") {
-      const r = Number(Math.random().toFixed(6));
+      const r = Number(Math.random().toFixed(4));
       setDisplay((prev) => prev + r);
       setParts((prev) => [...prev, String(r)]);
     }
@@ -177,11 +177,31 @@ export default function CalculatorWidget() {
           </button>
         </div>
       </div>
+
       <div className="calc-display">
         <div className="calc-expr">{display || "\u00A0"}</div>
         <div className="calc-value">{display === "" ? "0" : display}</div>
       </div>
+
       <div className="calc-keys">
+        {/* Row 1: Top Clear / Grouping */}
+        <button type="button" onClick={() => handleKey("C")} className="mem" style={{ color: "#F87171" }}>
+          AC
+        </button>
+        <button type="button" onClick={() => handleKey("back")} className="mem">
+          ⌫
+        </button>
+        <button type="button" onClick={() => handleKey("(")} className="fn">
+          (
+        </button>
+        <button type="button" onClick={() => handleKey(")")} className="fn">
+          )
+        </button>
+        <button type="button" onClick={() => handleKey("%")} className="op">
+          %
+        </button>
+
+        {/* Row 2: Trig & Division */}
         <button type="button" onClick={() => handleFn("sin")} className="fn">
           sin
         </button>
@@ -191,25 +211,14 @@ export default function CalculatorWidget() {
         <button type="button" onClick={() => handleFn("tan")} className="fn">
           tan
         </button>
-        <button type="button" onClick={() => handleKey("(")} className="fn">
-          (
-        </button>
-        <button type="button" onClick={() => handleKey("7")}>
-          7
-        </button>
-        <button type="button" onClick={() => handleKey("8")}>
-          8
-        </button>
-        <button type="button" onClick={() => handleKey("9")}>
-          9
+        <button type="button" onClick={() => handleConst("pi")} className="fn">
+          π
         </button>
         <button type="button" onClick={() => handleKey("/")} className="op">
           ÷
         </button>
-        <button type="button" onClick={() => handleKey("back")} className="mem">
-          ⌫
-        </button>
 
+        {/* Row 3: Inverse Trig & Multiplication */}
         <button type="button" onClick={() => handleFn("asin")} className="fn">
           sin⁻¹
         </button>
@@ -219,9 +228,65 @@ export default function CalculatorWidget() {
         <button type="button" onClick={() => handleFn("atan")} className="fn">
           tan⁻¹
         </button>
-        <button type="button" onClick={() => handleKey(")")} className="fn">
-          )
+        <button type="button" onClick={() => handleConst("e")} className="fn">
+          e
         </button>
+        <button type="button" onClick={() => handleKey("*")} className="op">
+          ×
+        </button>
+
+        {/* Row 4: Logs, Roots, Powers & Subtraction */}
+        <button type="button" onClick={() => handleFn("ln")} className="fn">
+          ln
+        </button>
+        <button type="button" onClick={() => handleFn("log")} className="fn">
+          log
+        </button>
+        <button type="button" onClick={() => handleFn("sqrt")} className="fn">
+          √
+        </button>
+        <button type="button" onClick={() => handleFn("pow")} className="fn">
+          xʸ
+        </button>
+        <button type="button" onClick={() => handleKey("-")} className="op">
+          −
+        </button>
+
+        {/* Row 5: Powers, Fractions, Factorial & Addition */}
+        <button type="button" onClick={() => handlePost("sq")} className="fn">
+          x²
+        </button>
+        <button type="button" onClick={() => handlePost("cube")} className="fn">
+          x³
+        </button>
+        <button type="button" onClick={() => handlePost("inv")} className="fn">
+          1/x
+        </button>
+        <button type="button" onClick={() => handlePost("fact")} className="fn">
+          n!
+        </button>
+        <button type="button" onClick={() => handleKey("+")} className="op">
+          +
+        </button>
+
+        {/* Row 6: Numbers 7-9 & Memory */}
+        <button type="button" onClick={() => handleKey("7")}>
+          7
+        </button>
+        <button type="button" onClick={() => handleKey("8")}>
+          8
+        </button>
+        <button type="button" onClick={() => handleKey("9")}>
+          9
+        </button>
+        <button type="button" onClick={() => handleMem("add")} className="mem">
+          M+
+        </button>
+        <button type="button" onClick={() => handleMem("recall")} className="mem">
+          MR
+        </button>
+
+        {/* Row 7: Numbers 4-6 & Memory/Ans */}
         <button type="button" onClick={() => handleKey("4")}>
           4
         </button>
@@ -231,25 +296,14 @@ export default function CalculatorWidget() {
         <button type="button" onClick={() => handleKey("6")}>
           6
         </button>
-        <button type="button" onClick={() => handleKey("*")} className="op">
-          ×
+        <button type="button" onClick={() => handleMem("sub")} className="mem">
+          M−
         </button>
-        <button type="button" onClick={() => handleConst("pi")} className="mem">
-          π
+        <button type="button" onClick={() => handleConst("ans")} className="mem">
+          Ans
         </button>
 
-        <button type="button" onClick={() => handlePost("sq")} className="fn">
-          x²
-        </button>
-        <button type="button" onClick={() => handlePost("cube")} className="fn">
-          x³
-        </button>
-        <button type="button" onClick={() => handleFn("pow")} className="fn">
-          xʸ
-        </button>
-        <button type="button" onClick={() => handleFn("sqrt")} className="fn">
-          √
-        </button>
+        {/* Row 8: Numbers 1-3 & Signs/RND */}
         <button type="button" onClick={() => handleKey("1")}>
           1
         </button>
@@ -259,62 +313,19 @@ export default function CalculatorWidget() {
         <button type="button" onClick={() => handleKey("3")}>
           3
         </button>
-        <button type="button" onClick={() => handleKey("-")} className="op">
-          −
+        <button type="button" onClick={() => handlePost("pm")} className="mem">
+          ±
         </button>
-        <button type="button" onClick={() => handleConst("e")} className="mem">
-          e
+        <button type="button" onClick={() => handleConst("rnd")} className="mem">
+          RND
         </button>
 
-        <button type="button" onClick={() => handleFn("ln")} className="fn">
-          ln
-        </button>
-        <button type="button" onClick={() => handleFn("log")} className="fn">
-          log
-        </button>
-        <button type="button" onClick={() => handlePost("inv")} className="fn">
-          1/x
-        </button>
-        <button type="button" onClick={() => handlePost("fact")} className="fn">
-          n!
-        </button>
-        <button type="button" onClick={() => handleKey("0")} className="mem">
+        {/* Row 9: 0, Decimal & Equal Button */}
+        <button type="button" onClick={() => handleKey("0")}>
           0
         </button>
         <button type="button" onClick={() => handleKey(".")}>
           .
-        </button>
-        <button type="button" onClick={() => handlePost("pm")} className="mem">
-          ±
-        </button>
-        <button type="button" onClick={() => handleKey("+")} className="op">
-          +
-        </button>
-        <button type="button" onClick={() => handleKey("%")} className="op">
-          %
-        </button>
-
-        <button type="button" onClick={() => handleKey("C")} className="mem">
-          AC
-        </button>
-        <button type="button" onClick={() => handleConst("ans")} className="mem">
-          Ans
-        </button>
-        <button type="button" onClick={() => handleMem("add")} className="mem">
-          M+
-        </button>
-        <button type="button" onClick={() => handleMem("sub")} className="mem">
-          M−
-        </button>
-        <button
-          type="button"
-          onClick={() => handleMem("recall")}
-          className="mem"
-        >
-          MR
-        </button>
-        <button type="button" onClick={() => handleConst("rnd")} className="mem">
-          RND
         </button>
         <button
           type="button"
@@ -325,8 +336,9 @@ export default function CalculatorWidget() {
           =
         </button>
       </div>
+
       <div className="calc-note">
-        Basic mode also available — <a href="#">switch to simple calculator →</a>
+        Complete scientific functions • Instant calculation
       </div>
     </div>
   );

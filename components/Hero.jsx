@@ -1,3 +1,4 @@
+import Link from "next/link";
 import CalculatorWidget from "@/components/CalculatorWidget";
 
 export default function Hero() {
@@ -14,20 +15,21 @@ export default function Hero() {
             sign-in, no downloads, no cost. Every result shows the formula
             behind it.
           </p>
-          <form className="hero-search">
+          <form className="hero-search" action="/#categories">
             <input
               type="text"
+              name="q"
               placeholder="Search calculators — “BMI”, “life path number”, “Mortgage”…"
             />
             <button type="submit">Search</button>
           </form>
           <div className="hero-chips">
-            <a href="/mortgage-calculator">Mortgage</a>
-            <a href="/bmi-calculator">BMI</a>
-            <a href="/age-calculator">Age</a>
-            <a href="#">Life Path Number</a>
-            <a href="#">Currency</a>
-            <a href="#">Percentage</a>
+            <Link href="/mortgage-calculator">Mortgage</Link>
+            <Link href="/bmi-calculator">BMI</Link>
+            <Link href="/age-calculator">Age</Link>
+            <Link href="/spiritual/life-path-number-calculator">Life Path Number</Link>
+            <Link href="/currency-calculator">Currency</Link>
+            <Link href="/math/percentage-calculator">Percentage</Link>
           </div>
         </div>
 

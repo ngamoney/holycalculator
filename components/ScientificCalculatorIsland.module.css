@@ -78,7 +78,6 @@
   border-radius: 4px;
 }
 
-/* Keypad Grid */
 .keypadGrid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -88,8 +87,14 @@
 
 @media (max-width: 640px) {
   .keypadGrid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 6px;
+    gap: 5px;
+  }
+  .keyBtn {
+    padding: 10px 2px;
+    font-size: 0.82rem;
+  }
+  .funcKey {
+    font-size: 0.75rem;
   }
 }
 
@@ -97,9 +102,9 @@
   background: var(--paper, #F6F3EC);
   border: 1px solid var(--line, #E5E0D8);
   border-radius: 8px;
-  padding: 14px 6px;
+  padding: 12px 6px;
   font-family: var(--font-jetbrains, 'JetBrains Mono', monospace);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--ink, #14171F);
   cursor: pointer;

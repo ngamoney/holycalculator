@@ -282,40 +282,24 @@ a {
    ========================================================================== */
 .ad-slot {
   max-width: 1200px;
-  margin: 44px auto 0;
+  margin: 36px auto 0;
   padding: 0 28px;
 }
 .ad-banner {
-  border: 1px dashed var(--line);
   border-radius: 10px;
-  background: var(--paper-raised);
-  height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--mono);
-  font-size: 11.5px;
-  color: var(--ink-60);
-  letter-spacing: 0.06em;
+  min-height: 90px;
+  width: 100%;
 }
-.sidebar-ad {
+.sidebar-ad,
+.sidebar-ad-wrapper {
   position: sticky;
   top: 90px;
+  width: 100%;
 }
 .ad-vertical {
-  border: 1px dashed var(--line);
   border-radius: 10px;
-  background: var(--paper-raised);
-  height: 600px;
+  min-height: 600px;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--mono);
-  font-size: 11.5px;
-  color: var(--ink-60);
-  writing-mode: vertical-rl;
-  letter-spacing: 0.06em;
 }
 
 /* ==========================================================================
@@ -408,9 +392,11 @@ a {
 .calc-widget {
   background: var(--ink);
   border-radius: 18px;
-  padding: 20px;
+  padding: 22px;
   box-shadow: 0 20px 50px -20px rgba(20, 23, 31, 0.45);
-  overflow-x: auto;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
 }
 .calc-top {
   display: flex;
@@ -449,10 +435,10 @@ a {
 .calc-display {
   background: rgba(255, 255, 255, 0.04);
   border-radius: 10px;
-  padding: 18px 16px;
+  padding: 16px;
   text-align: right;
   margin-bottom: 14px;
-  min-width: 520px;
+  width: 100%;
 }
 .calc-expr {
   font-family: var(--mono);
@@ -464,29 +450,31 @@ a {
 }
 .calc-value {
   font-family: var(--mono);
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 700;
   color: var(--gold);
   word-break: break-all;
 }
 .calc-keys {
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 6px;
-  min-width: 520px;
+  width: 100%;
 }
 .calc-keys button {
   font-family: var(--mono);
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 600;
-  padding: 12px 0;
+  padding: 11px 0;
   border-radius: 7px;
   border: none;
   cursor: pointer;
   background: rgba(255, 255, 255, 0.06);
   color: var(--paper);
   transition: background 0.1s ease, transform 0.06s ease;
-  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .calc-keys button:hover {
   background: rgba(255, 255, 255, 0.13);
@@ -518,7 +506,7 @@ a {
 }
 .calc-keys button.mem {
   background: rgba(255, 255, 255, 0.03);
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.65);
 }
 .calc-note {
   font-family: var(--mono);

@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import AdBanner from "@/components/AdBanner";
+import SidebarAd from "@/components/SidebarAd";
 import CalorieCalculatorIsland from "@/components/CalorieCalculatorIsland";
 import CalorieReferenceContent from "@/components/CalorieReferenceContent";
 import { CALORIE_FAQS } from "@/lib/data/calorieFaqs";
@@ -137,12 +139,8 @@ export default function CalorieCalculatorPage() {
 
         {/* Desktop Sticky Sidebar */}
         <aside className="calc-sidebar">
-          {/* Vertical Ad — visually separated from disclaimer (disclaimer is inside the Island card above) */}
-          <div className="sidebar-box" style={{ padding: "10px", textAlign: "center" }}>
-            <div className="ad-vertical" style={{ height: "450px" }}>
-              ADVERTISEMENT — 300×600
-            </div>
-          </div>
+          {/* Vertical Ad */}
+          <SidebarAd />
 
           {/* Related Fitness & Health Calculators */}
           <div className="sidebar-box">
@@ -208,10 +206,8 @@ export default function CalorieCalculatorPage() {
         </aside>
       </div>
 
-      {/* Below-calculator ad — separated from the Island's disclaimer by the layout gap */}
-      <div className="ad-slot">
-        <div className="ad-banner">ADVERTISEMENT — 728×90</div>
-      </div>
+      {/* Below-calculator ad */}
+      <AdBanner />
 
       {/* SEO Reference Content */}
       <CalorieReferenceContent />

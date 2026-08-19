@@ -21,10 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata = {
   metadataBase: new URL("https://holycalculator.com"),
-  title: {
-    default: "Holy Calculator — Every number, one place",
-    template: "%s | Holy Calculator",
-  },
+  title: "Holy Calculator — Every number, one place",
   description:
     "30+ free calculators — mortgage to BMI to life path number. No sign-in, no downloads, no cost. Every result shows the formula behind it.",
   alternates: {

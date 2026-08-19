@@ -10,11 +10,10 @@ export default function ScientificCalculatorIsland() {
   const [expression, setExpression] = useState("");
   const [historyLine, setHistoryLine] = useState("");
   const [isDegreeMode, setIsDegreeMode] = useState(true);
-  const [isShiftActive, setIsShiftActive] = useState(false);
+  const [lastResult, setLastResult] = useState(0);
 
   const [memory, setMemory] = useState(0);
   const [history, setHistory] = useState([]);
-  const [copied, setCopied] = useState(false);
 
   // Load saved history on mount
   useEffect(() => {
@@ -48,6 +47,7 @@ export default function ScientificCalculatorIsland() {
     setHistoryLine(`${expression} =`);
     if (res.isValid) {
       setExpression(res.formattedResult);
+      setLastResult(res.result);
       addHistory(expression, res.formattedResult);
     } else {
       setExpression("Error");
@@ -93,6 +93,19 @@ export default function ScientificCalculatorIsland() {
     if (res.isValid) setMemory((prev) => prev - res.result);
   };
 
+  // Plus/Minus Toggle
+  const handlePlusMinus = () => {
+    if (!expression || expression === "0") {
+      setExpression("-");
+    } else if (expression.startsWith("-(")) {
+      setExpression(expression.slice(2, -1));
+    } else if (expression.startsWith("-")) {
+      setExpression(expression.slice(1));
+    } else {
+      setExpression(`-(${expression})`);
+    }
+  };
+
   // Keyboard Event Listener
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -107,6 +120,7 @@ export default function ScientificCalculatorIsland() {
       else if (e.key === "(") handleAppend("(");
       else if (e.key === ")") handleAppend(")");
       else if (e.key === "^") handleAppend("^");
+      else if (e.key === "%") handleAppend("%");
       else if (e.key === "Enter" || e.key === "=") {
         e.preventDefault();
         handleEvaluate();
@@ -120,14 +134,6 @@ export default function ScientificCalculatorIsland() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [expression, handleEvaluate]);
-
-  const handleCopyLink = () => {
-    if (typeof window === "undefined") return;
-    navigator.clipboard.writeText(window.location.href).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2500);
-    });
-  };
 
   return (
     <div className={styles.islandContainer}>
@@ -154,103 +160,86 @@ export default function ScientificCalculatorIsland() {
           >
             RAD
           </button>
-          <button
-            type="button"
-            className={`${styles.toggleBtn} ${isShiftActive ? styles.toggleBtnActive : ""}`}
-            onClick={() => setIsShiftActive(!isShiftActive)}
-          >
-            2nd
-          </button>
         </div>
         {memory !== 0 && <span className={styles.memIndicator}>M = {memory}</span>}
       </div>
 
-      {/* Keypad Grid */}
+      {/* Complete Keypad Grid — All functions visible simultaneously on one page */}
       <div className={styles.keypadGrid}>
-        {/* Memory Row */}
+        {/* Row 1: Memory */}
         <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={handleMemoryClear}>MC</button>
         <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={handleMemoryRecall}>MR</button>
         <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={handleMemoryStore}>MS</button>
         <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={handleMemoryAdd}>M+</button>
         <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={handleMemorySub}>M-</button>
 
-        {/* Scientific Row 1 */}
-        <button
-          type="button"
-          className={`${styles.keyBtn} ${styles.funcKey}`}
-          onClick={() => handleAppend(isShiftActive ? "asin(" : "sin(")}
-        >
-          {isShiftActive ? "sin⁻¹" : "sin"}
-        </button>
-        <button
-          type="button"
-          className={`${styles.keyBtn} ${styles.funcKey}`}
-          onClick={() => handleAppend(isShiftActive ? "acos(" : "cos(")}
-        >
-          {isShiftActive ? "cos⁻¹" : "cos"}
-        </button>
-        <button
-          type="button"
-          className={`${styles.keyBtn} ${styles.funcKey}`}
-          onClick={() => handleAppend(isShiftActive ? "atan(" : "tan(")}
-        >
-          {isShiftActive ? "tan⁻¹" : "tan"}
-        </button>
+        {/* Row 2: Standard Trigonometry & Parentheses */}
+        <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend("sin(")}>sin</button>
+        <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend("cos(")}>cos</button>
+        <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend("tan(")}>tan</button>
+        <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend("(")}>(</button>
+        <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend(")")}>)</button>
+
+        {/* Row 3: Inverse Trigonometry & Constants */}
+        <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend("asin(")}>sin⁻¹</button>
+        <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend("acos(")}>cos⁻¹</button>
+        <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend("atan(")}>tan⁻¹</button>
         <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend("π")}>π</button>
         <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend("e")}>e</button>
 
-        {/* Scientific Row 2 */}
-        <button
-          type="button"
-          className={`${styles.keyBtn} ${styles.funcKey}`}
-          onClick={() => handleAppend(isShiftActive ? "10^(" : "log(")}
-        >
-          {isShiftActive ? "10ˣ" : "log"}
-        </button>
-        <button
-          type="button"
-          className={`${styles.keyBtn} ${styles.funcKey}`}
-          onClick={() => handleAppend(isShiftActive ? "e^(" : "ln(")}
-        >
-          {isShiftActive ? "eˣ" : "ln"}
-        </button>
-        <button
-          type="button"
-          className={`${styles.keyBtn} ${styles.funcKey}`}
-          onClick={() => handleAppend(isShiftActive ? "^2" : "√(")}
-        >
-          {isShiftActive ? "x²" : "√"}
-        </button>
+        {/* Row 4: Logs, Roots, Powers & Factorial */}
+        <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend("ln(")}>ln</button>
+        <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend("log(")}>log</button>
+        <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend("√(")}>√</button>
         <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend("^")}>xʸ</button>
         <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend("fact(")}>n!</button>
 
-        {/* Standard Numeric & Operators Row 1 */}
-        <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend("(")}>(</button>
-        <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend(")")}>)</button>
+        {/* Row 5: Powers, Exponentials & Reciprocal */}
+        <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend("^2")}>x²</button>
+        <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend("^3")}>x³</button>
+        <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend("10^(")}>10ˣ</button>
+        <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend("e^(")}>eˣ</button>
+        <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend("1/(")}>1/x</button>
+
+        {/* Row 6: Clear, Delete, Signs & Division */}
         <button type="button" className={`${styles.keyBtn} ${styles.clearKey}`} onClick={handleClear}>AC</button>
         <button type="button" className={`${styles.keyBtn} ${styles.clearKey}`} onClick={handleDelete}>DEL</button>
+        <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={handlePlusMinus}>±</button>
+        <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend("%")}>%</button>
         <button type="button" className={`${styles.keyBtn} ${styles.opKey}`} onClick={() => handleAppend("÷")}>÷</button>
 
-        {/* Numeric Row 2 */}
+        {/* Row 7: Numeric 7-9, Ans & Multiplication */}
         <button type="button" className={styles.keyBtn} onClick={() => handleAppend("7")}>7</button>
         <button type="button" className={styles.keyBtn} onClick={() => handleAppend("8")}>8</button>
         <button type="button" className={styles.keyBtn} onClick={() => handleAppend("9")}>9</button>
+        <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend(String(lastResult || 0))}>Ans</button>
         <button type="button" className={`${styles.keyBtn} ${styles.opKey}`} onClick={() => handleAppend("×")}>×</button>
-        <button type="button" className={`${styles.keyBtn} ${styles.opKey}`} onClick={() => handleAppend("-")}>-</button>
 
-        {/* Numeric Row 3 */}
+        {/* Row 8: Numeric 4-6, RND & Subtraction */}
         <button type="button" className={styles.keyBtn} onClick={() => handleAppend("4")}>4</button>
         <button type="button" className={styles.keyBtn} onClick={() => handleAppend("5")}>5</button>
         <button type="button" className={styles.keyBtn} onClick={() => handleAppend("6")}>6</button>
-        <button type="button" className={`${styles.keyBtn} ${styles.opKey}`} onClick={() => handleAppend("+")}>+</button>
-        <button type="button" className={`${styles.keyBtn} ${styles.equalsKey}`} onClick={handleEvaluate}>=</button>
+        <button type="button" className={`${styles.keyBtn} ${styles.funcKey}`} onClick={() => handleAppend(String(Number(Math.random().toFixed(4))))}>RND</button>
+        <button type="button" className={`${styles.keyBtn} ${styles.opKey}`} onClick={() => handleAppend("-")}>-</button>
 
-        {/* Numeric Row 4 */}
+        {/* Row 9: Numeric 1-3 & Addition */}
         <button type="button" className={styles.keyBtn} onClick={() => handleAppend("1")}>1</button>
         <button type="button" className={styles.keyBtn} onClick={() => handleAppend("2")}>2</button>
         <button type="button" className={styles.keyBtn} onClick={() => handleAppend("3")}>3</button>
         <button type="button" className={styles.keyBtn} onClick={() => handleAppend("0")}>0</button>
+        <button type="button" className={`${styles.keyBtn} ${styles.opKey}`} onClick={() => handleAppend("+")}>+</button>
+
+        {/* Row 10: Decimal, 00 & Prominent Equals Button */}
         <button type="button" className={styles.keyBtn} onClick={() => handleAppend(".")}>.</button>
+        <button type="button" className={styles.keyBtn} onClick={() => handleAppend("00")}>00</button>
+        <button
+          type="button"
+          className={`${styles.keyBtn} ${styles.equalsKey}`}
+          style={{ gridColumn: "span 3" }}
+          onClick={handleEvaluate}
+        >
+          =
+        </button>
       </div>
 
       {/* History List */}

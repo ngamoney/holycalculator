@@ -65,10 +65,10 @@ export default function Footer() {
             <h5>Spiritual</h5>
             <ul>
               <li>
-                <Link href="/spiritual/life-path-calculator">Life path number</Link>
+                <Link href="/spiritual/life-path-number-calculator">Life path number</Link>
               </li>
               <li>
-                <Link href="/spiritual/zodiac-calculator">Zodiac match</Link>
+                <Link href="/spiritual/zodiac-compatibility-calculator">Zodiac match</Link>
               </li>
               <li>
                 <Link href="/spiritual/angel-number-calculator">Angel numbers</Link>

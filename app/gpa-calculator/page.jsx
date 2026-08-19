@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import SidebarAd from "@/components/SidebarAd";
 import GPACalculatorIsland from "@/components/GPACalculatorIsland";
 import GPAReferenceContent from "@/components/GPAReferenceContent";
 import { GPA_FAQS } from "@/lib/data/gpaFaqs";
@@ -16,7 +17,7 @@ export const metadata = {
   openGraph: {
     title: "GPA Calculator – Calculate Your Grade Point Average",
     description:
-      "Calculate semester and cumulative Grade Point Average (GPA) instantly. Supports 4.0 scale, letter grades, percentages, prior GPA carryover, and target GPA planning.",
+      "Free college and high school GPA calculator. Calculate cumulative GPA, weighted grades, and goal GPA forecasts.",
     url: "https://holycalculator.com/gpa-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
@@ -24,9 +25,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GPA Calculator – Calculate Your Grade Point Average",
-    description:
-      "Free instant GPA Calculator with semester grouping, letter/percentage grades, prior GPA carryover, and target planning.",
+    title: "GPA Calculator | Holy Calculator",
+    description: "Calculate high school and college GPA with weighted credits.",
   },
 };
 
@@ -37,76 +37,83 @@ export default function GPACalculatorPage() {
     { label: "GPA Calculator", active: true },
   ];
 
+  // FAQPage Schema Markup
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": GPA_FAQS.map((faq) => ({
+    mainEntity: GPA_FAQS.map((faq) => ({
       "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
+      name: faq.question,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": faq.answer,
+        text: faq.answer,
       },
     })),
   };
 
+  // WebApplication Schema Markup
+  const webAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Holy Calculator — GPA Calculator",
+    url: "https://holycalculator.com/gpa-calculator",
+    applicationCategory: "EducationalApplication",
+    operatingSystem: "All",
+    description:
+      "Instant GPA calculation tool for semester and cumulative GPA projections.",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+  };
+
+  // HowTo Schema Markup
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "How to Calculate Grade Point Average (GPA)",
-    "description": "Step-by-step instructions to calculate semester and cumulative grade point average using quality points and credit weighting.",
-    "step": [
+    name: "How to Calculate Your Grade Point Average (GPA)",
+    description:
+      "Step-by-step instructions to calculate weighted and unweighted semester and cumulative GPA.",
+    step: [
       {
         "@type": "HowToStep",
-        "name": "Convert each letter grade to numerical grade points",
-        "text": "Map each class grade to standard GPA points (e.g., A = 4.0, B = 3.0, C = 2.0).",
-        "position": 1,
+        name: "Add your courses and credits",
+        text: "Input each class name, credit hours (weight), and grade received (letter grade or percentage).",
+        position: 1,
       },
       {
         "@type": "HowToStep",
-        "name": "Multiply grade points by course credit hours",
-        "text": "Multiply each class's grade point value by its number of credit hours to calculate Quality Points (e.g., 4 credits × 4.0 = 16 quality points).",
-        "position": 2,
+        name: "Include prior cumulative GPA",
+        text: "Optional: enter your existing cumulative GPA and completed credits to compute your updated overall standing.",
+        position: 2,
       },
       {
         "@type": "HowToStep",
-        "name": "Divide total quality points by total credit hours",
-        "text": "Sum all quality points earned and divide by the total number of graded credits attempted across the term.",
-        "position": 3,
+        name: "Forecast your target GPA",
+        text: "Use the Target GPA section to see what grades you need in future semesters to graduate with your goal honors.",
+        position: 3,
       },
     ],
   };
 
-  const webAppSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Holy Calculator - GPA Calculator",
-    "url": "https://holycalculator.com/gpa-calculator",
-    "applicationCategory": "EducationalApplication",
-    "operatingSystem": "All",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-    },
-  };
-
   return (
     <main>
-      {/* Structured Data Schemas */}
+      {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
 
+      {/* Global Header */}
       <Header />
 
       {/* Breadcrumbs Navigation */}
@@ -115,8 +122,8 @@ export default function GPACalculatorPage() {
       {/* Page Header */}
       <header className="calc-page-header">
         <div className="eyebrow">
-          <span className="dot" />
-          Math &amp; Academic Calculators
+          <span className="dot" style={{ background: "#9C7420" }} />
+          Academic &amp; Math Calculators
         </div>
         <h1>GPA Calculator</h1>
         <p className="lead">
@@ -131,11 +138,7 @@ export default function GPACalculatorPage() {
         {/* Desktop Sticky Sidebar Rail */}
         <aside className="calc-sidebar">
           {/* 300x600 Sticky Ad Container */}
-          <div className="sidebar-box" style={{ padding: "10px", textAlign: "center" }}>
-            <div className="ad-vertical" style={{ height: "450px" }}>
-              ADVERTISEMENT — 300×600
-            </div>
-          </div>
+          <SidebarAd />
 
           {/* Quick Navigation / Related Calculators */}
           <div className="sidebar-box">
