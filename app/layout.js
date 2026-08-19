@@ -28,6 +28,9 @@ export const metadata = {
   alternates: {
     canonical: "/",
   },
+  other: {
+    "google-adsense-account": "ca-pub-8328664420871406",
+  },
   openGraph: {
     title: "Holy Calculator — Every number, one place",
     description:
@@ -63,10 +66,9 @@ export default function RootLayout({ children }) {
       className={`${sora.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <head>
-        {/* Google AdSense */}
-        <Script
+        {/* Google AdSense direct script & verification */}
+        <script
           async
-          strategy="afterInteractive"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8328664420871406"
           crossOrigin="anonymous"
         />
