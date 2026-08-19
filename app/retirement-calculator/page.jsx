@@ -22,13 +22,13 @@ export const metadata = {
     "social security retirement",
   ],
   alternates: {
-    canonical: "https://holycalculator.com/retirement-calculator",
+    canonical: "https://www.holycalculator.com/retirement-calculator",
   },
   openGraph: {
     title: "Retirement Calculator – How Much Do You Need to Retire?",
     description:
       "Estimate your retirement nest egg, monthly savings plan, sustainable withdrawals, and drawdown duration with 4 interactive modes.",
-    url: "https://holycalculator.com/retirement-calculator",
+    url: "https://www.holycalculator.com/retirement-calculator",
     type: "website",
     siteName: "Holy Calculator",
   },
@@ -65,7 +65,7 @@ export default function RetirementCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Retirement Calculator",
-    url: "https://holycalculator.com/retirement-calculator",
+    url: "https://www.holycalculator.com/retirement-calculator",
     applicationCategory: "FinanceApplication",
     operatingSystem: "All",
     offers: {

@@ -7,6 +7,6 @@ export default function robots() {
         disallow: ["/api/"],
       },
     ],
-    sitemap: "https://holycalculator.com/sitemap.xml",
+    sitemap: "https://www.holycalculator.com/sitemap.xml",
   };
 }

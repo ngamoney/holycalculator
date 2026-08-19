@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Calculate love compatibility percentage, element synergy, and relationship dynamics between any two zodiac signs.",
   alternates: {
-    canonical: "https://holycalculator.com/spiritual/zodiac-compatibility-calculator",
+    canonical: "https://www.holycalculator.com/spiritual/zodiac-compatibility-calculator",
   },
   openGraph: {
     title: "Zodiac Compatibility Calculator – Love Match & Element Synergy",
     description:
       "Calculate love match percentage between any two zodiac signs based on elements, modalities, and astrology synastry.",
-    url: "https://holycalculator.com/spiritual/zodiac-compatibility-calculator",
+    url: "https://www.holycalculator.com/spiritual/zodiac-compatibility-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -52,7 +52,7 @@ export default function ZodiacCompatibilityCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — Zodiac Compatibility Calculator",
-    url: "https://holycalculator.com/spiritual/zodiac-compatibility-calculator",
+    url: "https://www.holycalculator.com/spiritual/zodiac-compatibility-calculator",
     applicationCategory: "LifestyleApplication",
     operatingSystem: "All",
     description: "Calculate love compatibility between any two zodiac signs.",

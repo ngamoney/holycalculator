@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Calculate exact duration between dates, count business days between two dates, or add/subtract working days with US federal holiday skipping. Free workday calculator.",
   alternates: {
-    canonical: "https://holycalculator.com/date-calculator",
+    canonical: "https://www.holycalculator.com/date-calculator",
   },
   openGraph: {
     title: "Date Calculator – Days Between Dates, Business Days & Workday Calculator",
     description:
       "Free online Date & Workday Calculator. Compute exact days, business days, and working days between two dates, or add/subtract working days with holiday skipping.",
-    url: "https://holycalculator.com/date-calculator",
+    url: "https://www.holycalculator.com/date-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -58,7 +58,7 @@ export default function DateCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — Date Calculator",
-    url: "https://holycalculator.com/date-calculator",
+    url: "https://www.holycalculator.com/date-calculator",
     applicationCategory: "UtilitiesApplication",
     operatingSystem: "All",
     description:

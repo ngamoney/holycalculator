@@ -22,13 +22,13 @@ export const metadata = {
     "living expenses calculator",
   ],
   alternates: {
-    canonical: "https://holycalculator.com/budget-calculator",
+    canonical: "https://www.holycalculator.com/budget-calculator",
   },
   openGraph: {
     title: "Budget Calculator – Plan Your Income, Expenses & DTI Ratio",
     description:
       "Plan your monthly budget, track 9 expense categories across 30+ line items, calculate DTI ratio, and analyze net cash flow.",
-    url: "https://holycalculator.com/budget-calculator",
+    url: "https://www.holycalculator.com/budget-calculator",
     type: "website",
     siteName: "Holy Calculator",
   },
@@ -65,7 +65,7 @@ export default function BudgetCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Budget Calculator",
-    url: "https://holycalculator.com/budget-calculator",
+    url: "https://www.holycalculator.com/budget-calculator",
     applicationCategory: "FinanceApplication",
     operatingSystem: "All",
     offers: {

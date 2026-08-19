@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Calculate Arithmetic Mean, Median, Mode, Range, Geometric Mean, Harmonic Mean, and Weighted Average instantly with custom dataset support.",
   alternates: {
-    canonical: "https://holycalculator.com/math/average-calculator",
+    canonical: "https://www.holycalculator.com/math/average-calculator",
   },
   openGraph: {
     title: "Average Calculator – Find Mean, Median, Mode & Weighted Average",
     description:
       "Free online Average & Statistics Calculator. Calculate mean, median, mode, range, geometric mean, harmonic mean, and weighted averages instantly.",
-    url: "https://holycalculator.com/math/average-calculator",
+    url: "https://www.holycalculator.com/math/average-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -58,7 +58,7 @@ export default function AverageCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — Average Calculator",
-    url: "https://holycalculator.com/math/average-calculator",
+    url: "https://www.holycalculator.com/math/average-calculator",
     applicationCategory: "EducationalApplication",
     operatingSystem: "All",
     description:

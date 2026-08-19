@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Generate lucky numbers for US lotteries (Powerball, Mega Millions, Cash4Life, Pick 3/4/5) and personal birthday numerology.",
   alternates: {
-    canonical: "https://holycalculator.com/spiritual/lucky-number-generator",
+    canonical: "https://www.holycalculator.com/spiritual/lucky-number-generator",
   },
   openGraph: {
     title: "US Lottery Lucky Number Generator – Powerball & Mega Millions",
     description:
       "Free random lucky number generator for US Powerball, Mega Millions, Cash4Life, Pick 3, Pick 4, Pick 5, and birthday numerology.",
-    url: "https://holycalculator.com/spiritual/lucky-number-generator",
+    url: "https://www.holycalculator.com/spiritual/lucky-number-generator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -52,7 +52,7 @@ export default function LuckyNumberGeneratorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — Lucky Number Generator",
-    url: "https://holycalculator.com/spiritual/lucky-number-generator",
+    url: "https://www.holycalculator.com/spiritual/lucky-number-generator",
     applicationCategory: "LifestyleApplication",
     operatingSystem: "All",
     description: "Generate lucky numbers for US lotteries and birthday numerology.",

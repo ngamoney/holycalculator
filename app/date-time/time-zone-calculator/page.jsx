@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Convert time across world UTC time zones and cities, compute time differences, and handle day rollover results instantly with standard offset arithmetic.",
   alternates: {
-    canonical: "https://holycalculator.com/date-time/time-zone-calculator",
+    canonical: "https://www.holycalculator.com/date-time/time-zone-calculator",
   },
   openGraph: {
     title: "Time Zone Calculator – Convert Time Between Time Zones & Cities",
     description:
       "Free online Time Zone Converter & World Clock Calculator. Convert time across world UTC offsets, compute time differences between cities, and handle day rollover instantly.",
-    url: "https://holycalculator.com/date-time/time-zone-calculator",
+    url: "https://www.holycalculator.com/date-time/time-zone-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -58,7 +58,7 @@ export default function TimeZoneCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — Time Zone Calculator",
-    url: "https://holycalculator.com/date-time/time-zone-calculator",
+    url: "https://www.holycalculator.com/date-time/time-zone-calculator",
     applicationCategory: "EducationalApplication",
     operatingSystem: "All",
     description:

@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Calculate your Life Path Number and Master Numbers (11, 22, 33) with authentic Pythagorean numerology step-by-step reduction breakdowns.",
   alternates: {
-    canonical: "https://holycalculator.com/spiritual/life-path-number-calculator",
+    canonical: "https://www.holycalculator.com/spiritual/life-path-number-calculator",
   },
   openGraph: {
     title: "Life Path Number Calculator – Find Your Numerology Chart & Master Number",
     description:
       "Free online Life Path Number Calculator. Discover your core numerology archetype, personality strengths, life lessons, and Master Numbers (11, 22, 33).",
-    url: "https://holycalculator.com/spiritual/life-path-number-calculator",
+    url: "https://www.holycalculator.com/spiritual/life-path-number-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -58,7 +58,7 @@ export default function LifePathNumberCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — Life Path Number Calculator",
-    url: "https://holycalculator.com/spiritual/life-path-number-calculator",
+    url: "https://www.holycalculator.com/spiritual/life-path-number-calculator",
     applicationCategory: "LifestyleApplication",
     operatingSystem: "All",
     description:

@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Calculate your ideal body weight using Devine, Robinson, Miller, and Hamwi formulas alongside the WHO Healthy BMI weight range.",
   alternates: {
-    canonical: "https://holycalculator.com/ideal-weight-calculator",
+    canonical: "https://www.holycalculator.com/ideal-weight-calculator",
   },
   openGraph: {
     title: "Ideal Weight Calculator – Devine, Robinson, Miller & Hamwi Formulas",
     description:
       "Compare ideal body weight side-by-side across 4 clinical formulas (Devine, Robinson, Miller, Hamwi) and WHO Healthy BMI weight ranges.",
-    url: "https://holycalculator.com/ideal-weight-calculator",
+    url: "https://www.holycalculator.com/ideal-weight-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -58,7 +58,7 @@ export default function IdealWeightCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — Ideal Weight Calculator",
-    url: "https://holycalculator.com/ideal-weight-calculator",
+    url: "https://www.holycalculator.com/ideal-weight-calculator",
     applicationCategory: "HealthApplication",
     operatingSystem: "All",
     description:

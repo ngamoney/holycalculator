@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Convert world currencies with live central bank exchange rates, manual exchange rate overrides, and popular currency pair reference tables.",
   alternates: {
-    canonical: "https://holycalculator.com/currency-calculator",
+    canonical: "https://www.holycalculator.com/currency-calculator",
   },
   openGraph: {
     title: "Currency Calculator – Convert Currencies with Live Exchange Rates",
     description:
       "Free online Currency Calculator. Convert USD, EUR, GBP, JPY, AUD, CAD, INR, and 150+ currencies with live real-time exchange rate feeds.",
-    url: "https://holycalculator.com/currency-calculator",
+    url: "https://www.holycalculator.com/currency-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -58,7 +58,7 @@ export default function CurrencyCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — Currency Calculator",
-    url: "https://holycalculator.com/currency-calculator",
+    url: "https://www.holycalculator.com/currency-calculator",
     applicationCategory: "FinanceApplication",
     operatingSystem: "All",
     description:

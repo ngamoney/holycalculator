@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Calculate basic percentages (X% of Y, X is what % of Y, X is Y% of what), percentage difference, and percentage increase or decrease instantly.",
   alternates: {
-    canonical: "https://holycalculator.com/math/percentage-calculator",
+    canonical: "https://www.holycalculator.com/math/percentage-calculator",
   },
   openGraph: {
     title: "Percentage Calculator – Find Percentages, Differences & Changes",
     description:
       "Free online Percentage Calculator. Compute basic percentages, percentage difference, and percentage increase or decrease with instant debounced results.",
-    url: "https://holycalculator.com/math/percentage-calculator",
+    url: "https://www.holycalculator.com/math/percentage-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -58,7 +58,7 @@ export default function PercentageCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — Percentage Calculator",
-    url: "https://holycalculator.com/math/percentage-calculator",
+    url: "https://www.holycalculator.com/math/percentage-calculator",
     applicationCategory: "EducationalApplication",
     operatingSystem: "All",
     description:

@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Perform high-precision scientific calculations, trigonometry, logarithms, exponents, factorials, and memory operations.",
   alternates: {
-    canonical: "https://holycalculator.com/math/scientific-calculator",
+    canonical: "https://www.holycalculator.com/math/scientific-calculator",
   },
   openGraph: {
     title: "Scientific Calculator – High-Precision Math & Trigonometry",
     description:
       "Free online scientific calculator with DEG/RAD modes, trig functions, logarithms, powers, roots, factorials, and memory controls.",
-    url: "https://holycalculator.com/math/scientific-calculator",
+    url: "https://www.holycalculator.com/math/scientific-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -52,7 +52,7 @@ export default function ScientificCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — Scientific Calculator",
-    url: "https://holycalculator.com/math/scientific-calculator",
+    url: "https://www.holycalculator.com/math/scientific-calculator",
     applicationCategory: "EducationalApplication",
     operatingSystem: "All",
     description: "High-precision scientific calculator with trigonometry and logarithms.",

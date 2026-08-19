@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Calculate population and sample standard deviation, variance, mean, sum, count, and 95% confidence interval margin of error. Free statistics calculator.",
   alternates: {
-    canonical: "https://holycalculator.com/math/standard-deviation-calculator",
+    canonical: "https://www.holycalculator.com/math/standard-deviation-calculator",
   },
   openGraph: {
     title: "Standard Deviation Calculator – Population & Sample SD, Variance, Mean",
     description:
       "Free online Standard Deviation Calculator. Compute population (σ) and sample (s) standard deviation, variance, mean, and 95% margin of error.",
-    url: "https://holycalculator.com/math/standard-deviation-calculator",
+    url: "https://www.holycalculator.com/math/standard-deviation-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -58,7 +58,7 @@ export default function StandardDeviationCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — Standard Deviation Calculator",
-    url: "https://holycalculator.com/math/standard-deviation-calculator",
+    url: "https://www.holycalculator.com/math/standard-deviation-calculator",
     applicationCategory: "EducationalApplication",
     operatingSystem: "All",
     description:

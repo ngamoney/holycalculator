@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Calculate your exact Body Mass Index (BMI), BMI Prime, Ponderal Index, and healthy weight range for adults, teens, and children. Free WHO & CDC clinical standards.",
   alternates: {
-    canonical: "https://holycalculator.com/bmi-calculator",
+    canonical: "https://www.holycalculator.com/bmi-calculator",
   },
   openGraph: {
     title: "BMI Calculator – Body Mass Index for Adults, Teens & Children",
     description:
       "Free Body Mass Index (BMI) calculator supporting US Customary and Metric units. Instant WHO adult classification, CDC child percentiles, BMI Prime, and Ponderal Index.",
-    url: "https://holycalculator.com/bmi-calculator",
+    url: "https://www.holycalculator.com/bmi-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -58,7 +58,7 @@ export default function BmiCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — BMI Calculator",
-    url: "https://holycalculator.com/bmi-calculator",
+    url: "https://www.holycalculator.com/bmi-calculator",
     applicationCategory: "HealthApplication",
     operatingSystem: "All",
     description:

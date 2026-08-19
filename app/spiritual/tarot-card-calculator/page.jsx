@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Draw 3-card past-present-future tarot spreads, single daily guidance cards, and Yes/No tarot readings.",
   alternates: {
-    canonical: "https://holycalculator.com/spiritual/tarot-card-calculator",
+    canonical: "https://www.holycalculator.com/spiritual/tarot-card-calculator",
   },
   openGraph: {
     title: "Tarot Card Reader & Calculator – Daily Draw & 3-Card Spread",
     description:
       "Free online Tarot Card Reading Calculator. Draw 3-card spreads, single daily cards, and instant Yes/No tarot readings.",
-    url: "https://holycalculator.com/spiritual/tarot-card-calculator",
+    url: "https://www.holycalculator.com/spiritual/tarot-card-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -52,7 +52,7 @@ export default function TarotCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — Tarot Card Reader",
-    url: "https://holycalculator.com/spiritual/tarot-card-calculator",
+    url: "https://www.holycalculator.com/spiritual/tarot-card-calculator",
     applicationCategory: "LifestyleApplication",
     operatingSystem: "All",
     description: "Draw 3-card tarot spreads and daily single card readings.",

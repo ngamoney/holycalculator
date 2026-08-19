@@ -22,13 +22,13 @@ export const metadata = {
     "compound interest loan",
   ],
   alternates: {
-    canonical: "https://holycalculator.com/loan-calculator",
+    canonical: "https://www.holycalculator.com/loan-calculator",
   },
   openGraph: {
     title: "Loan Calculator – Amortized Loans, Deferred Payments & Bonds",
     description:
       "Calculate periodic loan payments, total interest, maturity lump sums, and bond present values across 3 calculation modes.",
-    url: "https://holycalculator.com/loan-calculator",
+    url: "https://www.holycalculator.com/loan-calculator",
     type: "website",
     siteName: "Holy Calculator",
   },
@@ -65,7 +65,7 @@ export default function LoanCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Loan Calculator",
-    url: "https://holycalculator.com/loan-calculator",
+    url: "https://www.holycalculator.com/loan-calculator",
     applicationCategory: "FinanceApplication",
     operatingSystem: "All",
     offers: {

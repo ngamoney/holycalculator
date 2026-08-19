@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Calculate your maintenance calories, BMR, and daily calorie targets for weight loss or gain. Supports Mifflin-St Jeor, Harris-Benedict, and Katch-McArdle formulas with US and metric units.",
   alternates: {
-    canonical: "https://holycalculator.com/calorie-calculator",
+    canonical: "https://www.holycalculator.com/calorie-calculator",
   },
   openGraph: {
     title: "Calorie Calculator – Daily Calorie Needs & Weight Goals",
     description:
       "Free calorie calculator with BMR estimation and weight loss/gain targets. Supports three BMR formulas, US and metric units, and live results.",
-    url: "https://holycalculator.com/calorie-calculator",
+    url: "https://www.holycalculator.com/calorie-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -58,7 +58,7 @@ export default function CalorieCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — Calorie Calculator",
-    url: "https://holycalculator.com/calorie-calculator",
+    url: "https://www.holycalculator.com/calorie-calculator",
     applicationCategory: "HealthApplication",
     operatingSystem: "All",
     description:

@@ -12,13 +12,13 @@ export const metadata = {
   description:
     "Calculate your weighted grade average and find out exactly what score you need on your final exam. Free, instant, and works with percentages, points, or letter grades.",
   alternates: {
-    canonical: "https://holycalculator.com/grade-calculator",
+    canonical: "https://www.holycalculator.com/grade-calculator",
   },
   openGraph: {
     title: "Grade Calculator – Weighted Average & Final Grade Needed",
     description:
       "Calculate your weighted grade average and find out exactly what score you need on your final exam. Free, instant, and works with percentages, points, or letter grades.",
-    url: "https://holycalculator.com/grade-calculator",
+    url: "https://www.holycalculator.com/grade-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -82,7 +82,7 @@ export default function GradeCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Holy Calculator - Grade Calculator",
-    "url": "https://holycalculator.com/grade-calculator",
+    "url": "https://www.holycalculator.com/grade-calculator",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "All",
     "offers": {

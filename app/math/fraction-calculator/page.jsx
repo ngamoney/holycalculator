@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Add, subtract, multiply, divide, simplify fractions, convert decimals to fractions, and solve mixed numbers with instant step-by-step results.",
   alternates: {
-    canonical: "https://holycalculator.com/math/fraction-calculator",
+    canonical: "https://www.holycalculator.com/math/fraction-calculator",
   },
   openGraph: {
     title: "Fraction Calculator – Add, Subtract, Multiply, Divide & Simplify Fractions",
     description:
       "Free online Fraction Calculator. Perform basic fraction arithmetic, mixed numbers calculations, fraction simplification, and decimal-to-fraction conversions.",
-    url: "https://holycalculator.com/math/fraction-calculator",
+    url: "https://www.holycalculator.com/math/fraction-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -58,7 +58,7 @@ export default function FractionCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — Fraction Calculator",
-    url: "https://holycalculator.com/math/fraction-calculator",
+    url: "https://www.holycalculator.com/math/fraction-calculator",
     applicationCategory: "EducationalApplication",
     operatingSystem: "All",
     description:

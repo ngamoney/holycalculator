@@ -7,13 +7,13 @@ export const metadata = {
   description:
     "Read the Terms of Service for using Holy Calculator and its online calculation tools.",
   alternates: {
-    canonical: "https://holycalculator.com/terms-of-service",
+    canonical: "https://www.holycalculator.com/terms-of-service",
   },
   openGraph: {
     title: "Terms of Service | Holy Calculator",
     description:
       "Holy Calculator Terms of Service — terms of site usage, estimates disclaimer, and liability limits.",
-    url: "https://holycalculator.com/terms-of-service",
+    url: "https://www.holycalculator.com/terms-of-service",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",

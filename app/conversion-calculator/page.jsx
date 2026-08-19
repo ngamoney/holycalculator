@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Convert units across Length, Weight, Temperature, Area, Volume, Time, and Speed instantly. Free metric to imperial converter.",
   alternates: {
-    canonical: "https://holycalculator.com/conversion-calculator",
+    canonical: "https://www.holycalculator.com/conversion-calculator",
   },
   openGraph: {
     title: "Unit Conversion Calculator – Length, Weight, Temperature & More",
     description:
       "Free online Unit Conversion Calculator. Convert centimeters to inches, kilograms to pounds, Celsius to Fahrenheit, liters to gallons, and more.",
-    url: "https://holycalculator.com/conversion-calculator",
+    url: "https://www.holycalculator.com/conversion-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -58,7 +58,7 @@ export default function ConversionCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — Unit Conversion Calculator",
-    url: "https://holycalculator.com/conversion-calculator",
+    url: "https://www.holycalculator.com/conversion-calculator",
     applicationCategory: "UtilitiesApplication",
     operatingSystem: "All",
     description:

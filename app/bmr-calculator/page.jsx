@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Calculate your Basal Metabolic Rate (BMR) using Mifflin-St Jeor, Harris-Benedict, and Katch-McArdle formulas, plus daily calorie needs by activity level.",
   alternates: {
-    canonical: "https://holycalculator.com/bmr-calculator",
+    canonical: "https://www.holycalculator.com/bmr-calculator",
   },
   openGraph: {
     title: "BMR Calculator – Basal Metabolic Rate",
     description:
       "Calculate your baseline resting metabolic rate (BMR) with 3 clinical formulas (Mifflin-St Jeor, Harris-Benedict, Katch-McArdle) and view daily calorie needs across 6 activity levels.",
-    url: "https://holycalculator.com/bmr-calculator",
+    url: "https://www.holycalculator.com/bmr-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -58,7 +58,7 @@ export default function BmrCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — BMR Calculator",
-    url: "https://holycalculator.com/bmr-calculator",
+    url: "https://www.holycalculator.com/bmr-calculator",
     applicationCategory: "HealthApplication",
     operatingSystem: "All",
     description:

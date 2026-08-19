@@ -7,13 +7,13 @@ export const metadata = {
   description:
     "Important disclaimers regarding financial, health, and general calculation estimates on Holy Calculator.",
   alternates: {
-    canonical: "https://holycalculator.com/disclaimer",
+    canonical: "https://www.holycalculator.com/disclaimer",
   },
   openGraph: {
     title: "Disclaimer | Holy Calculator",
     description:
       "General, financial, and health disclaimers for online tools on Holy Calculator.",
-    url: "https://holycalculator.com/disclaimer",
+    url: "https://www.holycalculator.com/disclaimer",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",

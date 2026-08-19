@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Calculate monthly mortgage payments, property taxes, insurance, PMI, extra payments, and full amortization schedules for Conventional, FHA, VA, & USDA loans.",
   alternates: {
-    canonical: "https://holycalculator.com/mortgage-calculator",
+    canonical: "https://www.holycalculator.com/mortgage-calculator",
   },
   openGraph: {
     title: "Mortgage Calculator – Monthly Payment, Taxes & Amortization",
     description:
       "Free mortgage payment calculator with PMI LTV cancellation tracking, extra payments, biweekly comparison, and full 360-month amortization schedules.",
-    url: "https://holycalculator.com/mortgage-calculator",
+    url: "https://www.holycalculator.com/mortgage-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -58,7 +58,7 @@ export default function MortgageCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — Mortgage Calculator",
-    url: "https://holycalculator.com/mortgage-calculator",
+    url: "https://www.holycalculator.com/mortgage-calculator",
     applicationCategory: "FinancialApplication",
     operatingSystem: "All",
     description:

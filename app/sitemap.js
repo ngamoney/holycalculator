@@ -1,7 +1,7 @@
 import calculators from "@/data/calculators.json";
 
 export default function sitemap() {
-  const baseUrl = "https://holycalculator.com";
+  const baseUrl = "https://www.holycalculator.com";
   const lastDeployDate = new Date("2026-08-19");
 
   // Core static trust and hub pages

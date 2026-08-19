@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Calculate your estimated due date, gestational age, and trimester timeline using LMP, conception date, IVF transfer, or ultrasound scan. Clinical methods aligned with ACOG.",
   alternates: {
-    canonical: "https://holycalculator.com/pregnancy-calculator",
+    canonical: "https://www.holycalculator.com/pregnancy-calculator",
   },
   openGraph: {
     title: "Pregnancy & Due Date Calculator – Estimate Your Due Date",
     description:
       "Free clinical pregnancy due date calculator with 5 calculation methods (LMP, conception, IVF, ultrasound, known due date). Live trimester timeline and gestational age tracking.",
-    url: "https://holycalculator.com/pregnancy-calculator",
+    url: "https://www.holycalculator.com/pregnancy-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -58,7 +58,7 @@ export default function PregnancyCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — Pregnancy Due Date Calculator",
-    url: "https://holycalculator.com/pregnancy-calculator",
+    url: "https://www.holycalculator.com/pregnancy-calculator",
     applicationCategory: "HealthApplication",
     operatingSystem: "All",
     description:

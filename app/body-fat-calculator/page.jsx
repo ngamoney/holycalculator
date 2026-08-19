@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Calculate body fat percentage, fat mass, and lean body mass using the U.S. Navy Method and BMI Method with ACE reference categories.",
   alternates: {
-    canonical: "https://holycalculator.com/body-fat-calculator",
+    canonical: "https://www.holycalculator.com/body-fat-calculator",
   },
   openGraph: {
     title: "Body Fat Calculator – U.S. Navy Method & BMI Method",
     description:
       "Free online Body Fat Calculator. Estimate body fat percentage, fat mass, and lean mass with the U.S. Navy tape measure formula and BMI method.",
-    url: "https://holycalculator.com/body-fat-calculator",
+    url: "https://www.holycalculator.com/body-fat-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -58,7 +58,7 @@ export default function BodyFatCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — Body Fat Calculator",
-    url: "https://holycalculator.com/body-fat-calculator",
+    url: "https://www.holycalculator.com/body-fat-calculator",
     applicationCategory: "HealthApplication",
     operatingSystem: "All",
     description:

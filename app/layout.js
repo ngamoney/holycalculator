@@ -21,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://holycalculator.com"),
+  metadataBase: new URL("https://www.holycalculator.com"),
   title: "Holy Calculator — Every number, one place",
   description:
     "30+ free calculators — mortgage to BMI to life path number. No sign-in, no downloads, no cost. Every result shows the formula behind it.",
@@ -35,7 +35,7 @@ export const metadata = {
     title: "Holy Calculator — Every number, one place",
     description:
       "30+ free calculators — mortgage to BMI to life path number. No sign-in, no downloads, no cost. Every result shows the formula behind it.",
-    url: "https://holycalculator.com",
+    url: "https://www.holycalculator.com",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",

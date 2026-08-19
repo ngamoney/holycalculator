@@ -12,13 +12,13 @@ export const metadata = {
   description:
     "Calculate semester and cumulative Grade Point Average (GPA) instantly. Supports 4.0 scale, letter grades, percentages, prior GPA carryover, and target GPA planning.",
   alternates: {
-    canonical: "https://holycalculator.com/gpa-calculator",
+    canonical: "https://www.holycalculator.com/gpa-calculator",
   },
   openGraph: {
     title: "GPA Calculator – Calculate Your Grade Point Average",
     description:
       "Free college and high school GPA calculator. Calculate cumulative GPA, weighted grades, and goal GPA forecasts.",
-    url: "https://holycalculator.com/gpa-calculator",
+    url: "https://www.holycalculator.com/gpa-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -56,7 +56,7 @@ export default function GPACalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — GPA Calculator",
-    url: "https://holycalculator.com/gpa-calculator",
+    url: "https://www.holycalculator.com/gpa-calculator",
     applicationCategory: "EducationalApplication",
     operatingSystem: "All",
     description:

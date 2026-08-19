@@ -12,13 +12,13 @@ export const metadata = {
   description:
     "Roll virtual dice online — standard 6-sided or any custom polyhedral die (d4, d6, d8, d10, d12, d20). Cryptographically random. Perfect for D&D, Pathfinder, and tabletop RPGs.",
   alternates: {
-    canonical: "https://holycalculator.com/dice-roller",
+    canonical: "https://www.holycalculator.com/dice-roller",
   },
   openGraph: {
     title: "Dice Roller – Free Virtual Dice (d4, d6, d8, d10, d12, d20)",
     description:
       "Free virtual dice roller for tabletop RPGs. Roll any polyhedral die with cryptographically secure randomness. Supports d4, d6, d8, d10, d12, d20, and custom-sided dice.",
-    url: "https://holycalculator.com/dice-roller",
+    url: "https://www.holycalculator.com/dice-roller",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -55,7 +55,7 @@ export default function DiceRollerPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Holy Calculator – Dice Roller",
-    "url": "https://holycalculator.com/dice-roller",
+    "url": "https://www.holycalculator.com/dice-roller",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
     "offers": {

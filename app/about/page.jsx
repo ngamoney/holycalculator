@@ -7,13 +7,13 @@ export const metadata = {
   description:
     "Discover Holy Calculator's mission to provide fast, transparent, and neutral online calculation tools without popups or sales funnels.",
   alternates: {
-    canonical: "https://holycalculator.com/about",
+    canonical: "https://www.holycalculator.com/about",
   },
   openGraph: {
     title: "About Holy Calculator — Fast, Neutral Online Calculators",
     description:
       "Holy Calculator is a free collection of fast, accurate calculators spanning finance, health, math, and everyday tools.",
-    url: "https://holycalculator.com/about",
+    url: "https://www.holycalculator.com/about",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",

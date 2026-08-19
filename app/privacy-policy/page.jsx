@@ -7,13 +7,13 @@ export const metadata = {
   description:
     "Learn about how Holy Calculator protects your privacy, handles information, cookies, analytics, local storage, and advertising.",
   alternates: {
-    canonical: "https://holycalculator.com/privacy-policy",
+    canonical: "https://www.holycalculator.com/privacy-policy",
   },
   openGraph: {
     title: "Privacy Policy | Holy Calculator",
     description:
       "Holy Calculator Privacy Policy — details on data privacy, cookies, local storage, and user rights.",
-    url: "https://holycalculator.com/privacy-policy",
+    url: "https://www.holycalculator.com/privacy-policy",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",

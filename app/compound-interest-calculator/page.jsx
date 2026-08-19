@@ -22,13 +22,13 @@ export const metadata = {
     "interest rate converter",
   ],
   alternates: {
-    canonical: "https://holycalculator.com/compound-interest-calculator",
+    canonical: "https://www.holycalculator.com/compound-interest-calculator",
   },
   openGraph: {
     title: "Compound Interest Calculator – See How Your Money Grows",
     description:
       "Calculate your future investment value, total interest earned, Rule of 72 doubling time, and convert interest rates across compounding frequencies.",
-    url: "https://holycalculator.com/compound-interest-calculator",
+    url: "https://www.holycalculator.com/compound-interest-calculator",
     type: "website",
     siteName: "Holy Calculator",
   },
@@ -65,7 +65,7 @@ export default function CompoundInterestCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Compound Interest Calculator",
-    url: "https://holycalculator.com/compound-interest-calculator",
+    url: "https://www.holycalculator.com/compound-interest-calculator",
     applicationCategory: "FinanceApplication",
     operatingSystem: "All",
     offers: {

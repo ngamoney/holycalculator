@@ -7,13 +7,13 @@ export const metadata = {
   description:
     "Get in touch with Holy Calculator for feedback, calculator suggestions, corrections, or bug reports.",
   alternates: {
-    canonical: "https://holycalculator.com/contact",
+    canonical: "https://www.holycalculator.com/contact",
   },
   openGraph: {
     title: "Contact Us | Holy Calculator",
     description:
       "Contact Holy Calculator — reach out for questions, calculation feedback, or feature requests.",
-    url: "https://holycalculator.com/contact",
+    url: "https://www.holycalculator.com/contact",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",

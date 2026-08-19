@@ -12,13 +12,13 @@ export const metadata = {
   description:
     "Calculate your exact age in years, months, days, hours, and seconds from date of birth. Find your age on any specific date with instant shareable links.",
   alternates: {
-    canonical: "https://holycalculator.com/age-calculator",
+    canonical: "https://www.holycalculator.com/age-calculator",
   },
   openGraph: {
     title: "Age Calculator – Find Your Exact Age in Years, Months & Days",
     description:
       "Calculate your exact chronological age in years, months, days, hours, and seconds. Free, instant, and supports calculating age on any past or future date.",
-    url: "https://holycalculator.com/age-calculator",
+    url: "https://www.holycalculator.com/age-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -55,7 +55,7 @@ export default function AgeCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Holy Calculator - Age Calculator",
-    "url": "https://holycalculator.com/age-calculator",
+    "url": "https://www.holycalculator.com/age-calculator",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
     "offers": {

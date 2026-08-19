@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Calculate your personal Angel Number by birth date or name, and decode repeating number sequences (111, 222, 333, 444, 555, 777, 888, 1111, 1212).",
   alternates: {
-    canonical: "https://holycalculator.com/spiritual/angel-number-calculator",
+    canonical: "https://www.holycalculator.com/spiritual/angel-number-calculator",
   },
   openGraph: {
     title: "Angel Number Calculator – Calculate Personal Angel Number & Decode Sequences",
     description:
       "Free online Angel Number Calculator. Calculate your Birthday & Name Angel Number, and decode repeating sequences (111, 222, 333, 444, 555, 777, 888, 1111) for spiritual, love, and career guidance.",
-    url: "https://holycalculator.com/spiritual/angel-number-calculator",
+    url: "https://www.holycalculator.com/spiritual/angel-number-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -58,7 +58,7 @@ export default function AngelNumberCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — Angel Number Calculator",
-    url: "https://holycalculator.com/spiritual/angel-number-calculator",
+    url: "https://www.holycalculator.com/spiritual/angel-number-calculator",
     applicationCategory: "LifestyleApplication",
     operatingSystem: "All",
     description:

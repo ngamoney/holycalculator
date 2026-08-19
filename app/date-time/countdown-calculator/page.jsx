@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Create live ticking countdown timers for holidays, events, weddings, and vacations with total hours, minutes, and seconds breakdowns.",
   alternates: {
-    canonical: "https://holycalculator.com/date-time/countdown-calculator",
+    canonical: "https://www.holycalculator.com/date-time/countdown-calculator",
   },
   openGraph: {
     title: "Countdown Calculator – Live Ticking Event Timer",
     description:
       "Free online Live Countdown Calculator. Track exact remaining days, hours, minutes, and seconds until any holiday, vacation, or custom event.",
-    url: "https://holycalculator.com/date-time/countdown-calculator",
+    url: "https://www.holycalculator.com/date-time/countdown-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -58,7 +58,7 @@ export default function CountdownCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — Countdown Calculator",
-    url: "https://holycalculator.com/date-time/countdown-calculator",
+    url: "https://www.holycalculator.com/date-time/countdown-calculator",
     applicationCategory: "UtilityApplication",
     operatingSystem: "All",
     description:

@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Calculate sales tax amounts, original before-tax prices, and final totals with 50-state tax rate lookups and state tax rate reference tables.",
   alternates: {
-    canonical: "https://holycalculator.com/sales-tax-calculator",
+    canonical: "https://www.holycalculator.com/sales-tax-calculator",
   },
   openGraph: {
     title: "Sales Tax Calculator – Calculate Tax Rate, Before & After Tax Price",
     description:
       "Free online Sales Tax Calculator. Solve for price before tax, tax rate, or final price with 50-state U.S. sales tax rate lookups.",
-    url: "https://holycalculator.com/sales-tax-calculator",
+    url: "https://www.holycalculator.com/sales-tax-calculator",
     siteName: "Holy Calculator",
     locale: "en_US",
     type: "website",
@@ -58,7 +58,7 @@ export default function SalesTaxCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Holy Calculator — Sales Tax Calculator",
-    url: "https://holycalculator.com/sales-tax-calculator",
+    url: "https://www.holycalculator.com/sales-tax-calculator",
     applicationCategory: "FinancialApplication",
     operatingSystem: "All",
     description:
