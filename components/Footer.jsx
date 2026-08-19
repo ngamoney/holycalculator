@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer>
@@ -15,19 +17,19 @@ export default function Footer() {
             <h5>Finance</h5>
             <ul>
               <li>
-                <a href="/mortgage-calculator">Mortgage</a>
+                <Link href="/mortgage-calculator">Mortgage</Link>
               </li>
               <li>
-                <a href="/retirement-calculator">Retirement</a>
+                <Link href="/retirement-calculator">Retirement</Link>
               </li>
               <li>
-                <a href="/loan-calculator">Loan Calculator</a>
+                <Link href="/loan-calculator">Loan Calculator</Link>
               </li>
               <li>
-                <a href="/budget-calculator">Budget Calculator</a>
+                <Link href="/budget-calculator">Budget Calculator</Link>
               </li>
               <li>
-                <a href="/compound-interest-calculator">Compound Interest</a>
+                <Link href="/compound-interest-calculator">Compound Interest</Link>
               </li>
             </ul>
           </div>
@@ -35,13 +37,13 @@ export default function Footer() {
             <h5>Health</h5>
             <ul>
               <li>
-                <a href="/calorie-calculator">Calorie</a>
+                <Link href="/calorie-calculator">Calorie</Link>
               </li>
               <li>
-                <a href="/pregnancy-calculator">Pregnancy Due Date</a>
+                <Link href="/pregnancy-calculator">Pregnancy Due Date</Link>
               </li>
               <li>
-                <a href="/#health">BMI</a>
+                <Link href="/bmi-calculator">BMI</Link>
               </li>
             </ul>
           </div>
@@ -49,13 +51,13 @@ export default function Footer() {
             <h5>Everyday</h5>
             <ul>
               <li>
-                <a href="#">Age</a>
+                <Link href="/age-calculator">Age</Link>
               </li>
               <li>
-                <a href="#">Percentage</a>
+                <Link href="/math/percentage-calculator">Percentage</Link>
               </li>
               <li>
-                <a href="#">Unit converter</a>
+                <Link href="/conversion-calculator">Unit converter</Link>
               </li>
             </ul>
           </div>
@@ -63,13 +65,33 @@ export default function Footer() {
             <h5>Spiritual</h5>
             <ul>
               <li>
-                <a href="#">Life path number</a>
+                <Link href="/spiritual/life-path-calculator">Life path number</Link>
               </li>
               <li>
-                <a href="#">Zodiac match</a>
+                <Link href="/spiritual/zodiac-calculator">Zodiac match</Link>
               </li>
               <li>
-                <a href="#">Angel numbers</a>
+                <Link href="/spiritual/angel-number-calculator">Angel numbers</Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5>Trust &amp; Legal</h5>
+            <ul>
+              <li>
+                <Link href="/about">About Us</Link>
+              </li>
+              <li>
+                <Link href="/contact">Contact Us</Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link href="/terms-of-service">Terms of Service</Link>
+              </li>
+              <li>
+                <Link href="/disclaimer">Disclaimer</Link>
               </li>
             </ul>
           </div>
@@ -82,3 +104,4 @@ export default function Footer() {
     </footer>
   );
 }
+

@@ -769,12 +769,12 @@ footer {
 }
 .footer-top {
   display: grid;
-  grid-template-columns: 1.4fr repeat(4, 1fr);
-  gap: 28px;
+  grid-template-columns: 1.2fr repeat(5, 1fr);
+  gap: 24px;
   padding-bottom: 36px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .footer-top {
     grid-template-columns: 1fr 1fr;
   }
@@ -817,3 +817,95 @@ footer li a:hover {
   flex-wrap: wrap;
   gap: 10px;
 }
+
+/* ==========================================================================
+   STATIC LEGAL & TRUST PAGES (PRIVACY, TERMS, DISCLAIMER, ABOUT, CONTACT)
+   ========================================================================== */
+.static-page-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 28px 80px;
+}
+.static-page-header {
+  padding: 24px 0 32px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 36px;
+}
+.static-page-header h1 {
+  font-family: var(--head);
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+.static-page-header .last-updated {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--gold-deep);
+  font-weight: 600;
+}
+.static-prose {
+  font-family: var(--body);
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--ink);
+}
+.static-prose h2 {
+  font-family: var(--head);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-top: 36px;
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+.static-prose h3 {
+  font-family: var(--head);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+.static-prose p {
+  margin-bottom: 18px;
+  color: #2B2F3A;
+}
+.static-prose ul, .static-prose ol {
+  margin-bottom: 20px;
+  padding-left: 24px;
+}
+.static-prose li {
+  margin-bottom: 8px;
+  color: #2B2F3A;
+}
+.static-prose strong {
+  color: var(--ink);
+}
+.static-prose a {
+  color: var(--gold-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+}
+.static-prose a:hover {
+  color: var(--ink);
+}
+.contact-info-card {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin: 24px 0 32px;
+  box-shadow: 0 1px 3px rgba(20, 23, 31, 0.04);
+}
+.contact-info-card p {
+  margin-bottom: 10px;
+}
+.contact-info-card p:last-child {
+  margin-bottom: 0;
+}
+
