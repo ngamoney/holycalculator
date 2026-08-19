@@ -1,4 +1,5 @@
 import { Sora, Inter, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const sora = Sora({
@@ -61,6 +62,25 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${sora.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
+      <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-D6P3QM64S3"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-D6P3QM64S3');
+            `,
+          }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );
