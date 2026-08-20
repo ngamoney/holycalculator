@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
+import { loadHistoryFromStorage, saveHistoryToStorage, syncParamsToUrl } from "@/lib/calculations/retentionHelpers";
 import {
   calculateByLMP,
   calculateByConception,
@@ -12,6 +13,8 @@ import {
   addDays,
 } from "@/lib/calculations/pregnancy";
 import styles from "./DueDateCalculatorIsland.module.css";
+
+const STORAGE_KEY = "holycalc_duedate_history";
 
 // Helper to get today's date formatted as YYYY-MM-DD
 function getTodayString() {
@@ -48,6 +51,25 @@ export default function DueDateCalculatorIsland() {
   });
 
   const [toastMessage, setToastMessage] = useState(null);
+  const [history, setHistory] = useState([]);
+  const syncTimerRef = useRef(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("method")) setMethod(params.get("method"));
+    if (params.has("lmp")) setLmpDate(params.get("lmp"));
+    if (params.has("cycle")) setCycleLength(parseInt(params.get("cycle"), 10) || 28);
+    setHistory(loadHistoryFromStorage(STORAGE_KEY));
+  }, []);
+
+  useEffect(() => {
+    if (syncTimerRef.current) clearTimeout(syncTimerRef.current);
+    syncTimerRef.current = setTimeout(() => {
+      syncParamsToUrl({ method, lmp: lmpDate, cycle: cycleLength });
+    }, 300);
+    return () => clearTimeout(syncTimerRef.current);
+  }, [method, lmpDate, cycleLength]);
 
   // Compute calculated due date based on selected method
   const calculationResult = useMemo(() => {

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
+import { loadHistoryFromStorage, saveHistoryToStorage, syncParamsToUrl } from "@/lib/calculations/retentionHelpers";
 import {
   calculateCompoundGrowth,
   convertInterestRate,
@@ -8,6 +9,8 @@ import {
   COMPOUND_FREQUENCIES,
 } from "@/lib/calculations/compoundInterest";
 import styles from "./CompoundInterestCalculatorIsland.module.css";
+
+const STORAGE_KEY = "holycalc_compound_history";
 
 export default function CompoundInterestCalculatorIsland() {
   // Primary Growth Calculator State
@@ -28,6 +31,33 @@ export default function CompoundInterestCalculatorIsland() {
 
   const [isScheduleExpanded, setIsScheduleExpanded] = useState(false);
   const [toastMessage, setToastMessage] = useState(null);
+  const [history, setHistory] = useState([]);
+  const syncTimerRef = useRef(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("initial")) setInitialInvestment(parseFloat(params.get("initial")) || 10000);
+    if (params.has("rate")) setInterestRate(parseFloat(params.get("rate")) || 7.0);
+    if (params.has("years")) setInvestmentYears(parseInt(params.get("years"), 10) || 10);
+    if (params.has("contrib")) setAdditionalContribution(parseFloat(params.get("contrib")) || 100);
+
+    setHistory(loadHistoryFromStorage(STORAGE_KEY));
+  }, []);
+
+  useEffect(() => {
+    if (syncTimerRef.current) clearTimeout(syncTimerRef.current);
+    syncTimerRef.current = setTimeout(() => {
+      syncParamsToUrl({
+        initial: initialInvestment,
+        rate: interestRate,
+        years: investmentYears,
+        contrib: additionalContribution,
+      });
+    }, 300);
+    return () => clearTimeout(syncTimerRef.current);
+  }, [initialInvestment, interestRate, investmentYears, additionalContribution]);
+
 
   // Recalculate Primary Growth
   const growthResult = useMemo(() => {

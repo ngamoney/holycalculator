@@ -897,3 +897,58 @@ footer li a:hover {
   margin-bottom: 0;
 }
 
+
+/* ==========================================================================
+   SHARED RETENTION & HISTORY STYLES
+   ========================================================================== */
+.history-box {
+  margin-top: 24px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+.history-title {
+  font-family: var(--head);
+  font-size: 13.5px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.history-clear-btn {
+  background: transparent;
+  border: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-60);
+  cursor: pointer;
+  text-decoration: underline;
+}
+.history-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0;
+  margin: 0;
+}
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+.history-item:hover {
+  background: rgba(201, 153, 47, 0.08);
+}

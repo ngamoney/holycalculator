@@ -1,12 +1,19 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import {
   calculateMortgage,
   formatCurrency,
   formatCurrencyCents,
 } from "@/lib/calculations/mortgage";
+import {
+  loadHistoryFromStorage,
+  saveHistoryToStorage,
+  syncParamsToUrl,
+} from "@/lib/calculations/retentionHelpers";
 import styles from "./MortgageCalculatorIsland.module.css";
+
+const STORAGE_KEY = "holycalc_mortgage_history";
 
 export default function MortgageCalculatorIsland() {
   // Main Inputs
@@ -40,6 +47,47 @@ export default function MortgageCalculatorIsland() {
   const [scheduleView, setScheduleView] = useState("yearly"); // 'yearly' | 'monthly'
 
   const [toastMessage, setToastMessage] = useState(null);
+  const [history, setHistory] = useState([]);
+  const syncTimerRef = useRef(null);
+
+  // Load from URL and LocalStorage on mount
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("price")) setHomePrice(parseFloat(params.get("price")) || 400000);
+    if (params.has("down")) setDownPaymentValue(parseFloat(params.get("down")) || 20);
+    if (params.has("downtype")) setDownPaymentType(params.get("downtype"));
+    if (params.has("term")) setLoanTermYears(parseInt(params.get("term"), 10) || 30);
+    if (params.has("rate")) setInterestRate(parseFloat(params.get("rate")) || 6.5);
+    if (params.has("type")) setLoanType(params.get("type"));
+    if (params.has("tax")) setPropertyTaxValue(parseFloat(params.get("tax")) || 1.2);
+    if (params.has("ins")) setHomeInsurance(parseFloat(params.get("ins")) || 1500);
+    if (params.has("pmi")) setPmiRate(parseFloat(params.get("pmi")) || 0.5);
+    if (params.has("hoa")) setHoaFee(parseFloat(params.get("hoa")) || 0);
+
+    setHistory(loadHistoryFromStorage(STORAGE_KEY));
+  }, []);
+
+  // Sync state to URL params (debounced ~300ms)
+  useEffect(() => {
+    if (syncTimerRef.current) clearTimeout(syncTimerRef.current);
+    syncTimerRef.current = setTimeout(() => {
+      syncParamsToUrl({
+        price: homePrice,
+        down: downPaymentValue,
+        downtype: downPaymentType,
+        term: loanTermYears,
+        rate: interestRate,
+        type: loanType,
+        tax: propertyTaxValue,
+        ins: homeInsurance,
+        pmi: pmiRate,
+        hoa: hoaFee,
+      });
+    }, 300);
+    return () => clearTimeout(syncTimerRef.current);
+  }, [homePrice, downPaymentValue, downPaymentType, loanTermYears, interestRate, loanType, propertyTaxValue, homeInsurance, pmiRate, hoaFee]);
+
 
   // Recalculate live
   const result = useMemo(() => {
@@ -980,6 +1028,44 @@ export default function MortgageCalculatorIsland() {
             </div>
           )}
         </div>
+
+        {/* Recent Calculations History */}
+        {history.length > 0 && (
+          <div className="history-box">
+            <div className="history-title">
+              <span>Recent Mortgage Calculations</span>
+              <button
+                type="button"
+                className="history-clear-btn"
+                onClick={() => {
+                  localStorage.removeItem(STORAGE_KEY);
+                  setHistory([]);
+                }}
+              >
+                Clear History
+              </button>
+            </div>
+            <ul className="history-list">
+              {history.map((h) => (
+                <li
+                  key={h.id}
+                  className="history-item"
+                  onClick={() => {
+                    if (h.price) setHomePrice(h.price);
+                    if (h.down) setDownPaymentValue(h.down);
+                    if (h.rate) setInterestRate(h.rate);
+                    if (h.term) setLoanTermYears(h.term);
+                  }}
+                >
+                  <span>
+                    {formatCurrency(h.price)} Home — {h.down}% Down @ {h.rate}% ({h.term} yr)
+                  </span>
+                  <strong style={{ color: "var(--ink)" }}>{formatCurrency(h.monthly)}/mo</strong>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {/* Financial Disclaimer Callout */}
         <div className={styles.disclaimerBox}>

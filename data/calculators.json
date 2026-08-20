@@ -99,6 +99,17 @@
     "icon": "🏠"
   },
   {
+    "id": "auto-loan-calculator",
+    "name": "Auto Loan Calculator",
+    "slug": "auto-loan-calculator",
+    "category": "finance",
+    "categoryName": "Finance",
+    "url": "/auto-loan-calculator",
+    "description": "Calculate monthly car payments, total interest, sales tax, trade-in allowances, and full loan amortization schedules.",
+    "featured": true,
+    "icon": "🚗"
+  },
+  {
     "id": "retirement-calculator",
     "name": "Retirement Calculator",
     "slug": "retirement-calculator",

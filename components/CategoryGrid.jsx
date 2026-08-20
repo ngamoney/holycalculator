@@ -22,6 +22,7 @@ export default function CategoryGrid() {
             </div>
             <div className="key-links">
               <Link href="/mortgage-calculator">Mortgage calculator</Link>
+              <Link href="/auto-loan-calculator">Auto loan calculator</Link>
               <Link href="/retirement-calculator">Retirement calculator</Link>
               <Link href="/loan-calculator">Loan calculator</Link>
               <Link href="/compound-interest-calculator">Compound interest</Link>

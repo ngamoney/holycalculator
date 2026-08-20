@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
+import { loadHistoryFromStorage, saveHistoryToStorage, syncParamsToUrl } from "@/lib/calculations/retentionHelpers";
 import {
   calculateRetirementNeeds,
   calculateSavingsPlan,
@@ -9,6 +10,8 @@ import {
   formatCurrency,
 } from "@/lib/calculations/retirement";
 import styles from "./RetirementCalculatorIsland.module.css";
+
+const STORAGE_KEY = "holycalc_retirement_history";
 
 export default function RetirementCalculatorIsland() {
   const [activeMode, setActiveMode] = useState("needs"); // 'needs' | 'savings_plan' | 'withdrawal' | 'drawdown'
@@ -28,6 +31,36 @@ export default function RetirementCalculatorIsland() {
   const [needsSavings, setNeedsSavings] = useState(50000);
   const [needsFutureSavingsMode, setNeedsFutureSavingsMode] = useState("percent"); // 'percent' | 'amount'
   const [needsFutureSavingsVal, setNeedsFutureSavingsVal] = useState(10);
+
+  const [history, setHistory] = useState([]);
+  const syncTimerRef = useRef(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("age")) setNeedsAge(parseInt(params.get("age"), 10) || 30);
+    if (params.has("retireAge")) setNeedsRetireAge(parseInt(params.get("retireAge"), 10) || 67);
+    if (params.has("income")) setNeedsIncome(parseFloat(params.get("income")) || 80000);
+    if (params.has("savings")) setNeedsSavings(parseFloat(params.get("savings")) || 50000);
+    if (params.has("return")) setNeedsReturnWork(parseFloat(params.get("return")) || 7.0);
+
+    setHistory(loadHistoryFromStorage(STORAGE_KEY));
+  }, []);
+
+  useEffect(() => {
+    if (syncTimerRef.current) clearTimeout(syncTimerRef.current);
+    syncTimerRef.current = setTimeout(() => {
+      syncParamsToUrl({
+        age: needsAge,
+        retireAge: needsRetireAge,
+        income: needsIncome,
+        savings: needsSavings,
+        return: needsReturnWork,
+      });
+    }, 300);
+    return () => clearTimeout(syncTimerRef.current);
+  }, [needsAge, needsRetireAge, needsIncome, needsSavings, needsReturnWork]);
+
 
   // MODE B State
   const [bAge, setBAge] = useState(30);

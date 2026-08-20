@@ -1,9 +1,12 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
+import { loadHistoryFromStorage, saveHistoryToStorage, syncParamsToUrl } from "@/lib/calculations/retentionHelpers";
 import { INCOME_CONFIG, EXPENSE_CATEGORIES_CONFIG } from "@/lib/data/budgetConfig";
 import { calculateBudget, formatCurrency, formatCurrencyCents } from "@/lib/calculations/budgetMath";
 import styles from "./BudgetCalculatorIsland.module.css";
+
+const STORAGE_KEY = "holycalc_budget_history";
 
 export default function BudgetCalculatorIsland() {
   // Income State
@@ -43,6 +46,23 @@ export default function BudgetCalculatorIsland() {
   });
 
   const [toastMessage, setToastMessage] = useState(null);
+  const [history, setHistory] = useState([]);
+  const syncTimerRef = useRef(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("tax")) setTaxRate(parseFloat(params.get("tax")) || 20);
+    setHistory(loadHistoryFromStorage(STORAGE_KEY));
+  }, []);
+
+  useEffect(() => {
+    if (syncTimerRef.current) clearTimeout(syncTimerRef.current);
+    syncTimerRef.current = setTimeout(() => {
+      syncParamsToUrl({ tax: taxRate });
+    }, 300);
+    return () => clearTimeout(syncTimerRef.current);
+  }, [taxRate]);
 
   // Live Calculation Results
   const result = useMemo(() => {

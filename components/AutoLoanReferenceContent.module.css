@@ -1,0 +1,204 @@
+.refContentSection {
+  max-width: 1200px;
+  margin: 56px auto 0;
+  padding: 0 28px 60px;
+}
+
+.refProse {
+  max-width: 820px;
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+.refProse h2 {
+  font-family: var(--font-sora, sans-serif);
+  font-size: 24px;
+  font-weight: 700;
+  margin: 36px 0 16px;
+  letter-spacing: -0.02em;
+}
+
+.refProse h3 {
+  font-family: var(--font-sora, sans-serif);
+  font-size: 19px;
+  font-weight: 600;
+  margin: 28px 0 12px;
+}
+
+.refProse p {
+  font-size: 15px;
+  margin-bottom: 16px;
+  color: rgba(20, 23, 31, 0.85);
+}
+
+.refProse ul {
+  margin: 0 0 20px 24px;
+  font-size: 14.5px;
+}
+
+.refProse li {
+  margin-bottom: 8px;
+}
+
+.formulaCard {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 24px 0;
+}
+
+.formulaTitle {
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gold-deep);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.formulaMath {
+  font-family: var(--mono);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.formulaDesc {
+  font-size: 13px;
+  color: var(--ink-60);
+}
+
+.benchmarkCard {
+  background: rgba(201, 153, 47, 0.06);
+  border: 1px solid rgba(201, 153, 47, 0.25);
+  border-radius: 12px;
+  padding: 22px 26px;
+  margin: 32px 0;
+}
+
+.benchmarkCard h4 {
+  font-family: var(--font-sora, sans-serif);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--ink);
+}
+
+.benchmarkGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.benchmarkItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.benchmarkItem strong {
+  font-family: var(--mono);
+  color: var(--gold-deep);
+}
+
+.faqWrap {
+  margin-top: 48px;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faqItem {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.faqQuestion {
+  width: 100%;
+  padding: 16px 20px;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-sora, sans-serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.faqIcon {
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.faqIcon.open {
+  transform: rotate(45deg);
+}
+
+.faqAnswer {
+  padding: 0 20px 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-60);
+}
+
+.relatedCard {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 48px;
+}
+
+.relatedCard h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.relatedLink {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 14px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.relatedLink:hover {
+  border-color: var(--gold-deep);
+  transform: translateY(-2px);
+}
+
+.relatedLink strong {
+  font-family: var(--font-sora, sans-serif);
+  font-size: 13.5px;
+  margin-bottom: 4px;
+}
+
+.relatedLink span {
+  font-size: 12px;
+  color: var(--ink-60);
+}

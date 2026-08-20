@@ -20,6 +20,9 @@ export default function Footer() {
                 <Link href="/mortgage-calculator">Mortgage</Link>
               </li>
               <li>
+                <Link href="/auto-loan-calculator">Auto Loan</Link>
+              </li>
+              <li>
                 <Link href="/retirement-calculator">Retirement</Link>
               </li>
               <li>

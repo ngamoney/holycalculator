@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HeaderSearch from "@/components/HeaderSearch";
 
 export default function Header() {
   return (
@@ -7,7 +8,7 @@ export default function Header() {
         <Link href="/" className="logo">
           <span className="digit">holy</span>calculator
         </Link>
-        <div className="nav-search">🔍 Jump to a calculator…</div>
+        <HeaderSearch />
         <div className="nav-links">
           <Link href="/#math">Math</Link>
           <Link href="/#finance">Finance</Link>
@@ -21,3 +22,4 @@ export default function Header() {
     </header>
   );
 }
+

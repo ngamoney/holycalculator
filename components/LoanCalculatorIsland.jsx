@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
+import { loadHistoryFromStorage, saveHistoryToStorage, syncParamsToUrl } from "@/lib/calculations/retentionHelpers";
 import {
   calculateAmortizedLoan,
   calculateDeferredLoan,
@@ -11,6 +12,8 @@ import {
   PAYBACK_FREQUENCIES,
 } from "@/lib/calculations/compoundInterest";
 import styles from "./LoanCalculatorIsland.module.css";
+
+const STORAGE_KEY = "holycalc_loan_history";
 
 export default function LoanCalculatorIsland() {
   const [activeMode, setActiveMode] = useState("amortized"); // 'amortized' | 'deferred' | 'bond'
@@ -38,6 +41,31 @@ export default function LoanCalculatorIsland() {
   const [cCompound, setCCompound] = useState("annually");
 
   const [isScheduleExpanded, setIsScheduleExpanded] = useState(false);
+  const [history, setHistory] = useState([]);
+  const syncTimerRef = useRef(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("amount")) setAAmount(parseFloat(params.get("amount")) || 20000);
+    if (params.has("term")) setATermVal(parseInt(params.get("term"), 10) || 5);
+    if (params.has("rate")) setARate(parseFloat(params.get("rate")) || 6.0);
+
+    setHistory(loadHistoryFromStorage(STORAGE_KEY));
+  }, []);
+
+  useEffect(() => {
+    if (syncTimerRef.current) clearTimeout(syncTimerRef.current);
+    syncTimerRef.current = setTimeout(() => {
+      syncParamsToUrl({
+        amount: aAmount,
+        term: aTermVal,
+        rate: aRate,
+      });
+    }, 300);
+    return () => clearTimeout(syncTimerRef.current);
+  }, [aAmount, aTermVal, aRate]);
+
   const [toastMessage, setToastMessage] = useState(null);
 
   // Recalculate live for active mode
