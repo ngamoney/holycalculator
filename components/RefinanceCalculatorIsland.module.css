@@ -1,0 +1,332 @@
+.islandContainer {
+  flex: 1;
+  min-width: 0;
+}
+
+.toastNotice {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--ink);
+  color: var(--gold);
+  font-family: var(--mono);
+  font-size: 13px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.calcGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 860px) {
+  .calcGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.inputCard,
+.resultsCard {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cardHeader {
+  font-family: var(--font-sora, sans-serif);
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: var(--ink);
+}
+
+.sectionDivider {
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+  margin-top: 4px;
+}
+
+.sectionDivider span {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gold-deep);
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.labelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-60);
+}
+
+.inputPrefixWrap {
+  display: flex;
+  align-items: center;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 10px;
+  transition: border-color 0.15s ease;
+}
+
+.inputPrefixWrap:focus-within {
+  border-color: var(--gold-deep);
+}
+
+.prefix,
+.suffix {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink-60);
+  user-select: none;
+}
+
+.numInput,
+.selectInput {
+  width: 100%;
+  padding: 8px 4px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-inter, sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.selectInput {
+  cursor: pointer;
+}
+
+.dualInputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.checkboxWrap {
+  margin-top: 4px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--ink-80);
+  cursor: pointer;
+}
+
+.actionRow {
+  margin-top: 4px;
+}
+
+.shareBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-80);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.shareBtn:hover {
+  background: var(--paper);
+  border-color: var(--gold);
+  color: var(--ink);
+}
+
+.heroResult {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+
+.heroLabel {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-60);
+  margin-bottom: 4px;
+}
+
+.heroValue {
+  font-family: var(--font-sora, sans-serif);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.heroSub {
+  font-size: 12px;
+  color: var(--ink-60);
+  margin-top: 6px;
+}
+
+.breakevenCard {
+  background: rgba(201, 153, 47, 0.1);
+  border: 1px solid rgba(201, 153, 47, 0.3);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.breakevenTitle {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 2px;
+}
+
+.breakevenVal {
+  font-family: var(--font-sora, sans-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.breakevenSub {
+  font-size: 12px;
+  color: var(--ink-80);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.compBox {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.compRowHeader {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  padding: 8px 12px;
+  background: var(--paper-raised);
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-60);
+  border-bottom: 1px solid var(--line);
+}
+
+.compRow {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  padding: 8px 12px;
+  font-size: 12.5px;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+
+.compRow strong {
+  font-family: var(--mono);
+  color: var(--gold-deep);
+}
+
+.compRow span {
+  font-family: var(--mono);
+}
+
+.compRow span:first-child {
+  font-family: var(--font-inter, sans-serif);
+  color: var(--ink-80);
+}
+
+.compTotalRow {
+  border-bottom: none;
+  font-weight: 700;
+  background: var(--paper-raised);
+}
+
+.compTotalRow span:last-child {
+  font-family: var(--mono);
+  font-size: 14px;
+}
+
+/* History Section */
+.historySection {
+  margin-top: 24px;
+}
+
+.historyTitle {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-60);
+  margin-bottom: 10px;
+}
+
+.historyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.historyCard {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.historyCard:hover {
+  border-color: var(--gold);
+  background: var(--paper);
+}
+
+.historyAmount {
+  font-family: var(--font-sora, sans-serif);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.historyMeta {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-60);
+  margin-top: 2px;
+}

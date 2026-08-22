@@ -416,5 +416,159 @@
     "description": "Perform high-precision scientific calculations, trigonometry, logarithms, exponents, factorials, and memory operations.",
     "featured": true,
     "icon": "🧪"
+  },
+  {
+    "id": "payment-calculator",
+    "name": "Payment Calculator",
+    "slug": "payment-calculator",
+    "category": "finance",
+    "categoryName": "Finance",
+    "url": "/payment-calculator",
+    "description": "Calculate monthly loan payments, total interest, or solve for payoff duration with extra payments.",
+    "featured": false,
+    "icon": "💳"
+  },
+  {
+    "id": "amortization-calculator",
+    "name": "Amortization Calculator",
+    "slug": "amortization-calculator",
+    "category": "finance",
+    "categoryName": "Finance",
+    "url": "/amortization-calculator",
+    "description": "Generate annual and monthly loan amortization schedules with extra prepayments and interest savings.",
+    "featured": false,
+    "icon": "📅"
+  },
+  {
+    "id": "401k-calculator",
+    "name": "401(k) Calculator",
+    "slug": "401k-calculator",
+    "category": "finance",
+    "categoryName": "Finance",
+    "url": "/401k-calculator",
+    "description": "Project retirement nest egg growth, 2026 IRS contribution caps, employer matching, and 4% rule retirement income.",
+    "featured": false,
+    "icon": "📈"
+  },
+  {
+    "id": "credit-card-calculator",
+    "name": "Credit Card Calculator",
+    "slug": "credit-card-calculator",
+    "category": "finance",
+    "categoryName": "Finance",
+    "url": "/credit-card-calculator",
+    "description": "Calculate credit card payoff timelines, interest charges, and see the financial trap of paying only minimums.",
+    "featured": false,
+    "icon": "💳"
+  },
+  {
+    "id": "credit-card-payoff-calculator",
+    "name": "Credit Card Payoff Calculator",
+    "slug": "credit-card-payoff-calculator",
+    "category": "finance",
+    "categoryName": "Finance",
+    "url": "/credit-card-payoff-calculator",
+    "description": "Plan the payoff of multiple credit cards using Debt Avalanche and Debt Snowball rollover strategies.",
+    "featured": false,
+    "icon": "💳"
+  },
+  {
+    "id": "debt-payoff-calculator",
+    "name": "Debt Payoff Calculator",
+    "slug": "debt-payoff-calculator",
+    "category": "finance",
+    "categoryName": "Finance",
+    "url": "/debt-payoff-calculator",
+    "description": "Consolidate multiple debts (credit cards, auto, personal loans) into a unified avalanche or snowball payoff plan.",
+    "featured": false,
+    "icon": "📉"
+  },
+  {
+    "id": "student-loan-calculator",
+    "name": "Student Loan Calculator",
+    "slug": "student-loan-calculator",
+    "category": "finance",
+    "categoryName": "Finance",
+    "url": "/student-loan-calculator",
+    "description": "Calculate monthly student loan payments, standard vs graduated plans, and extra prepayment interest savings.",
+    "featured": false,
+    "icon": "🎓"
+  },
+  {
+    "id": "debt-to-income-ratio-calculator",
+    "name": "Debt-to-Income (DTI) Ratio Calculator",
+    "slug": "debt-to-income-ratio-calculator",
+    "category": "finance",
+    "categoryName": "Finance",
+    "url": "/debt-to-income-ratio-calculator",
+    "description": "Calculate Front-End and Back-End DTI ratios and evaluate 28/36 mortgage underwriting benchmarks.",
+    "featured": false,
+    "icon": "📊"
+  },
+  {
+    "id": "personal-loan-calculator",
+    "name": "Personal Loan Calculator",
+    "slug": "personal-loan-calculator",
+    "category": "finance",
+    "categoryName": "Finance",
+    "url": "/personal-loan-calculator",
+    "description": "Calculate monthly personal loan payments, origination fee deductions, and solve for true effective APR.",
+    "featured": false,
+    "icon": "🤝"
+  },
+  {
+    "id": "refinance-calculator",
+    "name": "Refinance Calculator",
+    "slug": "refinance-calculator",
+    "category": "finance",
+    "categoryName": "Finance",
+    "url": "/refinance-calculator",
+    "description": "Compare current and refinanced mortgages side-by-side to calculate monthly payment savings and breakeven horizons.",
+    "featured": false,
+    "icon": "🔄"
+  },
+  {
+    "id": "rent-vs-buy-calculator",
+    "name": "Rent vs. Buy Calculator",
+    "slug": "rent-vs-buy-calculator",
+    "category": "finance",
+    "categoryName": "Finance",
+    "url": "/rent-vs-buy-calculator",
+    "description": "Compare 30-year total housing costs, equity accumulation, and the opportunity cost of investing market returns.",
+    "featured": false,
+    "icon": "⚖️"
+  },
+  {
+    "id": "house-affordability-calculator",
+    "name": "House Affordability Calculator",
+    "slug": "house-affordability-calculator",
+    "category": "finance",
+    "categoryName": "Finance",
+    "url": "/house-affordability-calculator",
+    "description": "Estimate maximum home purchasing power based on household income, debts, down payment, and DTI limits.",
+    "featured": false,
+    "icon": "🏡"
+  },
+  {
+    "id": "down-payment-calculator",
+    "name": "Down Payment Calculator",
+    "slug": "down-payment-calculator",
+    "category": "finance",
+    "categoryName": "Finance",
+    "url": "/down-payment-calculator",
+    "description": "Calculate required upfront cash, closing costs, and evaluate PMI impact across down payment tiers.",
+    "featured": false,
+    "icon": "💰"
+  },
+  {
+    "id": "salary-calculator",
+    "name": "Salary Calculator",
+    "slug": "salary-calculator",
+    "category": "finance",
+    "categoryName": "Finance",
+    "url": "/salary-calculator",
+    "description": "Convert wages between hourly, daily, weekly, bi-weekly, monthly, and annual amounts with PTO adjustments.",
+    "featured": false,
+    "icon": "💼"
   }
 ]
