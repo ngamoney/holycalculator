@@ -10,10 +10,10 @@ export default function Header() {
         </Link>
         <HeaderSearch />
         <div className="nav-links">
-          <Link href="/#math">Math</Link>
-          <Link href="/#finance">Finance</Link>
-          <Link href="/#health">Health</Link>
-          <Link href="/#spiritual">Spiritual</Link>
+          <Link href="/math">Math</Link>
+          <Link href="/finance">Finance</Link>
+          <Link href="/health">Health</Link>
+          <Link href="/spiritual">Spiritual</Link>
           <Link href="/#categories" className="cta">
             All calculators →
           </Link>

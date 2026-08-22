@@ -18,7 +18,7 @@ export default function CategoryGrid() {
                 <div className="key-icon">$</div>
                 <h3>Finance</h3>
               </div>
-              <div className="key-see-all">See all 7 →</div>
+              <Link href="/finance" className="key-see-all">See all 8 →</Link>
             </div>
             <div className="key-links">
               <Link href="/mortgage-calculator">Mortgage calculator</Link>
@@ -39,7 +39,7 @@ export default function CategoryGrid() {
                 <div className="key-icon">+</div>
                 <h3>Health &amp; Fitness</h3>
               </div>
-              <div className="key-see-all">See all 6 →</div>
+              <Link href="/health" className="key-see-all">See all 6 →</Link>
             </div>
             <div className="key-links">
               <Link href="/bmi-calculator">BMI calculator</Link>
@@ -58,7 +58,7 @@ export default function CategoryGrid() {
                 <div className="key-icon">%</div>
                 <h3>Math</h3>
               </div>
-              <div className="key-see-all">See all 7 →</div>
+              <Link href="/math" className="key-see-all">See all 7 →</Link>
             </div>
             <div className="key-links">
               <Link href="/grade-calculator">Grade calculator</Link>
@@ -78,7 +78,7 @@ export default function CategoryGrid() {
                 <div className="key-icon">◷</div>
                 <h3>Date &amp; Time</h3>
               </div>
-              <div className="key-see-all">See all 4 →</div>
+              <Link href="/date-time" className="key-see-all">See all 4 →</Link>
             </div>
             <div className="key-links">
               <Link href="/age-calculator">Age calculator</Link>
@@ -95,7 +95,7 @@ export default function CategoryGrid() {
                 <div className="key-icon">⇄</div>
                 <h3>Conversions</h3>
               </div>
-              <div className="key-see-all">See all 8 →</div>
+              <Link href="/conversions" className="key-see-all">See all 8 →</Link>
             </div>
             <div className="key-links">
               <Link href="/conversion-calculator">Unit converter</Link>
@@ -116,7 +116,7 @@ export default function CategoryGrid() {
                 <div className="key-icon">✦</div>
                 <h3>Spiritual &amp; Luck</h3>
               </div>
-              <div className="key-see-all">See all 5 →</div>
+              <Link href="/spiritual" className="key-see-all">See all 5 →</Link>
             </div>
             <div className="key-links">
               <Link href="/spiritual/life-path-number-calculator">Life path number</Link>
@@ -134,7 +134,7 @@ export default function CategoryGrid() {
                 <div className="key-icon">◎</div>
                 <h3>Tools &amp; Games</h3>
               </div>
-              <div className="key-see-all">See tool →</div>
+              <Link href="/tools" className="key-see-all">See tool →</Link>
             </div>
             <div className="key-links">
               <Link href="/dice-roller">Virtual dice roller</Link>

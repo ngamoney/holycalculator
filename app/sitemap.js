@@ -13,6 +13,48 @@ export default function sitemap() {
       priority: 1.0,
     },
     {
+      url: `${baseUrl}/finance`,
+      lastModified: lastDeployDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/health`,
+      lastModified: lastDeployDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/math`,
+      lastModified: lastDeployDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/date-time`,
+      lastModified: lastDeployDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/conversions`,
+      lastModified: lastDeployDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/spiritual`,
+      lastModified: lastDeployDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/tools`,
+      lastModified: lastDeployDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/about`,
       lastModified: lastDeployDate,
       changeFrequency: "monthly",
