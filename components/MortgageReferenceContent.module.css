@@ -1,5 +1,7 @@
 .referenceContainer {
-  margin-top: 40px;
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding: 0 28px 80px;
   display: flex;
   flex-direction: column;
   gap: 40px;

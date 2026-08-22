@@ -1,11 +1,11 @@
 .refContentSection {
   max-width: 1200px;
-  margin: 56px auto 0;
-  padding: 0 28px 60px;
+  margin: 0 auto;
+  padding: 0 28px 80px;
 }
 
 .refProse {
-  max-width: 820px;
+  max-width: 860px;
   color: var(--ink);
   line-height: 1.7;
 }

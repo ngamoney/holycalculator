@@ -1,8 +1,11 @@
 .refContentSection {
-  margin-top: var(--section-gap-lg, 56px);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 28px 80px;
 }
 
 .refProse {
+  max-width: 860px;
   display: flex;
   flex-direction: column;
   gap: 20px;
