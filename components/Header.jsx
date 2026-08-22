@@ -14,7 +14,7 @@ export default function Header() {
           <Link href="/finance">Finance</Link>
           <Link href="/health">Health</Link>
           <Link href="/spiritual">Spiritual</Link>
-          <Link href="/#categories" className="cta">
+          <Link href="/calculators" className="cta">
             All calculators →
           </Link>
         </div>

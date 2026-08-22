@@ -38,4 +38,13 @@ All calculator pages must maintain consistent vertical spacing across section bo
 - Result -> secondary actions / callouts: var(--section-gap-sm, 24px)
 - Main form / island bottom -> ad slot: var(--section-gap-md, 36px)
 - Ad slot -> reference content heading: var(--section-gap-lg, 56px)
-- Major content blocks (How it works -> FAQ -> Related): var(--section-gap-xl, 80px)
+- Major content blocks (How it works -> FAQ -> Related): var(--section-gap-xl, 80px)
+
+## Homepage Inclusion Rule
+When a new calculator is built, it must be added to:
+- Its category's data source entry in `data/calculators.json` (so it automatically appears on `/calculators` and its relevant `/[category]` hub page)
+- `sitemap.xml`
+
+It must **NOT** be automatically added to the homepage's curated category cards. Homepage cards are a manually curated shortlist chosen by Ellete, not an auto-generated full list. A new calculator only appears on the homepage if Ellete explicitly requests it in that calculator's build prompt.
+
+Default assumption for every calculator build going forward: **homepage untouched unless explicitly instructed otherwise.**

@@ -13,6 +13,12 @@ export default function sitemap() {
       priority: 1.0,
     },
     {
+      url: `${baseUrl}/calculators`,
+      lastModified: lastDeployDate,
+      changeFrequency: "daily",
+      priority: 0.95,
+    },
+    {
       url: `${baseUrl}/finance`,
       lastModified: lastDeployDate,
       changeFrequency: "weekly",
